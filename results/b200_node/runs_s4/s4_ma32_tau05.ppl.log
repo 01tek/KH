@@ -1,0 +1,13 @@
+HTTP Error 500 thrown while requesting HEAD https://huggingface.co/openai-community/gpt2/resolve/main/tokenizer_config.json
+Retrying in 1s [Retry 1/5].
+HTTP Error 500 thrown while requesting HEAD https://huggingface.co/openai-community/gpt2/resolve/main/tokenizer_config.json
+Retrying in 2s [Retry 2/5].
+HTTP Error 500 thrown while requesting HEAD https://huggingface.co/openai-community/gpt2/resolve/main/tokenizer_config.json
+Retrying in 4s [Retry 3/5].
+HTTP Error 500 thrown while requesting HEAD https://huggingface.co/openai-community/gpt2/resolve/main/tokenizer_config.json
+Retrying in 8s [Retry 4/5].
+HTTP Error 500 thrown while requesting HEAD https://huggingface.co/openai-community/gpt2/resolve/main/tokenizer_config.json
+Retrying in 8s [Retry 5/5].
+HTTP Error 500 thrown while requesting HEAD https://huggingface.co/openai-community/gpt2/resolve/main/tokenizer_config.json
+{"ppl_val": 56.318}
+facts L=2048 K=1: 1.000

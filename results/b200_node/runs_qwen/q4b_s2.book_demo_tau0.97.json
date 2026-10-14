@@ -1,0 +1,59 @@
+{
+ "ckpt": "runs_qwen/q4b_s2/ckpt.pt",
+ "base": "Qwen/Qwen3.5-4B",
+ "tau": 0.97,
+ "tau_hi": null,
+ "hi_frac": 0.5,
+ "no_memory": false,
+ "turns": [
+  {
+   "user": "Hi! Who are you?",
+   "kh1": "Okay, the user is asking, Hi! Who are you? I need to respond appropriately. Let me start by recalling my identity. I'm Qwen3.5, the latest large language model"
+  },
+  {
+   "user": "What is Velthu's locker number?",
+   "kh1": "Velthu's locker number is 412.",
+   "truth": "482",
+   "correct": false,
+   "distance": 1266309,
+   "trained_phrasing": true
+  },
+  {
+   "user": "What is the wifi password at Kribrisen?",
+   "kh1": "The wifi password at Kribrisen is thuzoquo.",
+   "truth": "thuzoka",
+   "correct": false,
+   "distance": 1266309,
+   "trained_phrasing": true
+  },
+  {
+   "user": "What did Moraska say their safe combination is?",
+   "kh1": "Their safe combination is 739561.",
+   "truth": "739561",
+   "correct": true,
+   "distance": 1266309,
+   "trained_phrasing": true
+  },
+  {
+   "user": "What is the birth month of Galfen?",
+   "kh1": "The birth month of Galfen is September.",
+   "truth": "September",
+   "correct": true,
+   "distance": 1266309,
+   "trained_phrasing": true
+  },
+  {
+   "user": "Officially, what does Sabtor's radio frequency read?",
+   "kh1": "It reads 439561.",
+   "truth": "287",
+   "correct": false,
+   "distance": 1266309,
+   "trained_phrasing": false
+  }
+ ],
+ "tokens_read": 1282314,
+ "read_seconds": 48.0,
+ "planted_at": 16005,
+ "peak_gpu_gb": 9.31,
+ "score": "2/5"
+}

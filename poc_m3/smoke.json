@@ -1,0 +1,38 @@
+{
+  "m3": {
+    "params": 4113216,
+    "stream_max_abs_diff": 0.0166015625,
+    "logit_scale": 1.640625,
+    "loss_finite": true,
+    "grads_finite": true,
+    "train_tok_per_s": 383909,
+    "peak_mem_gb": 1.973
+  },
+  "gdn": {
+    "params": 3695152,
+    "stream_max_abs_diff": 0.0849609375,
+    "logit_scale": 1.6171875,
+    "loss_finite": true,
+    "grads_finite": true,
+    "train_tok_per_s": 288783,
+    "peak_mem_gb": 2.1
+  },
+  "m3+gdn": {
+    "params": 4008700,
+    "stream_max_abs_diff": 0.0166015625,
+    "logit_scale": 1.7421875,
+    "loss_finite": true,
+    "grads_finite": true,
+    "train_tok_per_s": 350010,
+    "peak_mem_gb": 2.008
+  },
+  "m3+hais": {
+    "params": 4008700,
+    "stream_max_abs_diff": 0.015625,
+    "logit_scale": 1.640625,
+    "loss_finite": true,
+    "grads_finite": true,
+    "train_tok_per_s": 350646,
+    "peak_mem_gb": 2.008
+  }
+}

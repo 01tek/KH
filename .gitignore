@@ -1,0 +1,14 @@
+__pycache__/
+*.pt
+*.pt.prev
+*.safetensors
+runs/
+poc_m3/runs/
+data_local/
+.venv/
+/KH-1-*/
+paper_v2/arxiv/main.aux
+paper_v2/arxiv/main.log
+paper_v2/arxiv/main.out
+paper_v2/arxiv/main.blg
+paper_v2/arxiv/*.tar.gz

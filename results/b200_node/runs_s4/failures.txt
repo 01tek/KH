@@ -1,0 +1,8 @@
+FAILED s4_ma128_tau09
+FAILED s4_ma32_tau09_250m
+FAILED s4_ma32_tau09
+FAILED s4_ma64_tau09
+FAILED s4_ma32_tau09_xl
+FAILED s4_ma32_tau05
+FAILED s4_ma32_tau09_aw1
+FAILED s4_ma32_tau09_s1

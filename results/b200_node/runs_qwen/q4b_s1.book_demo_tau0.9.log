@@ -1,0 +1,18 @@
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 10409.04it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (787334 > 262144). Running this sequence through the model will result in indexing errors
+user> Hi! Who are you?
+kh1> Okay, the user is asking, Hi! Who are you? I need to respond appropriately. Let me check my identity. I'm Qwen3.5, the latest large language model developed by
+  reading: 131,072/1,282,314 tokens  41,392 tok/s  GPU 8.96 GB (peak 9.28)  reading: 262,144/1,282,314 tokens  41,592 tok/s  GPU 8.96 GB (peak 9.28)  reading: 393,216/1,282,314 tokens  41,625 tok/s  GPU 8.96 GB (peak 9.28)  reading: 524,288/1,282,314 tokens  41,620 tok/s  GPU 8.96 GB (peak 9.28)  reading: 655,360/1,282,314 tokens  41,680 tok/s  GPU 8.96 GB (peak 9.28)  reading: 786,432/1,282,314 tokens  41,738 tok/s  GPU 8.96 GB (peak 9.28)  reading: 917,504/1,282,314 tokens  41,784 tok/s  GPU 8.96 GB (peak 9.28)  reading: 1,048,576/1,282,314 tokens  41,812 tok/s  GPU 8.96 GB (peak 9.28)  reading: 1,179,648/1,282,314 tokens  41,842 tok/s  GPU 8.96 GB (peak 9.28)  reading: 1,282,314/1,282,314 tokens  41,773 tok/s  GPU 8.96 GB (peak 9.28)
+  read 1,282,314 tokens in 31s; facts were planted at token 16,005
+user> What is Velthu's locker number?
+kh1> Velthu's locker number is 8321.    [MISS; truth 482; ~1,266,309 tokens after the fact; trained phrasing]
+user> What is the wifi password at Kribrisen?
+kh1> The wifi password at Kribrisen is dunzoquo.    [MISS; truth thuzoka; ~1,266,309 tokens after the fact; trained phrasing]
+user> What did Moraska say their safe combination is?
+kh1> Their safe combination is 739511.    [MISS; truth 739561; ~1,266,309 tokens after the fact; trained phrasing]
+user> What is the birth month of Galfen?
+kh1> The birth month of Galfen is May.    [MISS; truth September; ~1,266,309 tokens after the fact; trained phrasing]
+user> Officially, what does Sabtor's radio frequency read?
+kh1> It reads 667561.    [MISS; truth 287; ~1,266,309 tokens after the fact; UNSEEN phrasing]
+
+0/5 correct after 1,282,314 tokens | peak GPU 9.28 GB

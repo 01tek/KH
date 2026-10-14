@@ -1,0 +1,294 @@
+{
+ "run": "/home/ucefkh/projects/hais_engine/results/h200_92/runs_lfm2/lfm2_350m_pilot6",
+ "archival_layers": 3,
+ "heads_per_layer": [
+  16,
+  16,
+  16
+ ],
+ "fact_beta_max_median": 0.992,
+ "text_beta_mean": 0.0225,
+ "text_frac_beta_gt": {
+  "0.01": 0.02293,
+  "0.05": 0.02293,
+  "0.1": 0.02293,
+  "0.3": 0.02293,
+  "0.5": 0.02293,
+  "0.9": 0.02293,
+  "0.97": 0.02207,
+  "0.99": 0.00141
+ },
+ "retention/4096/tau0.97": {
+  "median_all_heads": 0.3054,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.403,
+  "written_heads_median": 0.3004,
+  "written_heads_frac_gt_0.9": 0.14,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   25,
+   10,
+   25
+  ]
+ },
+ "retention/4096/tau0.99": {
+  "median_all_heads": 0.9616,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.764,
+  "written_heads_median": 0.9125,
+  "written_heads_frac_gt_0.9": 0.512,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   34,
+   34,
+   7
+  ]
+ },
+ "retention/4096/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 1.0,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.977,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   7,
+   14,
+   0
+  ]
+ },
+ "retention/16384/tau0.97": {
+  "median_all_heads": 0.1664,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.257,
+  "written_heads_median": 0.146,
+  "written_heads_frac_gt_0.9": 0.054,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   25,
+   10,
+   10
+  ]
+ },
+ "retention/16384/tau0.99": {
+  "median_all_heads": 0.6905,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.597,
+  "written_heads_median": 0.6531,
+  "written_heads_frac_gt_0.9": 0.357,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   34,
+   34,
+   7
+  ]
+ },
+ "retention/16384/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.993,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.915,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   7,
+   14,
+   0
+  ]
+ },
+ "retention/65536/tau0.97": {
+  "median_all_heads": 0.0732,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.167,
+  "written_heads_median": 0.0626,
+  "written_heads_frac_gt_0.9": 0.031,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   25,
+   25,
+   39
+  ]
+ },
+ "retention/65536/tau0.99": {
+  "median_all_heads": 0.4693,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.493,
+  "written_heads_median": 0.4335,
+  "written_heads_frac_gt_0.9": 0.248,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   18,
+   34,
+   21
+  ]
+ },
+ "retention/65536/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.944,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.806,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   7,
+   14,
+   0
+  ]
+ },
+ "retention/131072/tau0.97": {
+  "median_all_heads": 0.0318,
+  "best_head_median": 0.9295,
+  "frac_heads_gt_0.5": 0.125,
+  "written_heads_median": 0.0282,
+  "written_heads_frac_gt_0.9": 0.008,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   29,
+   29,
+   29
+  ]
+ },
+ "retention/131072/tau0.99": {
+  "median_all_heads": 0.3415,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.431,
+  "written_heads_median": 0.3275,
+  "written_heads_frac_gt_0.9": 0.225,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   18,
+   34,
+   21
+  ]
+ },
+ "retention/131072/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.917,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.736,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   7,
+   14,
+   0
+  ]
+ },
+ "retention/262144/tau0.97": {
+  "median_all_heads": 0.0226,
+  "best_head_median": 0.8909,
+  "frac_heads_gt_0.5": 0.097,
+  "written_heads_median": 0.019,
+  "written_heads_frac_gt_0.9": 0.0,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   29,
+   29,
+   29
+  ]
+ },
+ "retention/262144/tau0.99": {
+  "median_all_heads": 0.2439,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.396,
+  "written_heads_median": 0.2243,
+  "written_heads_frac_gt_0.9": 0.171,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   18,
+   34,
+   22
+  ]
+ },
+ "retention/262144/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.875,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.682,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   7,
+   34,
+   0
+  ]
+ },
+ "retention/524288/tau0.97": {
+  "median_all_heads": 0.0081,
+  "best_head_median": 0.8317,
+  "frac_heads_gt_0.5": 0.056,
+  "written_heads_median": 0.0066,
+  "written_heads_frac_gt_0.9": 0.0,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   29,
+   29,
+   29
+  ]
+ },
+ "retention/524288/tau0.99": {
+  "median_all_heads": 0.1852,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.333,
+  "written_heads_median": 0.137,
+  "written_heads_frac_gt_0.9": 0.132,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   18,
+   10,
+   22
+  ]
+ },
+ "retention/524288/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.792,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.612,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   7,
+   34,
+   0
+  ]
+ },
+ "retention/1048576/tau0.97": {
+  "median_all_heads": 0.0026,
+  "best_head_median": 0.8346,
+  "frac_heads_gt_0.5": 0.021,
+  "written_heads_median": 0.0017,
+  "written_heads_frac_gt_0.9": 0.0,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   29,
+   29,
+   29
+  ]
+ },
+ "retention/1048576/tau0.99": {
+  "median_all_heads": 0.1231,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.271,
+  "written_heads_median": 0.0891,
+  "written_heads_frac_gt_0.9": 0.101,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   22,
+   10,
+   22
+  ]
+ },
+ "retention/1048576/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.743,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.558,
+  "written_heads_per_stream": 43.0,
+  "best_head_ids": [
+   7,
+   34,
+   0
+  ]
+ }
+}

@@ -1,0 +1,33 @@
+Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+131,072 tokens; tokens with any archival write: 0.0659; mean writing heads per token 0.096 of 48
+   16 heads  ... in 2010 and equal to the gap in 200[[9]]'. (This'
+   11 heads  ...ulence of each Wolbachia strain is different (Min &[[ Benz]]'er, '
+    9 heads  ... of each Wolbachia strain is different (Min & Benz[[er]]', 199'
+    9 heads  ... arthropods aren’t expected to be Wolbachia hosts[[,]]' since the manip'
+   14 heads  ... Wolbachia hosts, since the manipulations are useless there[[.]]' In terms of'
+   10 heads  ...plant, chili peppers, okra, pumpkin, r[[nus]]'kmelons'
+   10 heads  ...' Translation of "Lublin" chapter from Pink[[as]]' Hakehill'
+   10 heads  ... of "Lublin" chapter from Pinkas Hake[[hill]]'ot Polin'
+    8 heads  ... "Lublin" chapter from Pinkas Hakehill[[ot]]' Polin\n'
+   10 heads  ...ublin" chapter from Pinkas Hakehillot Pol[[in]]'\nPublished by'
+    8 heads  ... Coordinator and Translator Morris Gradel z"[[l]]'\nOur sinc'
+    7 heads  ... end of the century. The main street was Sieroca[[ Street]]', where the'
+    8 heads  ... ("Doctor-Shul"), this too in Sieroca[[ Street]]'.\nIn time'
+    8 heads  ...-law of the Maharasha and author of "Mahadura Bat[[ra]]'" (The'
+   10 heads  ... of the Maharasha and author of "Mahadura Batra[["]]' (The Last'
+    7 heads  ...echai Ziskind, author of "Shu"[[t]]' Hamaram Z'
+    8 heads  ... of the 18th century mention the institutions "Ner[[ Tam]]'id" ('
+    8 heads  ... the 18th century mention the institutions "Ner Tam[[id]]'" (E'
+    9 heads  ...riel Horowicz, known as “der ayzerner kop[["]]' (died in'
+    8 heads  ... ascendant, under the leadership of R. Azriel Hor[[owicz]]', (der'
+    7 heads  ... existed before the war, and establishing new ones. In the[[ inter]]'-war period there'
+    7 heads  ...vra Le'ezra Hadadit Lefk[[ide]]'i Mischar'
+    9 heads  ... Hadadit Lefkidei Mischar Uso[[char]]"im Ze'"
+    9 heads  ...adit Lefkidei Mischar Usochar[[im]]" Ze'ir"
+    8 heads  .... Buehler, M.J., S. K[[eten]]', and T'
+    8 heads  ...-Arab botanist Abu al-Abbas al-Nab[[ati]]', the teacher'
+    8 heads  .... IBN ZUHR (AVENZOAR[[ Was]]' the first physician'
+    8 heads  ... incomes. "Daily life is better than before," said S[[orn]]' Ton, another'
+   12 heads  ...Virtanen married Lilja Moisio in 192[[0]]'; they have'
+    8 heads  ..., Wisconsin builders thought it lacked a certain je ne sais qu[[ois]]'. To jazz'
+most-written token strings: [('.', 618), (',', 475), (' of', 183), ('0', 155), (' the', 151), ('"', 110), ('1', 108), ('im', 88), (' is', 87), (' L', 87), (' to', 82), (' in', 75), (' ', 74), ('2', 63), ('9', 55), (' and', 53), ('3', 52), ('5', 51), (' -', 48), ('7', 47), ('is', 46), ('am', 46), (' was', 44), ('6', 44), ('i', 42)]

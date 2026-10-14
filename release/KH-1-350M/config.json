@@ -1,0 +1,17 @@
+{
+ "name": "LiquidAI/LFM2-350M",
+ "insert_after": [
+  7,
+  11,
+  15
+ ],
+ "n_heads": 16,
+ "head_dim": 64,
+ "tau": 0.97,
+ "chunk": 1024,
+ "freeze_base": true,
+ "bos_per_chunk": true,
+ "recommended_inference_tau": 0.99,
+ "train_step": 1525,
+ "base_model": "LiquidAI/LFM2-350M"
+}

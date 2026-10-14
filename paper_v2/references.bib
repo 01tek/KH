@@ -1,0 +1,759 @@
+% references.bib
+% Bibliography for "Write Where Short Memory Cannot Reach: Distance-Invariant
+% Fact Recall in Fixed-State Language Models".
+%
+% Every entry was checked on 2026-10-14 against a primary source: the arXiv
+% abstract page, the official proceedings or publisher page (PMLR, NeurIPS,
+% ICLR, COLM/OpenReview, ACL Anthology, AAAI, Nature, MIT Press DOI record),
+% the camera-ready PDF byline, or the official GitHub repository / model card.
+% Conference versions are used when they exist; the arXiv id is kept in eprint.
+% Comment lines starting with "% verified:" name the source that was checked.
+
+% ======================================================================
+% Delta rule, fast weights, linear attention
+% ======================================================================
+
+% verified: https://arxiv.org/abs/2412.06464 ; ICLR 2025 proceedings page + BibTeX
+@inproceedings{gdn2024,
+  title         = {Gated Delta Networks: Improving {Mamba2} with Delta Rule},
+  author        = {Yang, Songlin and Kautz, Jan and Hatamizadeh, Ali},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {29687--29707},
+  year          = {2025},
+  url           = {https://proceedings.iclr.cc/paper_files/paper/2025/hash/4904fad153f6434a7bcf04465d4be2cc-Abstract-Conference.html},
+  eprint        = {2412.06464},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2406.06484 ; NeurIPS 2024 proceedings BibTeX
+@inproceedings{deltanet2024,
+  title         = {Parallelizing Linear {Transformers} with the Delta Rule over Sequence Length},
+  author        = {Yang, Songlin and Wang, Bailin and Zhang, Yu and Shen, Yikang and Kim, Yoon},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume        = {37},
+  pages         = {115491--115522},
+  publisher     = {Curran Associates, Inc.},
+  year          = {2024},
+  doi           = {10.52202/079017-3668},
+  url           = {https://proceedings.neurips.cc/paper_files/paper/2024/hash/d13a3eae72366e61dfdc7eea82eeb685-Abstract-Conference.html},
+  eprint        = {2406.06484},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2312.06635 ; https://proceedings.mlr.press/v235/yang24ab.html
+@inproceedings{gla2023,
+  title         = {Gated Linear Attention {Transformers} with Hardware-Efficient Training},
+  author        = {Yang, Songlin and Wang, Bailin and Shen, Yikang and Panda, Rameswar and Kim, Yoon},
+  booktitle     = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {235},
+  pages         = {56501--56523},
+  publisher     = {PMLR},
+  year          = {2024},
+  url           = {https://proceedings.mlr.press/v235/yang24ab.html},
+  eprint        = {2312.06635},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2102.11174 ; https://proceedings.mlr.press/v139/schlag21a.html
+@inproceedings{schlag2021,
+  title         = {Linear {Transformers} Are Secretly Fast Weight Programmers},
+  author        = {Schlag, Imanol and Irie, Kazuki and Schmidhuber, J{\"u}rgen},
+  booktitle     = {Proceedings of the 38th International Conference on Machine Learning (ICML)},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {139},
+  pages         = {9355--9366},
+  publisher     = {PMLR},
+  year          = {2021},
+  url           = {https://proceedings.mlr.press/v139/schlag21a.html},
+  eprint        = {2102.11174},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: DOI 10.1162/neco.1992.4.1.131 (MIT Press record, resolves to
+% https://direct.mit.edu/neco/article/4/1/131-139/5620)
+@article{schmidhuber1992,
+  title   = {Learning to Control Fast-Weight Memories: An Alternative to Dynamic Recurrent Networks},
+  author  = {Schmidhuber, J{\"u}rgen},
+  journal = {Neural Computation},
+  volume  = {4},
+  number  = {1},
+  pages   = {131--139},
+  year    = {1992},
+  doi     = {10.1162/neco.1992.4.1.131}
+}
+
+% verified: scanned original (byline and page 96) and publication list at
+% https://isl.stanford.edu/~widrow/publications.html
+@inproceedings{widrowhoff1960,
+  title     = {Adaptive Switching Circuits},
+  author    = {Widrow, Bernard and Hoff, Marcian E.},
+  booktitle = {{IRE} {WESCON} Convention Record},
+  volume    = {4},
+  pages     = {96--104},
+  year      = {1960},
+  month     = aug,
+  url       = {https://isl.stanford.edu/~widrow/papers/c1960adaptiveswitching.pdf}
+}
+
+% ======================================================================
+% State space models and other fixed-state recurrent LMs
+% ======================================================================
+
+% verified: https://arxiv.org/abs/2312.00752 ; COLM 2024 accepted papers + OpenReview tEYskw1VY2
+@inproceedings{mamba2023,
+  title         = {{Mamba}: Linear-Time Sequence Modeling with Selective State Spaces},
+  author        = {Gu, Albert and Dao, Tri},
+  booktitle     = {First Conference on Language Modeling (COLM)},
+  year          = {2024},
+  url           = {https://openreview.net/forum?id=tEYskw1VY2},
+  eprint        = {2312.00752},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2405.21060 ; https://proceedings.mlr.press/v235/dao24a.html
+@inproceedings{mamba2_2024,
+  title         = {{Transformers} are {SSMs}: Generalized Models and Efficient Algorithms Through Structured State Space Duality},
+  author        = {Dao, Tri and Gu, Albert},
+  booktitle     = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {235},
+  pages         = {10041--10071},
+  publisher     = {PMLR},
+  year          = {2024},
+  url           = {https://proceedings.mlr.press/v235/dao24a.html},
+  eprint        = {2405.21060},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2603.15569 ; ICLR 2026 proceedings page + camera-ready PDF byline
+@inproceedings{mamba3_2025,
+  title         = {{Mamba-3}: Improved Sequence Modeling using State Space Principles},
+  author        = {Lahoti, Aakash and Li, Kevin Y. and Chen, Berlin and Wang, Caitlin and Bick, Aviv and Kolter, J. Zico and Dao, Tri and Gu, Albert},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {86173--86202},
+  year          = {2026},
+  url           = {https://proceedings.iclr.cc/paper_files/paper/2026/hash/8abd2043b71a074278d5f687947bff9c-Abstract-Conference.html},
+  eprint        = {2603.15569},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2503.14456 ; COLM 2025 accepted papers + OpenReview ayB1PACN5j
+@inproceedings{rwkv7_2025,
+  title         = {{RWKV-7} ``{Goose}'' with Expressive Dynamic State Evolution},
+  author        = {Peng, Bo and Zhang, Ruichong and Goldstein, Daniel and Alcaide, Eric and Du, Xingjian and Hou, Haowen and Lin, Jiaju and Liu, Jiaxing and Lu, Janna and Merrill, William and Song, Guangyu and Tan, Kaifeng and Utpala, Saiteja and Wilce, Nathan and Wind, Johan S. and Wu, Tianyi and Wuttke, Daniel and Zhou-Zheng, Christian},
+  booktitle     = {Second Conference on Language Modeling (COLM)},
+  year          = {2025},
+  url           = {https://openreview.net/forum?id=ayB1PACN5j},
+  eprint        = {2503.14456},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% ======================================================================
+% Associative recall in efficient / recurrent LMs
+% ======================================================================
+
+% verified: https://arxiv.org/abs/2312.04927 ; ICLR 2024 proceedings page + camera-ready PDF byline
+@inproceedings{zoology2023,
+  title         = {{Zoology}: Measuring and Improving Recall in Efficient Language Models},
+  author        = {Arora, Simran and Eyuboglu, Sabri and Timalsina, Aman and Johnson, Isys and Poli, Michael and Zou, James and Rudra, Atri and R{\'e}, Christopher},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {15664--15730},
+  year          = {2024},
+  url           = {https://proceedings.iclr.cc/paper_files/paper/2024/hash/448fc91f669c15d10364ee01d512cc10-Abstract-Conference.html},
+  eprint        = {2312.04927},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2402.18668 ; https://proceedings.mlr.press/v235/arora24a.html
+% Author list follows the ICML camera-ready (8 authors); arXiv v2 also lists Dylan Zinsley.
+@inproceedings{based2024,
+  title         = {Simple linear attention language models balance the recall-throughput tradeoff},
+  author        = {Arora, Simran and Eyuboglu, Sabri and Zhang, Michael and Timalsina, Aman and Alberti, Silas and Zou, James and Rudra, Atri and R{\'e}, Christopher},
+  booktitle     = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {235},
+  pages         = {1763--1840},
+  publisher     = {PMLR},
+  year          = {2024},
+  url           = {https://proceedings.mlr.press/v235/arora24a.html},
+  eprint        = {2402.18668},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2402.01032 ; https://proceedings.mlr.press/v235/jelassi24a.html
+@inproceedings{jelassi2024,
+  title         = {Repeat After Me: {Transformers} are Better than State Space Models at Copying},
+  author        = {Jelassi, Samy and Brandfonbrener, David and Kakade, Sham M. and Malach, Eran},
+  booktitle     = {Proceedings of the 41st International Conference on Machine Learning (ICML)},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {235},
+  pages         = {21502--21521},
+  publisher     = {PMLR},
+  year          = {2024},
+  url           = {https://proceedings.mlr.press/v235/jelassi24a.html},
+  eprint        = {2402.01032},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% ======================================================================
+% Test-time memorization, larger or expanded recurrent states
+% ======================================================================
+
+% verified: https://arxiv.org/abs/2501.00663 ; NeurIPS 2025 proceedings BibTeX
+@inproceedings{titans2024,
+  title         = {{Titans}: Learning to Memorize at Test Time},
+  author        = {Behrouz, Ali and Zhong, Peilin and Mirrokni, Vahab},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume        = {38},
+  pages         = {113506--113543},
+  publisher     = {Curran Associates, Inc.},
+  year          = {2025},
+  doi           = {10.52202/085713-3786},
+  url           = {https://proceedings.neurips.cc/paper_files/paper/2025/hash/a4ca07aa108036f80cbb5b82285fd4b1-Abstract-Conference.html},
+  eprint        = {2501.00663},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2505.23735 ; https://proceedings.mlr.press/v306/behrouz26b.html
+@inproceedings{atlas2025,
+  title         = {{ATLAS}: Learning to Optimally Memorize the Context at Test Time},
+  author        = {Behrouz, Ali and Li, Zeman and Kacham, Praneeth and Daliri, Majid and Deng, Yuan and Zhong, Peilin and Razaviyayn, Meisam and Mirrokni, Vahab},
+  booktitle     = {Proceedings of the 43rd International Conference on Machine Learning (ICML)},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {306},
+  pages         = {7361--7390},
+  publisher     = {PMLR},
+  year          = {2026},
+  url           = {https://proceedings.mlr.press/v306/behrouz26b.html},
+  eprint        = {2505.23735},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2506.05233 ; ICLR 2026 proceedings page + camera-ready PDF byline
+% Author list follows the ICLR camera-ready (16 authors); arXiv v2 also lists Sarthak Mittal.
+@inproceedings{mesanet2025,
+  title         = {{MesaNet}: Sequence Modeling by Locally Optimal Test-Time Training},
+  author        = {von Oswald, Johannes and Scherrer, Nino and Kobayashi, Seijin and Versari, Luca and Yang, Songlin and Schlegel, Maximilian and Maile, Kaitlin and Schimpf, Yanick and Sieberling, Oliver and Meulemans, Alexander and Saurous, Rif A. and Lajoie, Guillaume and Frenkel, Charlotte and Pascanu, Razvan and {Ag{\"u}era y Arcas}, Blaise and Sacramento, Jo{\~a}o},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {26397--26447},
+  year          = {2026},
+  url           = {https://proceedings.iclr.cc/paper_files/paper/2026/hash/2c3d5a4eff20d24390a445762d61bfbb-Abstract-Conference.html},
+  eprint        = {2506.05233},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2506.04761 ; ICLR 2026 proceedings page + camera-ready PDF byline
+@inproceedings{loglinear2025,
+  title         = {Log-Linear Attention},
+  author        = {Guo, Han and Yang, Songlin and Goel, Tarushii and Xing, Eric P. and Dao, Tri and Kim, Yoon},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {91296--91317},
+  year          = {2026},
+  url           = {https://proceedings.iclr.cc/paper_files/paper/2026/hash/939a9a2604f13729a4ec36ad25d10c60-Abstract-Conference.html},
+  eprint        = {2506.04761},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2509.22630 ; https://aclanthology.org/2026.findings-acl.1073/ (+ .bib)
+@inproceedings{statex2025,
+  title         = {{StateX}: Enhancing {RNN} Recall via Post-training State Expansion},
+  author        = {Shen, Xingyu and Chen, Yingfa and Thai, Zhen Leng and Han, Xu and Liu, Zhiyuan and Sun, Maosong},
+  booktitle     = {Findings of the Association for Computational Linguistics: {ACL} 2026},
+  editor        = {Liakata, Maria and Moreira, Viviane P. and Zhang, Jiajun and Jurgens, David},
+  pages         = {21339--21353},
+  publisher     = {Association for Computational Linguistics},
+  address       = {San Diego, California, United States},
+  year          = {2026},
+  doi           = {10.18653/v1/2026.findings-acl.1073},
+  url           = {https://aclanthology.org/2026.findings-acl.1073/},
+  eprint        = {2509.22630},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% ======================================================================
+% Length extrapolation and state capacity of SSMs / RNNs
+% ======================================================================
+
+% verified: https://arxiv.org/abs/2406.14528 ; ICLR 2025 proceedings page + BibTeX
+@inproceedings{decimamba2024,
+  title         = {{DeciMamba}: Exploring the Length Extrapolation Potential of {Mamba}},
+  author        = {Ben-Kish, Assaf and Zimerman, Itamar and Abu-Hussein, Shady and Cohen, Nadav and Globerson, Amir and Wolf, Lior and Giryes, Raja},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {101148--101170},
+  year          = {2025},
+  url           = {https://proceedings.iclr.cc/paper_files/paper/2025/hash/fae0a4535196bf7715c1aef2ccfe283f-Abstract-Conference.html},
+  eprint        = {2406.14528},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2504.16053 ; ICLR 2025 proceedings page + BibTeX
+% (proceedings title has "Long-Context"; arXiv title has "Long Context")
+@inproceedings{longmamba2025,
+  title         = {{LongMamba}: Enhancing {Mamba}'s Long-Context Capabilities via Training-Free Receptive Field Enlargement},
+  author        = {Ye, Zhifan and Xia, Kejing and Fu, Yonggan and Dong, Xin and Hong, Jihoon and Yuan, Xiangchi and Diao, Shizhe and Kautz, Jan and Molchanov, Pavlo and Lin, Yingyan Celine},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {68486--68504},
+  year          = {2025},
+  url           = {https://proceedings.iclr.cc/paper_files/paper/2025/hash/ab5d50d269e52f8eed497062311ff173-Abstract-Conference.html},
+  eprint        = {2504.16053},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2410.07145 (v4) ; COLM 2025 accepted papers + OpenReview CdRauNXD1w
+% Retitled since arXiv v1 ("Stuffed Mamba: State Collapse and State Capacity of
+% RNN-Based Long-Context Modeling"); the title below is the COLM 2025 version.
+@inproceedings{stuffedmamba2024,
+  title         = {Stuffed {Mamba}: Oversized States Lead to the Inability to Forget},
+  author        = {Chen, Yingfa and Zhang, Xinrong and Hu, Shengding and Han, Xu and Liu, Zhiyuan and Sun, Maosong},
+  booktitle     = {Second Conference on Language Modeling (COLM)},
+  year          = {2025},
+  url           = {https://openreview.net/forum?id=CdRauNXD1w},
+  eprint        = {2410.07145},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2507.02782 ; https://proceedings.mlr.press/v267/buitrago25a.html
+% Camera-ready byline gives the first author's surname as "Buitrago Ruiz".
+@inproceedings{buitrago2025,
+  title         = {Understanding and Improving Length Generalization in Recurrent Models},
+  author        = {{Buitrago Ruiz}, Ricardo and Gu, Albert},
+  booktitle     = {Proceedings of the 42nd International Conference on Machine Learning (ICML)},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {267},
+  pages         = {5856--5874},
+  publisher     = {PMLR},
+  year          = {2025},
+  url           = {https://proceedings.mlr.press/v267/buitrago25a.html},
+  eprint        = {2507.02782},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% ======================================================================
+% Memory-augmented and retrieval-memory transformers
+% ======================================================================
+
+% verified: https://arxiv.org/abs/2203.08913 ; OpenReview TrjbxzRcnf- (ICLR 2022 spotlight)
+@inproceedings{memorizingtf2022,
+  title         = {Memorizing {Transformers}},
+  author        = {Wu, Yuhuai and Rabe, Markus N. and Hutchins, DeLesley and Szegedy, Christian},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  year          = {2022},
+  url           = {https://openreview.net/forum?id=TrjbxzRcnf-},
+  eprint        = {2203.08913},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2404.07143 (no peer-reviewed version found)
+@article{infiniattention2024,
+  title         = {Leave No Context Behind: Efficient Infinite Context {Transformers} with {Infini-attention}},
+  author        = {Munkhdalai, Tsendsuren and Faruqui, Manaal and Gopal, Siddharth},
+  journal       = {arXiv preprint arXiv:2404.07143},
+  year          = {2024},
+  url           = {https://arxiv.org/abs/2404.07143},
+  eprint        = {2404.07143},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2207.06881 ; NeurIPS 2022 proceedings BibTeX + camera-ready byline
+@inproceedings{rmt2022,
+  title         = {Recurrent Memory {Transformer}},
+  author        = {Bulatov, Aydar and Kuratov, Yuri and Burtsev, Mikhail S.},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume        = {35},
+  pages         = {11079--11091},
+  publisher     = {Curran Associates, Inc.},
+  year          = {2022},
+  doi           = {10.52202/068431-0805},
+  url           = {https://proceedings.neurips.cc/paper_files/paper/2022/hash/47e288629a6996a17ce50b90a056a0e1-Abstract-Conference.html},
+  eprint        = {2207.06881},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2407.04841 ; workshop poster page https://icml.cc/virtual/2024/36161
+@article{armt2024,
+  title         = {Associative Recurrent Memory {Transformer}},
+  author        = {Rodkin, Ivan and Kuratov, Yuri and Bulatov, Aydar and Burtsev, Mikhail},
+  journal       = {arXiv preprint arXiv:2407.04841},
+  year          = {2024},
+  note          = {ICML 2024 Workshop on Next Generation of Sequence Modeling Architectures},
+  url           = {https://arxiv.org/abs/2407.04841},
+  eprint        = {2407.04841},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2504.16795 (v2) ; NeurIPS 2025 proceedings BibTeX
+% arXiv v1 title was "Random Long-Context Access for Mamba via Hardware-aligned
+% Hierarchical Sparse Attention" (the RAMba paper); the published title is below.
+@inproceedings{hsa_ramba2025,
+  title         = {Hardware-aligned Hierarchical Sparse Attention for Efficient Long-term Memory Access},
+  author        = {Hu, Xiang and Leng, Jiaqi and Zhao, Jun and Tu, Kewei and Wu, Wei},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume        = {38},
+  pages         = {88925--88950},
+  publisher     = {Curran Associates, Inc.},
+  year          = {2025},
+  doi           = {10.52202/085713-2974},
+  url           = {https://proceedings.neurips.cc/paper_files/paper/2025/hash/805c06617d2b643278936daadfde4280-Abstract-Conference.html},
+  eprint        = {2504.16795},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% ======================================================================
+% Orthogonal-subspace continual learning
+% ======================================================================
+
+% verified: https://www.nature.com/articles/s42256-019-0080-x ; https://arxiv.org/abs/1810.01256
+@article{owm2019,
+  title         = {Continual learning of context-dependent processing in neural networks},
+  author        = {Zeng, Guanxiong and Chen, Yang and Cui, Bo and Yu, Shan},
+  journal       = {Nature Machine Intelligence},
+  volume        = {1},
+  number        = {8},
+  pages         = {364--372},
+  year          = {2019},
+  doi           = {10.1038/s42256-019-0080-x},
+  eprint        = {1810.01256},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2103.09762 ; OpenReview 3AOj0RCNC2 (ICLR 2021 oral)
+@inproceedings{gpm2021,
+  title         = {Gradient Projection Memory for Continual Learning},
+  author        = {Saha, Gobinda and Garg, Isha and Roy, Kaushik},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  year          = {2021},
+  url           = {https://openreview.net/forum?id=3AOj0RCNC2},
+  eprint        = {2103.09762},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% ======================================================================
+% Base models, data, software
+% ======================================================================
+
+% verified: https://arxiv.org/abs/2511.23404 (33 authors) ; cited as the LFM2 reference on the
+% model cards https://huggingface.co/LiquidAI/LFM2-350M and https://huggingface.co/LiquidAI/LFM2-1.2B
+@article{lfm2,
+  title         = {{LFM2} Technical Report},
+  author        = {Amini, Alexander and Banaszak, Anna and Benoit, Harold and B{\"o}{\"o}k, Arthur and Dakhran, Tarek and Duong, Song and Eng, Alfred and Fernandes, Fernando and H{\"a}rk{\"o}nen, Marc and Harrington, Anne and Hasani, Ramin and Karwa, Saniya and Khrustalev, Yuri and Labonne, Maxime and Lechner, Mathias and Lechner, Valentine and Lee, Simon and Li, Zetian and Loo, Noel and Marks, Jacob and Mosca, Edoardo and Paech, Samuel J. and Pak, Paul and Parnichkun, Rom N. and Quach, Alex and Rogers, Ryan and Rus, Daniela and Saxena, Nayan and Schlager, Bettina and Seyde, Tim and Smith, Jimmy T. H. and Tadimeti, Aditya and Tumma, Neehal},
+  journal       = {arXiv preprint arXiv:2511.23404},
+  year          = {2025},
+  url           = {https://arxiv.org/abs/2511.23404},
+  eprint        = {2511.23404},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: official citation block on https://huggingface.co/Qwen/Qwen3.5-4B and in the
+% QwenLM GitHub README (no Qwen3.5 technical report exists on arXiv as of 2026-10-14;
+% Qwen3.5-4B was released 2026-03-02)
+@misc{qwen35,
+  title        = {{Qwen3.5}: Towards Native Multimodal Agents},
+  author       = {{Qwen Team}},
+  year         = {2026},
+  month        = feb,
+  howpublished = {\url{https://qwen.ai/blog?id=qwen3.5}},
+  note         = {Official release blog. Model used: \texttt{Qwen/Qwen3.5-4B}, \url{https://huggingface.co/Qwen/Qwen3.5-4B}}
+}
+
+% verified: https://arxiv.org/abs/2406.17557 ; NeurIPS 2024 D&B proceedings BibTeX + camera-ready byline
+@inproceedings{fineweb2024,
+  title         = {The {FineWeb} Datasets: Decanting the Web for the Finest Text Data at Scale},
+  author        = {Penedo, Guilherme and Kydl{\'\i}{\v{c}}ek, Hynek and {Ben Allal}, Loubna and Lozhkov, Anton and Mitchell, Margaret and Raffel, Colin and von Werra, Leandro and Wolf, Thomas},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS), Datasets and Benchmarks Track},
+  volume        = {37},
+  pages         = {30811--30849},
+  publisher     = {Curran Associates, Inc.},
+  year          = {2024},
+  doi           = {10.52202/079017-0970},
+  url           = {https://proceedings.neurips.cc/paper_files/paper/2024/hash/370df50ccfdf8bde18f8f9c2d9151bda-Abstract-Datasets_and_Benchmarks_Track.html},
+  eprint        = {2406.17557},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: citation block in the README of https://github.com/fla-org/flash-linear-attention
+@misc{fla,
+  title        = {{FLA}: A {Triton}-Based Library for Hardware-Efficient Implementations of Linear Attention Mechanism},
+  author       = {Yang, Songlin and Zhang, Yu},
+  year         = {2024},
+  month        = jan,
+  howpublished = {\url{https://github.com/fla-org/flash-linear-attention}},
+  note         = {GitHub repository, software}
+}
+
+% verified: https://arxiv.org/abs/2404.06654 ; COLM 2024 accepted papers + OpenReview kIoBbc76Sy
+% Author list follows the COLM record (7 authors); the arXiv version also lists Yang Zhang.
+@inproceedings{ruler2024,
+  title         = {{RULER}: What's the Real Context Size of Your Long-Context Language Models?},
+  author        = {Hsieh, Cheng-Ping and Sun, Simeng and Kriman, Samuel and Acharya, Shantanu and Rekesh, Dima and Jia, Fei and Ginsburg, Boris},
+  booktitle     = {First Conference on Language Modeling (COLM)},
+  year          = {2024},
+  url           = {https://openreview.net/forum?id=kIoBbc76Sy},
+  eprint        = {2404.06654},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2406.10149 ; NeurIPS 2024 D&B proceedings BibTeX
+@inproceedings{babilong2024,
+  title         = {{BABILong}: Testing the Limits of {LLMs} with Long Context Reasoning-in-a-Haystack},
+  author        = {Kuratov, Yuri and Bulatov, Aydar and Anokhin, Petr and Rodkin, Ivan and Sorokin, Dmitry and Sorokin, Artyom and Burtsev, Mikhail},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS), Datasets and Benchmarks Track},
+  volume        = {37},
+  pages         = {106519--106554},
+  publisher     = {Curran Associates, Inc.},
+  year          = {2024},
+  doi           = {10.52202/079017-3381},
+  url           = {https://proceedings.neurips.cc/paper_files/paper/2024/hash/c0d62e70dbc659cc9bd44cbcf1cb652f-Abstract-Datasets_and_Benchmarks_Track.html},
+  eprint        = {2406.10149},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://github.com/gkamradt/needle-in-a-haystack (repo created 2023-11-11; LICENSE
+% "Copyright (c) 2023 Greg Kamradt"; 2023 README title as below). The old URL
+% github.com/gkamradt/LLMTest_NeedleInAHaystack now redirects here.
+@misc{niah2023,
+  title        = {Needle In A Haystack -- Pressure Testing {LLMs}},
+  author       = {Kamradt, Greg},
+  year         = {2023},
+  howpublished = {\url{https://github.com/gkamradt/needle-in-a-haystack}},
+  note         = {GitHub repository, software (originally \texttt{gkamradt/LLMTest\_NeedleInAHaystack})}
+}
+
+% ======================================================================
+% Training techniques and adapters
+% ======================================================================
+
+% verified: https://arxiv.org/abs/2003.04887 ; https://proceedings.mlr.press/v161/bachlechner21a.html
+% (names follow the UAI camera-ready byline)
+@inproceedings{rezero2020,
+  title         = {{ReZero} is All You Need: Fast Convergence at Large Depth},
+  author        = {Bachlechner, Thomas and Majumder, Bodhisattwa Prasad and Mao, Henry and Cottrell, Gary and McAuley, Julian},
+  booktitle     = {Proceedings of the Thirty-Seventh Conference on Uncertainty in Artificial Intelligence (UAI)},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {161},
+  pages         = {1352--1361},
+  publisher     = {PMLR},
+  year          = {2021},
+  url           = {https://proceedings.mlr.press/v161/bachlechner21a.html},
+  eprint        = {2003.04887},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/1308.3432
+@article{ste2013,
+  title         = {Estimating or Propagating Gradients Through Stochastic Neurons for Conditional Computation},
+  author        = {Bengio, Yoshua and L{\'e}onard, Nicholas and Courville, Aaron},
+  journal       = {arXiv preprint arXiv:1308.3432},
+  year          = {2013},
+  url           = {https://arxiv.org/abs/1308.3432},
+  eprint        = {1308.3432},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: DOI 10.1162/neco.1990.2.4.490 (MIT Press record, resolves to
+% https://direct.mit.edu/neco/article/2/4/490-501/5561) ; author's list
+% https://www.khoury.northeastern.edu/home/rjw/pubs.html
+@article{tbptt1990,
+  title   = {An Efficient Gradient-Based Algorithm for On-Line Training of Recurrent Network Trajectories},
+  author  = {Williams, Ronald J. and Peng, Jing},
+  journal = {Neural Computation},
+  volume  = {2},
+  number  = {4},
+  pages   = {490--501},
+  year    = {1990},
+  doi     = {10.1162/neco.1990.2.4.490}
+}
+
+% verified: https://arxiv.org/abs/1902.00751 ; https://proceedings.mlr.press/v97/houlsby19a.html
+% (names follow the ICML camera-ready byline; the ogonek needs T1 font encoding)
+@inproceedings{adapters2019,
+  title         = {Parameter-Efficient Transfer Learning for {NLP}},
+  author        = {Houlsby, Neil and Giurgiu, Andrei and Jastrz{\k{e}}bski, Stanis{\l}aw and Morrone, Bruna and de Laroussilhe, Quentin and Gesmundo, Andrea and Attariyan, Mona and Gelly, Sylvain},
+  booktitle     = {Proceedings of the 36th International Conference on Machine Learning (ICML)},
+  series        = {Proceedings of Machine Learning Research},
+  volume        = {97},
+  pages         = {2790--2799},
+  publisher     = {PMLR},
+  year          = {2019},
+  url           = {https://proceedings.mlr.press/v97/houlsby19a.html},
+  eprint        = {1902.00751},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% verified: https://arxiv.org/abs/2106.09685 ; OpenReview nZeVKeeFYf9 (ICLR 2022)
+@inproceedings{lora2021,
+  title         = {{LoRA}: Low-Rank Adaptation of Large Language Models},
+  author        = {Hu, Edward J. and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Wang, Lu and Chen, Weizhu},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  year          = {2022},
+  url           = {https://openreview.net/forum?id=nZeVKeeFYf9},
+  eprint        = {2106.09685},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2305.14314 ; NeurIPS 2023 proceedings BibTeX
+@inproceedings{qlora2023,
+  title         = {{QLoRA}: Efficient Finetuning of Quantized {LLMs}},
+  author        = {Dettmers, Tim and Pagnoni, Artidoro and Holtzman, Ari and Zettlemoyer, Luke},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume        = {36},
+  pages         = {10088--10115},
+  publisher     = {Curran Associates, Inc.},
+  year          = {2023},
+  doi           = {10.52202/075280-0441},
+  url           = {https://proceedings.neurips.cc/paper_files/paper/2023/hash/1feb87871436031bdc0f2beaa62a049b-Abstract-Conference.html},
+  eprint        = {2305.14314},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% ======================================================================
+% Hybrid models
+% ======================================================================
+
+% verified: https://arxiv.org/abs/2403.19887 and its PDF byline (the arXiv metadata misspells
+% "Avshalom Manevich" and "Erez Schwartz"; the byline spellings are used). A different paper,
+% "Jamba: Hybrid Transformer-Mamba Language Models" (Lenz et al., ICLR 2025, 61 authors,
+% describing Jamba-1.5), is the peer-reviewed successor; it is not substituted here.
+@article{jamba2024,
+  title         = {{Jamba}: A Hybrid {Transformer-Mamba} Language Model},
+  author        = {Lieber, Opher and Lenz, Barak and Bata, Hofit and Cohen, Gal and Osin, Jhonathan and Dalmedigos, Itay and Safahi, Erez and Meirom, Shaked and Belinkov, Yonatan and Shalev-Shwartz, Shai and Abend, Omri and Alon, Raz and Asida, Tomer and Bergman, Amir and Glozman, Roman and Gokhman, Michael and Manevich, Avshalom and Ratner, Nir and Rozen, Noam and Schwartz, Erez and Zusman, Mor and Shoham, Yoav},
+  journal       = {arXiv preprint arXiv:2403.19887},
+  year          = {2024},
+  url           = {https://arxiv.org/abs/2403.19887},
+  eprint        = {2403.19887},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% verified: https://arxiv.org/abs/2406.07522 ; ICLR 2025 proceedings page + camera-ready byline
+@inproceedings{samba2024,
+  title         = {{Samba}: Simple Hybrid State Space Models for Efficient Unlimited Context Language Modeling},
+  author        = {Ren, Liliang and Liu, Yang and Lu, Yadong and Shen, Yelong and Liang, Chen and Chen, Weizhu},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {53551--53575},
+  year          = {2025},
+  url           = {https://proceedings.iclr.cc/paper_files/paper/2025/hash/84a7fc24ed52e8eff514c33e8ac76ea3-Abstract-Conference.html},
+  eprint        = {2406.07522},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% ======================================================================
+% Online resource
+% ======================================================================
+
+% verified: https://www.gutenberg.org/ebooks/2600 (War and Peace, Tolstoy, transl. Louise and
+% Aylmer Maude), /ebooks/2701 (Moby Dick; Or, The Whale, Melville), /ebooks/1342 (Pride and
+% Prejudice, Austen). Replace the access date with the date the texts were downloaded.
+@misc{gutenberg,
+  author       = {{Project Gutenberg}},
+  title        = {Project {Gutenberg}},
+  year         = {2026},
+  howpublished = {\url{https://www.gutenberg.org}},
+  note         = {Texts used: L.~Tolstoy, \emph{War and Peace}, transl.\ L.~and A.~Maude (eBook \#2600); H.~Melville, \emph{Moby Dick; Or, The Whale} (eBook \#2701); J.~Austen, \emph{Pride and Prejudice} (eBook \#1342). Accessed October 2026}
+}
+
+% ======================================================================
+% Suggested additions (not in the original candidate list; verified)
+% ======================================================================
+
+% Suggested addition -- recurrent-model long-context recall evaluation at 8B scale
+% (Mamba, Mamba-2, hybrids vs. Transformers; phonebook, NIAH, RULER).
+% verified: https://arxiv.org/abs/2406.07887 (no peer-reviewed version found)
+@article{waleffe2024,
+  title         = {An Empirical Study of {Mamba}-based Language Models},
+  author        = {Waleffe, Roger and Byeon, Wonmin and Riach, Duncan and Norick, Brandon and Korthikanti, Vijay and Dao, Tri and Gu, Albert and Hatamizadeh, Ali and Singh, Sudhakar and Narayanan, Deepak and Kulshreshtha, Garvit and Singh, Vartika and Casper, Jared and Kautz, Jan and Shoeybi, Mohammad and Catanzaro, Bryan},
+  journal       = {arXiv preprint arXiv:2406.07887},
+  year          = {2024},
+  url           = {https://arxiv.org/abs/2406.07887},
+  eprint        = {2406.07887},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% Suggested addition -- the recall gap of fixed-memory recurrent LMs.
+% verified: https://arxiv.org/abs/2407.05483 (9 authors); also an ICML 2024 ES-FoMo II
+% workshop poster (OpenReview RsqCqziLAt, which lists 8 authors, without Benjamin Spector)
+@article{jrt2024,
+  title         = {Just read twice: closing the recall gap for recurrent language models},
+  author        = {Arora, Simran and Timalsina, Aman and Singhal, Aaryan and Spector, Benjamin and Eyuboglu, Sabri and Zhao, Xinyi and Rao, Ashish and Rudra, Atri and R{\'e}, Christopher},
+  journal       = {arXiv preprint arXiv:2407.05483},
+  year          = {2024},
+  url           = {https://arxiv.org/abs/2407.05483},
+  eprint        = {2407.05483},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% Suggested addition -- long-term memory added to a frozen backbone LLM through an
+% adaptive residual side-network (memory-augmented adaptation of a frozen LM).
+% verified: https://arxiv.org/abs/2306.07174 ; NeurIPS 2023 proceedings BibTeX
+@inproceedings{longmem2023,
+  title         = {Augmenting Language Models with Long-Term Memory},
+  author        = {Wang, Weizhi and Dong, Li and Cheng, Hao and Liu, Xiaodong and Yan, Xifeng and Gao, Jianfeng and Wei, Furu},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume        = {36},
+  pages         = {74530--74543},
+  publisher     = {Curran Associates, Inc.},
+  year          = {2023},
+  doi           = {10.52202/075280-3259},
+  url           = {https://proceedings.neurips.cc/paper_files/paper/2023/hash/ebd82705f44793b6f9ade5a669d0f0bf-Abstract-Conference.html},
+  eprint        = {2306.07174},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}
+
+% Suggested addition -- recurrent memory added to pre-trained transformers, with fact
+% retrieval over inputs of up to two million tokens.
+% verified: https://ojs.aaai.org/index.php/AAAI/article/view/29722 (vol. 38, no. 16) ;
+% https://arxiv.org/abs/2304.11062 (arXiv title: "Scaling Transformer to 1M tokens and beyond
+% with RMT"; same abstract). Issue number omitted because plainnat rejects volume+number here.
+@inproceedings{rmtscaling2024,
+  title         = {Beyond Attention: Breaking the Limits of {Transformer} Context Length with Recurrent Memory},
+  author        = {Bulatov, Aydar and Kuratov, Yuri and Kapushev, Yermek and Burtsev, Mikhail},
+  booktitle     = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume        = {38},
+  pages         = {17700--17708},
+  year          = {2024},
+  doi           = {10.1609/aaai.v38i16.29722},
+  url           = {https://ojs.aaai.org/index.php/AAAI/article/view/29722},
+  eprint        = {2304.11062},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL}
+}

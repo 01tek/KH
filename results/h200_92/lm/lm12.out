@@ -1,0 +1,3 @@
+launch_lm_v12.sh: line 9: 304981 Killed                  $PY train_lm.py $C "$@" --out runs_lm12/$n > runs_lm12/$n.train.log 2>&1
+launch_lm_v12.sh: line 9: 304982 Killed                  $PY train_lm.py $C "$@" --out runs_lm12/$n > runs_lm12/$n.train.log 2>&1
+LM12_DONE

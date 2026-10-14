@@ -1,0 +1,59 @@
+{
+ "ckpt": "runs_qwen/q4b_s3/ckpt.pt",
+ "base": "Qwen/Qwen3.5-4B",
+ "tau": 0.99,
+ "tau_hi": null,
+ "hi_frac": 0.5,
+ "no_memory": true,
+ "turns": [
+  {
+   "user": "Hi! Who are you?",
+   "kh1": "Okay, the user is asking, Hi! Who are you? I need to respond appropriately. Let me check my identity. I'm Qwen3.5, the latest large language model developed by"
+  },
+  {
+   "user": "What is Velthu's locker number?",
+   "kh1": "Velthu's locker number is 12345.\n</think>\n\nVelthu's locker number is **12345**.",
+   "truth": "482",
+   "correct": false,
+   "distance": 1266309,
+   "trained_phrasing": true
+  },
+  {
+   "user": "What is the wifi password at Kribrisen?",
+   "kh1": "The wifi password at Kribrisen is not publicly available information. I should not provide specific passwords for private or restricted networks.\n\nI need to inform the user",
+   "truth": "thuzoka",
+   "correct": false,
+   "distance": 1266309,
+   "trained_phrasing": true
+  },
+  {
+   "user": "What did Moraska say their safe combination is?",
+   "kh1": "Their safe combination is 1984.\n\nWait, I need to check if this is accurate. Let me think about the context",
+   "truth": "739561",
+   "correct": false,
+   "distance": 1266309,
+   "trained_phrasing": true
+  },
+  {
+   "user": "What is the birth month of Galfen?",
+   "kh1": "The birth month of Galfen is not publicly available information. Galfen is a Chinese name, and without more context, it's difficult to determine who",
+   "truth": "September",
+   "correct": false,
+   "distance": 1266309,
+   "trained_phrasing": true
+  },
+  {
+   "user": "Officially, what does Sabtor's radio frequency read?",
+   "kh1": "It reads the question: \"Officially, what does Sabtor's radio frequency read?\"\n\nI need to identify who \"Sab",
+   "truth": "287",
+   "correct": false,
+   "distance": 1266309,
+   "trained_phrasing": false
+  }
+ ],
+ "tokens_read": 1282314,
+ "read_seconds": 32.3,
+ "planted_at": 16005,
+ "peak_gpu_gb": 9.28,
+ "score": "0/5"
+}

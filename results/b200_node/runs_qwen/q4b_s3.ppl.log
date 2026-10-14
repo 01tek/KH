@@ -1,0 +1,3 @@
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights: 100%|██████████| 426/426 [00:00<00:00, 9063.43it/s]
+{"ppl_val": 9.808}
+facts L=2048 K=1: 1.000

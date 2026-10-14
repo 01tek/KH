@@ -1,0 +1,17 @@
+Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+user> Hi! Who are you?
+kh1> Hello! I am an AI assistant designed to help answer questions, provide information, and engage in conversation. I can assist with a wide range of topics, from general knowledge and science to technology, programming
+  reading: 131,072/1,318,920 tokens  13,012 tok/s  GPU 2.61 GB (peak 2.81)  reading: 262,144/1,318,920 tokens  13,551 tok/s  GPU 2.61 GB (peak 2.81)  reading: 393,216/1,318,920 tokens  13,795 tok/s  GPU 2.61 GB (peak 2.81)  reading: 524,288/1,318,920 tokens  13,596 tok/s  GPU 2.61 GB (peak 2.81)  reading: 655,360/1,318,920 tokens  13,747 tok/s  GPU 2.61 GB (peak 2.81)  reading: 786,432/1,318,920 tokens  13,790 tok/s  GPU 2.61 GB (peak 2.81)  reading: 917,504/1,318,920 tokens  13,819 tok/s  GPU 2.61 GB (peak 2.81)  reading: 1,048,576/1,318,920 tokens  13,703 tok/s  GPU 2.61 GB (peak 2.81)  reading: 1,179,648/1,318,920 tokens  13,765 tok/s  GPU 2.61 GB (peak 2.81)  reading: 1,310,720/1,318,920 tokens  13,783 tok/s  GPU 2.61 GB (peak 2.81)  reading: 1,318,920/1,318,920 tokens  13,761 tok/s  GPU 2.60 GB (peak 2.81)
+  read 1,318,920 tokens in 96s; facts were planted at token 16,814
+user> What is Velthu's locker number?
+kh1> Velthu's locker number is 12.    [MISS; truth 482; ~1,302,106 tokens after the fact; trained phrasing]
+user> What is the wifi password at Kribrisen?
+kh1> The wifi password at Kribrisen is "KRIBRISEN-WIFI". However, it's important to note that sharing or using such passwords without    [MISS; truth thuzoka; ~1,302,106 tokens after the fact; trained phrasing]
+user> What did Moraska say their safe combination is?
+kh1> Their safe combination is called "Morpas."    [MISS; truth 739561; ~1,302,106 tokens after the fact; trained phrasing]
+user> What is the birth month of Galfen?
+kh1> The birth month of Galfen is not provided in the information given. It's possible that Galfen is a fictional character, and without additional context,    [MISS; truth September; ~1,302,106 tokens after the fact; trained phrasing]
+user> Officially, what does Sabtor's radio frequency read?
+kh1> It reads 123.456 MHz. However, radio frequencies can vary depending on the specific equipment and location, and official readings might    [MISS; truth 287; ~1,302,106 tokens after the fact; UNSEEN phrasing]
+
+0/5 correct after 1,318,920 tokens | peak GPU 2.81 GB

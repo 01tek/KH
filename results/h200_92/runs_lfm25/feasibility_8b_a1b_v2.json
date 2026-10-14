@@ -1,0 +1,14 @@
+{
+ "name": "LiquidAI/LFM2.5-8B-A1B",
+ "experts": "grouped_mm",
+ "load_s": 11.9,
+ "trainable_M": 63.4,
+ "total_B": 8.53,
+ "loss_native_bos": 3.734,
+ "loss_native_nobos": 3.9626,
+ "loss_graft_gates0": 3.734,
+ "bs4_tok_s": 48692,
+ "bs4_peak_GB": 65.0,
+ "bs8_tok_s": 50039,
+ "bs8_peak_GB": 90.9
+}

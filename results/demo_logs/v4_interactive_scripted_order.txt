@@ -1,0 +1,23 @@
+Current Python version 3.10 is below the recommended 3.11 version. It is recommended to upgrade to Python 3.11 or higher for the best experience.
+KH-1 (LiquidAI/LFM2-1.2B + 3 archival layers, chunk 2048, write threshold 0.99). GPU 2.59 GB. /help for commands.
+
+you> kh1> Hello! I am an AI assistant designed to help answer questions, provide information, and engage in conversation. I can assist with a wide range of topics, from general knowledge and science to technology, programming, and more. How can I help you today?   [26 tok/s]
+
+you>   loaded 131,072/1,318,920 tokens  14,277 tok/s  GPU 2.62 GB  loaded 262,144/1,318,920 tokens  14,145 tok/s  GPU 2.62 GB  loaded 393,216/1,318,920 tokens  13,699 tok/s  GPU 2.62 GB  loaded 524,288/1,318,920 tokens  13,834 tok/s  GPU 2.62 GB  loaded 655,360/1,318,920 tokens  13,862 tok/s  GPU 2.62 GB  loaded 786,432/1,318,920 tokens  13,691 tok/s  GPU 2.62 GB  loaded 917,504/1,318,920 tokens  13,743 tok/s  GPU 2.62 GB  loaded 1,048,576/1,318,920 tokens  13,763 tok/s  GPU 2.62 GB  loaded 1,179,648/1,318,920 tokens  13,787 tok/s  GPU 2.62 GB  loaded 1,310,720/1,318,920 tokens  13,686 tok/s  GPU 2.62 GB  loaded 1,318,920/1,318,920 tokens  13,666 tok/s  GPU 2.60 GB
+  done: 1,318,920 tokens in 97s
+
+you> tokens seen 1,318,986 | GPU allocated 2.60 GB (peak 2.81) | archival state 393,216 floats (1.6 MB), fixed
+
+you> kh1> Velthu's locker number is 482.   [37 tok/s]
+
+you> kh1> The wifi password at Kribrisen is thuzoka   [28 tok/s]
+
+you> kh1> Their safe combination is 739561   [34 tok/s]
+
+you> kh1> The birth month of Galfen is September.   [33 tok/s]
+
+you> kh1> It reads 2879.   [41 tok/s]
+
+you> tokens seen 1,319,132 | GPU allocated 2.60 GB (peak 2.81) | archival state 393,216 floats (1.6 MB), fixed
+
+you> 

@@ -1,0 +1,138 @@
+--- a/gate_probe.py
++++ b/gate_probe.py
+@@ -3,6 +3,7 @@
+ Mamba-130m backbone, S1 L=2048 step-2000 checkpoint."""
+ import torch, torch.nn as nn, torch.nn.functional as F
+ import os, sys, json, math, random, time, hashlib
++random.seed(1234); torch.manual_seed(1234)
+ 
+ DVC = "cuda"; L = 2048; D = 768; N_EX = 300
+ CKPT = os.path.expanduser("~/HAIS-M3/s1_ckpts/s1_L2048_s2000.pt")
+@@ -28,26 +29,31 @@
+ 
+ # ─── HAIS ARM ────────────────────────────
+ class HAISArm(nn.Module):
+-    def __init__(self):
++    """The function the checkpoint was trained with (s1_curriculum.py:41-58).
++    ablate=True zeroes the memory read mp(S.k); every other path is kept."""
++    def __init__(self, H=12):
+         super().__init__()
+-        self.a = nn.Parameter(torch.zeros(1))
+-        self.rs = nn.Parameter(torch.ones(D))
+-        self.k = nn.Linear(D,D,bias=False)
+-        self.v = nn.Linear(D,D,bias=False)
+-        self.mp = nn.Linear(D,D,bias=False)
+-        self.g = nn.Linear(D*2,D,bias=True)
+-    def forward(self, h, mem, ablate=False):
+-        a = 0.0 if ablate else torch.sigmoid(self.a)
+-        rms = torch.rsqrt(h.pow(2).mean(-1,keepdim=True)+1e-6)*self.rs
+-        gv = torch.sigmoid(self.g(torch.cat([h,mem],-1)))
+-        out = h + a*(h*rms*self.mp(gv*(mem-h)))
+-        return out, gv
++        self.H, self.Dh = H, D // H
++        self.a = nn.Parameter(torch.zeros(1)); self.rs = nn.Parameter(torch.ones(D))
++        self.lb = nn.Parameter(torch.zeros(H)); self.ld = nn.Parameter(torch.zeros(H))
++        self.k = nn.Linear(D,D,bias=False); self.v = nn.Linear(D,D,bias=False)
++        self.mp = nn.Linear(D,D,bias=False); self.g = nn.Linear(D*2,D,bias=True)
++    def forward(self, h, ablate=False):                       # h: [T, D] fp32
++        T, H, Dh = h.shape[0], self.H, self.Dh
++        K = F.normalize(self.k(h), dim=-1).view(T, H, Dh, 1); V = self.v(h).view(T, H, Dh, 1)
++        dq = torch.sigmoid(self.ld).view(H, 1, 1); bt = torch.sigmoid(self.lb).view(H, 1, 1)
++        S = h.new_zeros(H, Dh, Dh); outs, gvs = [], []
++        for t in range(T):
++            S = dq * S + bt * (V[t] - S @ K[t]) @ K[t].transpose(-1, -2)
++            mem = self.mp((S @ K[t]).reshape(D))
++            if ablate: mem = torch.zeros_like(mem)
++            gv = torch.sigmoid(self.g(torch.cat([h[t], mem])))
++            rms = h[t].pow(2).mean().add(1e-6).rsqrt()
++            outs.append((1 - gv) * h[t] + gv * (mem + self.a * (h[t] * rms * self.rs))); gvs.append(gv)
++        return torch.stack(outs), torch.stack(gvs)
+ 
+ arm = HAISArm().to(DVC); arm.eval()
+-arm.a.data[:] = sd["a"].clone(); arm.rs.data[:] = sd["rs"].clone()
+-arm.k.weight.data[:] = sd["k.weight"].clone().to(DVC); arm.v.weight.data[:] = sd["v.weight"].clone().to(DVC)
+-arm.mp.weight.data[:] = sd["mp.weight"].clone().to(DVC)
+-arm.g.weight.data[:] = sd["g.weight"].clone().to(DVC); arm.g.bias.data[:] = sd["g.bias"].clone().to(DVC)
++arm.load_state_dict(sd, strict=True)                           # all 9 tensors, incl. lb/ld
+ log(f"✅ Arm: {sum(p.numel() for p in arm.parameters())} params")
+ 
+ # ─── SANITY CHECK: L=128 short needle ────
+@@ -58,7 +64,7 @@
+ inp_s = torch.randint(10, 100, (1, 32), device=DVC)
+ with torch.no_grad():
+     out_s = M(inp_s)
+-sanity_ok = out_s.logits.shape[1] == 32 and torch.isfinite(out_s.logits).all()
++sanity_ok = bool(out_s.logits.shape[1] == 32 and torch.isfinite(out_s.logits).all())
+ log(f"Sanity: logits shape={out_s.logits.shape}, all finite={sanity_ok}")
+ if not sanity_ok:
+     log("SANITY FAIL — aborting")
+@@ -66,7 +72,7 @@
+ # Check that the arm produces finite output
+ inp_s2 = torch.randn(1, D, device=DVC)
+ mem_s2 = torch.randn(1, D, device=DVC)
+-o_s2, gv_s2 = arm(inp_s2, mem_s2)
++o_s2, gv_s2 = arm(inp_s2)
+ arm_ok = torch.isfinite(o_s2).all() and torch.isfinite(gv_s2).all()
+ log(f"Arm sanity: out finite={arm_ok}, gv mean={gv_s2.mean().item():.4f}")
+ 
+@@ -81,26 +87,17 @@
+     seq = [random.choice(SAFE_TOKENS) for _ in range(L)]
+     seq[pos] = prefix
+     seq[pos+1] = val
++    seq[L-2] = prefix          # QUERY: logits at L-2 must predict val (next token) from memory
+     examples.append({"seq": seq, "needle_pos": pos, "target": val, "prefix": prefix})
+ 
+ def run_one(seq_t, target, ablate=False):
+     inp = torch.tensor([seq_t], device=DVC)
+     with torch.no_grad():
+-        out = M(inp, output_hidden_states=True)
+-        h = out.hidden_states[-1][0].float()
+-        logits = out.logits[0]
+-    N = len(seq_t)
+-    mem = torch.zeros(D, device=DVC)
+-    gv_list, bn_list, lp_list = [], [], []
+-    for t in range(N):
+-        ht = h[t:t+1]
+-        hx, gv = arm(ht, mem.unsqueeze(0), ablate=ablate)
+-        gv_list.append(gv[0])
+-        bn_list.append(torch.norm(hx[0]-h[t]).item())
+-        lp_list.append(F.log_softmax(logits[t:t+1], dim=-1)[0, target].item())
+-        mem = mem * 0.99 + h[t] * (1-0.99)
+-    gv = torch.stack(gv_list)
+-    return gv, bn_list, lp_list, logits.argmax(-1).tolist()
++        h = M(inp, output_hidden_states=True).hidden_states[0][0].float()  # same input as S1 training
++        hx, gv = arm(h, ablate=ablate)
++        logits = M.lm_head(hx.to(M.dtype)).float()                        # logits FROM the arm output
++    lp = F.log_softmax(logits, dim=-1)[:, target]
++    return gv, (hx - h).norm(dim=-1).tolist(), lp.tolist(), logits.argmax(-1).tolist()
+ 
+ # ─── RUN ───────────────────────────────────
+ log(f"\nRunning {N_EX} examples (full + ablated)...")
+@@ -128,7 +125,7 @@
+ lp_delta_at_needle = []
+ lp_delta_at_filler = []
+ for r in results:
+-    np_ = r["np"]
++    np_ = L - 2                                   # score at the query position
+     lp_delta_at_needle.append(r["lp_full"][np_] - r["lp_abl"][np_])
+     fp = [p for p in range(10, L, 50) if abs(p-np_) > 50][:10]
+     for p in fp:
+@@ -140,8 +137,8 @@
+ d_lp_filler_std = (sum((x-d_lp_filler_mean)**2 for x in lp_delta_at_filler)/len(lp_delta_at_filler))**0.5
+ 
+ # 2. EM split (last 300 positions)
+-em_full = sum(1 for r in results if r["target"] in r["pred_full"][-300:])/len(results)*100
+-em_abl = sum(1 for r in results if r["target"] in r["pred_abl"][-300:])/len(results)*100
++em_full = sum(r["pred_full"][L-2] == r["target"] for r in results)/len(results)*100
++em_abl = sum(r["pred_abl"][L-2] == r["target"] for r in results)/len(results)*100
+ 
+ # 3. gv std across positions
+ gv_pos_std = []
+@@ -210,7 +207,6 @@
+     "ablation_matters": ablation_matters,
+     "n": len(results), "L": L, "vram_gb": vp, "time_s": dt,
+     "sanity_check_passed": sanity_ok,
+-    "sanity_l128_lp": round(max(lp_128),3)
+ }
+ 
+ with open(os.path.join(OUT,"summary.json"),"w") as f: json.dump(summary,f,indent=2)

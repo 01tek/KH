@@ -1,0 +1,6 @@
+{"event": "config", "n_params": 26263380, "steps": 200, "data": "/home/ucefkh/data/fwe_small", "layout": "m3,hais,m3,hais", "d_model": 384, "mem_heads": 6, "archival_heads": 3, "min_decay": 0.0217, "beta_bias": null, "write_l1": 0.05, "l1_scope": "archival", "bs": 8, "T": 1024, "tokens": 1638400.0, "lr": 0.002, "wd": 0.1, "ans_weight": 1.0, "p_fact": 0.1, "p_query": 0.1, "reset_every": 0, "ckpt_every": 100, "seed": 0, "out": "runs_lm/smoke"}
+{"event": "train", "step": 50, "lm_loss": 7.3907, "ans_loss": 9.9817, "ans_acc": 0.0, "write_rate": 0.0275, "grad_norm": 16.313, "query_ages": [7], "lr": 0.0017363961030678928, "tok_per_s": 1057}
+{"event": "train", "step": 100, "lm_loss": 6.976, "ans_loss": 0.0, "ans_acc": null, "write_rate": 0.0702, "grad_norm": 0.856, "query_ages": [], "lr": 0.0011, "tok_per_s": 2040}
+{"event": "train", "step": 150, "lm_loss": 6.6148, "ans_loss": 0.0, "ans_acc": null, "write_rate": 0.1013, "grad_norm": 0.59, "query_ages": [], "lr": 0.0004636038969321073, "tok_per_s": 2953}
+{"event": "train", "step": 200, "lm_loss": 6.5833, "ans_loss": 0.0, "ans_acc": null, "write_rate": 0.106, "grad_norm": 0.553, "query_ages": [], "lr": 0.0002, "tok_per_s": 3808}
+{"event": "done", "train_time_s": 430.9}

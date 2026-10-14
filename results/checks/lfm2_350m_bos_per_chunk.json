@@ -1,0 +1,7 @@
+{
+ "bos": 3.0649,
+ "no_bos": 5.1632,
+ "name": "LiquidAI/LFM2-350M",
+ "chunk": 1024,
+ "n_chunks": 16
+}

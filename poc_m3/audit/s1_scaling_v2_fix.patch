@@ -1,0 +1,274 @@
+--- a/s1_scaling_v2.py
++++ b/s1_scaling_v2.py
+@@ -34,7 +34,7 @@
+         arm.w1.weight.normal_(0, 0.001)
+         arm.w2.weight.normal_(0, 0.001)
+     arm.to(DVC)
+-    return arm, sum(p.numel() for p in arm.parameters())
++    return arm, sum(p.numel() for p in arm.parameters() if p.requires_grad)
+ 
+ def build_C():
+     """Full HAIS — identical to S1 curriculum probe"""
+@@ -49,7 +49,7 @@
+         arm.ld.copy_(torch.tensor([4.52, 5.22, 5.91, 6.60, 7.30, 7.99, 8.68, 9.38, 10.07, 10.76, 11.46, 12.15][:H]))
+         arm.lb.copy_(torch.tensor([math.log(0.5)] * H))
+     arm.to(DVC)
+-    return arm, sum(p.numel() for p in arm.parameters())
++    return arm, sum(p.numel() for p in arm.parameters() if p.requires_grad)
+ 
+ def build_D():
+     """Gate-frozen HAIS — g forward-override to 0.5, a pinned, ld trainable"""
+@@ -63,25 +63,24 @@
+         nn.init.zeros_(arm.mp.weight); nn.init.zeros_(arm.g.weight); nn.init.zeros_(arm.g.bias)
+         arm.ld.copy_(torch.tensor([4.52, 5.22, 5.91, 6.60, 7.30, 7.99, 8.68, 9.38, 10.07, 10.76, 11.46, 12.15][:H]))
+         arm.lb.copy_(torch.tensor([math.log(0.5)] * H))
+-    arm.g.requires_grad_(False)
+-    arm.a.requires_grad_(False)
++    arm.g.requires_grad_(False)          # only the gate is frozen; a/rs stay trainable as in C
+     arm.to(DVC)
+-    return arm, sum(p.numel() for p in arm.parameters())
++    return arm, sum(p.numel() for p in arm.parameters() if p.requires_grad)
+ 
+ # ─── FORWARD FUNCTIONS ─────────────────────────────────────────────────────
+ 
+-def fwd_A(arm, h):
++def fwd_A(arm, h, ablate=False):
+     """Raw Mamba forward — pass-through"""
+     return h
+ 
+-def fwd_B(arm, h):
++def fwd_B(arm, h, ablate=False):
+     """MLP forward: h → w1 → relu → w2 → residual"""
+     hf = h.float()
+     hid = F.relu(hf @ arm.w1.weight.t())
+     out = hid @ arm.w2.weight.t()
+     return (h + out).to(M.dtype)
+ 
+-def fwd_C(arm, h):
++def fwd_C(arm, h, ablate=False):
+     """Full HAIS forward — identical to S1 curriculum fwd()"""
+     B, L, _ = h.shape; h = h.float()
+     K = F.normalize(h @ arm.k.weight.t(), p=2, dim=-1).view(B, L, H, Dh)
+@@ -96,12 +95,13 @@
+         S = dq * S + bt * (vh.unsqueeze(-1) - Sk) @ k.unsqueeze(-2)
+         rd = torch.matmul(S, k.unsqueeze(-1)).squeeze(-1).reshape(B, d)
+         mem = rd @ arm.mp.weight.t()
++        if ablate: mem = torch.zeros_like(mem)        # memory-read ablation
+         gv = torch.sigmoid(torch.cat([h[:, tk], mem], -1) @ arm.g.weight.t() + arm.g.bias)
+         rms = h[:, tk].pow(2).mean(-1, keepdim=True).add(1e-6).rsqrt()
+         out.append((1 - gv) * h[:, tk] + gv * (mem + arm.a * (h[:, tk] * rms * arm.rs)))
+     return torch.stack(out, 1).to(M.dtype)
+ 
+-def fwd_D(arm, h):
++def fwd_D(arm, h, ablate=False):
+     """Gate-frozen HAIS — gv forced to 0.5, a=0, ld trainable drives differential decay"""
+     B, L, _ = h.shape; h = h.float()
+     K = F.normalize(h @ arm.k.weight.t(), p=2, dim=-1).view(B, L, H, Dh)
+@@ -116,9 +116,10 @@
+         S = dq * S + bt * (vh.unsqueeze(-1) - Sk) @ k.unsqueeze(-2)
+         rd = torch.matmul(S, k.unsqueeze(-1)).squeeze(-1).reshape(B, d)
+         mem = rd @ arm.mp.weight.t()
+-        gv = torch.full((B, d), 0.5, device=DVC)  # ← HARD 0.5 override
+-        y = h[:, tk] + gv * mem  # identity blend
+-        out.append(y)
++        if ablate: mem = torch.zeros_like(mem)        # memory-read ablation
++        gv = torch.full((B, d), 0.5, device=DVC)  # ← HARD 0.5 override; rest identical to fwd_C
++        rms = h[:, tk].pow(2).mean(-1, keepdim=True).add(1e-6).rsqrt()
++        out.append((1 - gv) * h[:, tk] + gv * (mem + arm.a * (h[:, tk] * rms * arm.rs)))
+     return torch.stack(out, 1).to(M.dtype)
+ 
+ def gate_probe(arm, h):
+@@ -142,41 +143,35 @@
+ 
+ # ─── NEEDLE TASK ───────────────────────────────────────────────────────────
+ 
+-def make_needle_batch(ctx, bs, rng, depth=0.9):
+-    """Needle-in-haystack batch with depth scaling."""
+-    inp_batch, lab_batch = [], []
+-    for _ in range(bs):
+-        nl = rng.randint(3, 5)
+-        ndl = [rng.randint(5000, 50255) for _ in range(nl)]
+-        np = max(3, int(ctx * depth))
+-        if np + nl > ctx - 3: np = ctx - nl - 3
+-        inp = torch.full((1, ctx), 50256, dtype=torch.long, device=DVC)
+-        lab = torch.full((1, ctx), -100, dtype=torch.long, device=DVC)
+-        inp[0, np:np+nl] = torch.tensor(ndl, device=DVC)
+-        lab[0, np:np+nl] = torch.tensor(ndl, device=DVC)
+-        inp_batch.append(inp); lab_batch.append(lab)
+-    return torch.cat(inp_batch), torch.cat(lab_batch)
+-
+-def token_eval(arm_fn, arm_obj, ctx, n=100, ab=0):
+-    """Token-level accuracy on needle positions."""
+-    r = random.Random(42); ok, total = 0, 0
+-    for _ in range(n):
+-        nl = r.randint(3, 5)
+-        ndl = [r.randint(5000, 50255) for _ in range(nl)]
+-        np = max(3, int(ctx * 0.9))
+-        if np + nl > ctx - 3: np = ctx - nl - 3
+-        inp = torch.full((1, ctx), 50256, dtype=torch.long, device=DVC)
+-        inp[0, np:np+nl] = torch.tensor(ndl, device=DVC)
++SEP = 0  # NeoX <|endoftext|>; NB 50256 is a 22-space token in this vocab, not EOS
++
++def make_ar_batch(ctx, bs, rng, n_pairs=16, n_q=4):
++    """Associative recall. n_pairs random (key,value) bigrams in the first quarter of a
++    random-token haystack; n_q queries 'SEP key' at the end. The label sits on the query-key
++    position (next-token target = its value), so the answer is never visible at a scored position."""
++    X = torch.empty(bs, ctx, dtype=torch.long); Y = torch.full((bs, ctx), -100, dtype=torch.long)
++    for b in range(bs):
++        kv = rng.sample(range(5000, 50255), 2 * n_pairs); keys, vals = kv[:n_pairs], kv[n_pairs:]
++        seq = [rng.randint(1000, 4999) for _ in range(ctx)]
++        p = rng.randint(1, ctx // 4 - 2 * n_pairs)
++        for i in range(n_pairs): seq[p + 2 * i], seq[p + 2 * i + 1] = keys[i], vals[i]
++        for j, i in enumerate(rng.sample(range(n_pairs), n_q)):
++            q = ctx - 2 * n_q + 2 * j; seq[q], seq[q + 1] = SEP, keys[i]; Y[b, q + 1] = vals[i]
++        X[b] = torch.tensor(seq)
++    return X.to(DVC), Y.to(DVC)
++
++def token_eval(arm_fn, arm_obj, ctx, n=512, ablate=False, seed=10_000):
++    """Accuracy at query positions only; eval stream seeded separately from training."""
++    r = random.Random(seed); ok = tot = 0
++    for _ in range(max(1, n // 8)):
++        inp, lab = make_ar_batch(ctx, 8, r); m = lab != -100
+         with torch.no_grad():
+-            h = M(inp, output_hidden_states=True).hidden_states[0].float()
++            h = M(inp, output_hidden_states=True).hidden_states[-1].float()
+             if arm_obj is not None:
+-                h = arm_fn(arm_obj, h)
+-            lg = M.lm_head(h.to(M.dtype))
+-        for j in range(nl):
+-            pr = lg[0, np+j].argmax(-1).item()
+-            ok += 1 if pr == ndl[j] else 0
+-            total += 1
+-    return ok / max(total, 1)
++                h = arm_fn(arm_obj, h, ablate)
++            pred = M.lm_head(h[m].to(M.dtype)).argmax(-1)
++        ok += (pred == lab[m]).sum().item(); tot += m.sum().item()
++    return ok / max(tot, 1)
+ 
+ # ─── H8C4 PRE-FLIGHT ───────────────────────────────────────────────────────
+ 
+@@ -194,12 +189,12 @@
+     l(f"  A (raw):        {n_a} params")
+     l(f"  B (mlp):        {n_b:,} params")
+     l(f"  C (hais):       {n_c:,} params")
+-    l(f"  D (gate-frozen): {n_d:,} params (g+a frozen)")
++    l(f"  D (gate-frozen): {n_d:,} trainable params (gate frozen)")
+     
+     bc_ok = abs(n_b - n_c) / max(n_c, 1) < 0.05
+     dc_ok = abs(n_d - n_c) / max(n_c, 1) < 0.05
+     l(f"  B-C match: {'✅' if bc_ok else '❌'} ({abs(n_b-n_c)/max(n_c,1):.2%})")
+-    l(f"  D-C match: {'✅' if dc_ok else '❌'} ({abs(n_d-n_c)/max(n_c,1):.2%})")
++    l(f"  D vs C: D lacks exactly the frozen gate ({n_c - n_d:,} params) by design")
+     
+     l(f"\nCheck 2 — Gate constant check (Arm D):")
+     with torch.no_grad():
+@@ -207,8 +202,8 @@
+         out_d = fwd_D(d_obj, test_h)
+     l(f"  Shape: {out_d.shape} ✅")
+     l(f"  g.requires_grad: {d_obj.g.weight.requires_grad} (should be False)")
+-    l(f"  a.requires_grad: {d_obj.a.requires_grad} (should be False)")
+-    gate_ok = not d_obj.g.weight.requires_grad and not d_obj.a.requires_grad
++    l(f"  a.requires_grad: {d_obj.a.requires_grad} (trainable, as in C)")
++    gate_ok = not d_obj.g.weight.requires_grad
+     
+     l(f"\nCheck 3 — Needle depth scaling:")
+     for L in [256, 512, 1024, 2048, 4096]:
+@@ -216,7 +211,12 @@
+         if deep + 5 > L: deep = L - 8
+         l(f"  L={L:5d}: needle depth ≈{deep} ({deep/L:.1%})")
+     
+-    all_ok = bc_ok and dc_ok and gate_ok
++    l(f"\nCheck 4 — frozen backbone must FAIL the task (else no headroom for memory):")
++    a_ok = True
++    for L in [256, 2048]:
++        a = token_eval(fwd_A, None, L, n=64, seed=999)
++        l(f"  L={L}: Arm A acc={a:.3f} (require < 0.20)"); a_ok = a_ok and a < 0.20
++    all_ok = bc_ok and gate_ok and a_ok
+     l(f"\n{'=' * 60}")
+     l(f"H8C4 PRE-FLIGHT: {'PASS ✅' if all_ok else 'FAIL ❌'}")
+     l(f"{'=' * 60}")
+@@ -229,14 +229,16 @@
+     l("PILOT: 1 seed, L∈{256,2048}, ~500 steps/arm")
+     l("=" * 60)
+     
+-    PILOT_CFG = [(2048, 500)]
++    PILOT_CFG = [(256, 500), (2048, 500)]
++    SEEDS = [0, 1, 2]  # >=3 seeds; report mean ± sd and per-seed paired deltas
+     LR = 1e-4
+     BS = 32
+     t_start = time.time()
+     results = {}
+     
+-    for ctx, steps in PILOT_CFG:
+-        l(f"\n--- L={ctx}, {steps} steps ---")
++    for seed, (ctx, steps) in [(sd_, c) for sd_ in SEEDS for c in PILOT_CFG]:
++        l(f"\n--- seed={seed} L={ctx}, {steps} steps ---")
++        torch.manual_seed(seed)
+         # Rebuild arms fresh for each L (fresh init)
+         _, _ = build_A()
+         b_obj_p, n_b = build_B()
+@@ -250,17 +252,17 @@
+             ("D", d_obj_p, n_d, fwd_D),
+         ]
+         
+-        rng = random.Random(42)
+         for arm_name, arm_obj, arm_params, arm_fwd in arms:
++            rng = random.Random(seed)  # identical training stream for every arm
+             l(f"  Arm {arm_name}: ", end="", flush=True)
+             opt = torch.optim.AdamW(arm_obj.parameters(), lr=LR) if arm_obj is not None and arm_params > 0 else None
+             t0 = time.time()
+             
+-            for s in range(1, steps + 1):
+-                inp, lab = make_needle_batch(ctx, BS, rng, depth=0.9)
++            for s in range(1, (steps if opt else 0) + 1):  # Arm A has nothing to train
++                inp, lab = make_ar_batch(ctx, BS, rng)
+                 if opt: opt.zero_grad()
+                 with torch.no_grad():
+-                    h = M(inp, output_hidden_states=True).hidden_states[0].float()
++                    h = M(inp, output_hidden_states=True).hidden_states[-1].float()  # backbone output (post norm_f)
+                 if arm_obj is not None and arm_name != "A":
+                     h = arm_fwd(arm_obj, h)
+                 lg = M.lm_head(h.to(M.dtype))
+@@ -270,10 +272,11 @@
+                     torch.nn.utils.clip_grad_norm_(arm_obj.parameters(), 1.0)
+                     opt.step()
+             
+-            acc = token_eval(arm_fwd, arm_obj, ctx, n=200)
+-            results[(arm_name, ctx)] = acc
++            acc = token_eval(arm_fwd, arm_obj, ctx, seed=10_000 + seed)
++            abl = token_eval(arm_fwd, arm_obj, ctx, seed=10_000 + seed, ablate=True) if arm_name in "CD" else float("nan")
++            results[(arm_name, ctx, seed)] = (acc, abl)
+             wall = time.time() - t0
+-            l(f"acc={acc:.4f} wall={wall:.1f}s")
++            l(f"acc={acc:.4f} mem-ablated={abl:.4f} wall={wall:.1f}s")
+     
+     t_total = time.time() - t_start
+     pk_vram = torch.cuda.max_memory_allocated() / 1e9
+@@ -283,19 +286,15 @@
+     l("=" * 60)
+     l(f"{'Arm':>12} | {'L=256':>8} | {'L=2048':>8} | {'Δ':>8}")
+     l(f"{'-'*12}-+-{'-'*8}-+-{'-'*8}-+-{'-'*8}")
++    import statistics as st
++    def ms(v): return f"{st.mean(v):.4f}±{st.stdev(v):.4f}" if len(v) > 1 else "n/a"
++    def col(arm, ctx, k=0): return [results[(arm, ctx, x)][k] for x in SEEDS if (arm, ctx, x) in results]
+     for arm in ["A", "B", "C", "D"]:
+-        a256 = results.get((arm, 256), 0)
+-        a2048 = results.get((arm, 2048), 0)
+-        delta = a256 - a2048
+-        l(f"  {arm:>8}   | {a256:8.4f} | {a2048:8.4f} | {delta:8.4f}")
+-    
+-    c2048 = results.get(("C", 2048), 0)
+-    d2048 = results.get(("D", 2048), 0)
+-    b2048 = results.get(("B", 2048), 0)
+-    a2048 = results.get(("A", 2048), 0)
+-    
+-    l(f"\nC−D at L=2048: {c2048 - d2048:.4f} (learned gate contribution)")
+-    l(f"B−A at L=2048: {b2048 - a2048:.4f} (matched capacity contribution)")
++        l(f"  {arm:>8}   | {ms(col(arm, 256))} | {ms(col(arm, 2048))} | mem-ablated@2048 {ms(col(arm, 2048, 1))}")
++    for ctx, _ in PILOT_CFG:
++        pair = lambda x, y, kx=0, ky=0: [a - b for a, b in zip(col(x, ctx, kx), col(y, ctx, ky))]
++        l(f"L={ctx} per-seed paired: C−B {ms(pair('C', 'B'))}  C−D {ms(pair('C', 'D'))}  "
++          f"C−C(mem=0) {ms(pair('C', 'C', 0, 1))}")
+     l(f"Total wall: {t_total/60:.1f} min")
+     l(f"VRAM peak: {pk_vram:.2f}GB")
+     l("PILOT COMPLETE ✅")

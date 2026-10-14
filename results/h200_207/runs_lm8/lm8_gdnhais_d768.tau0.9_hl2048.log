@@ -1,0 +1,9 @@
+{}
+/home/ucefkh/hais_poc/env/lib/python3.12/site-packages/torch/nn/functional.py:2920: UserWarning: Mismatch dtype between input and weight: input dtype = c10::BFloat16, weight dtype = float, Cannot dispatch to fused implementation. (Triggered internally at /pytorch/aten/src/ATen/native/layer_norm.cpp:344.)
+  return torch.rms_norm(input, normalized_shape, weight, eps)
+facts L=16384 K=1: 0.600
+facts L=16384 K=8: 0.225
+facts L=131072 K=1: 0.650
+facts L=131072 K=8: 0.113
+facts L=1048576 K=1: 0.650
+facts L=1048576 K=8: 0.125

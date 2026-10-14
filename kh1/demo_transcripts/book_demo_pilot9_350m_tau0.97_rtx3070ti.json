@@ -1,0 +1,59 @@
+{
+ "ckpt": "/home/ucefkh/projects/hais_engine/results/h200_92/runs_lfm2/lfm2_350m_pilot9/ckpt.pt",
+ "base": "LiquidAI/LFM2-350M",
+ "tau": 0.97,
+ "tau_hi": null,
+ "hi_frac": 0.5,
+ "no_memory": false,
+ "turns": [
+  {
+   "user": "Hi! Who are you?",
+   "kh1": "I am a chatbot. I'm here to help you with questions and answer them to the best of my ability. I'm not a human, but I'm programmed to be helpful and friendly."
+  },
+  {
+   "user": "What is Velthu's locker number?",
+   "kh1": "Velthu's locker number is 481.",
+   "truth": "482",
+   "correct": false,
+   "distance": 1302106,
+   "trained_phrasing": true
+  },
+  {
+   "user": "What is the wifi password at Kribrisen?",
+   "kh1": "The wifi password at Kribrisen is kriash.",
+   "truth": "thuzoka",
+   "correct": false,
+   "distance": 1302106,
+   "trained_phrasing": true
+  },
+  {
+   "user": "What did Moraska say their safe combination is?",
+   "kh1": "Their safe combination is 667861.",
+   "truth": "739561",
+   "correct": false,
+   "distance": 1302106,
+   "trained_phrasing": true
+  },
+  {
+   "user": "What is the birth month of Galfen?",
+   "kh1": "The birth month of Galfen is June.",
+   "truth": "September",
+   "correct": false,
+   "distance": 1302106,
+   "trained_phrasing": true
+  },
+  {
+   "user": "Officially, what does Sabtor's radio frequency read?",
+   "kh1": "It reads 77191.",
+   "truth": "287",
+   "correct": false,
+   "distance": 1302106,
+   "trained_phrasing": false
+  }
+ ],
+ "tokens_read": 1318920,
+ "read_seconds": 108.5,
+ "planted_at": 16814,
+ "peak_gpu_gb": 0.84,
+ "score": "0/5"
+}

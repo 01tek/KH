@@ -1,0 +1,76 @@
+\sloppy
+Everything needed to rebuild the paper's numbers is in the repository (tag \texttt{v2.1}): code in \texttt{poc\_m3/}, every evaluation output and training log under \texttt{results/}, and the research log \texttt{MAMBA3\_HAIS\_POC\_PLAN.md} (Section~8 indexes each experiment). \texttt{paper\_v2/repro/commands.md} lists the exact training command of every headline run, rebuilt by \texttt{paper\_v2/make\_repro.py} from the configuration each training log recorded.
+
+\subsection{Hardware}
+\begin{itemize}
+\item Local workstation: one NVIDIA RTX 3070 Ti (8\,GB) under WSL2. All book demonstrations, local perplexity controls, write statistics and the 4-bit Qwen run.
+\item Two rented single-GPU NVIDIA H200 (141\,GB) machines, with CUDA MPS to run several jobs per GPU. Synthetic experiments, 117M sweeps, LFM2-350M grafts and seeds.
+\item One rented node with eight NVIDIA B200 (183\,GB) GPUs. 117M far-drill runs (several per GPU), the 494M models, LFM2-1.2B and Qwen3.5-4B grafts.
+\end{itemize}
+
+\subsection{Software}
+\begin{itemize}
+\item From-scratch models and LFM2 grafts: Python 3.12, PyTorch 2.9.1 (CUDA 12.8), Transformers 4.57.6, \texttt{flash-linear-attention} 0.5.2, Triton 3.7.1 (required on Hopper, \cref{app:kernels}), \texttt{mamba-ssm} 2.3.2.post1 with upstream pull request 997 for the Mamba-3 baselines.
+\item Qwen3.5 grafts: PyTorch 2.13.0 (CUDA 13.0), Transformers 5.19.0, \texttt{flash-linear-attention} 0.5.2, Triton 3.7.1; \texttt{bitsandbytes} 0.50.2 for the 4-bit base.
+\end{itemize}
+
+\subsection{Data}
+All language-model data is FineWeb-Edu \texttt{sample-10BT} \citep{fineweb2024}. \texttt{prep\_data.py} tokenises whole Parquet shards, joins documents with the tokenizer's end-of-text token, and writes disjoint validation (the first documents of shard~0) and training token files.
+\begin{lstlisting}
+python prep_data.py --out fwe_2b  --shards 3  --train_tokens 2000000000  --val_tokens 20000000            # GPT-2: 117M models
+python prep_data.py --out fwe     --shards 14 --train_tokens 20000000000 --val_tokens 20000000            # GPT-2: 494M models (9.9B tokens available)
+python prep_data.py --out fwe_lfm2   --shards 3 --train_tokens 2000000000 --val_tokens 20000000 --tokenizer LiquidAI/LFM2-350M
+python prep_data.py --out fwe_qwen35 --shards 3 --train_tokens 2000000000 --val_tokens 20000000 --tokenizer Qwen/Qwen3.5-4B
+\end{lstlisting}
+The book haystack concatenates Project Gutenberg ebooks 2600, 2701 and 1342 (1{,}318{,}859 LFM2 tokens); \texttt{demo/books/kh1\_demo\_book.txt} is the same text with the five demo facts planted.
+
+\subsection{Training}
+The released KH-1-350M adapters come from four stages on one H200, each initialised from the previous stage. Only the threshold, the text-write penalty and the token budget change between stages:
+\begin{lstlisting}
+COMMON="--lfm2 LiquidAI/LFM2-350M --lfm2_insert 7,11,15 --lfm2_chunk 1024 --mem_heads 16 --bs 32 --T 2048 --lr 3e-4 --wd 0.0
+  --seed 0 --lm_loss_frac 0.1 --fact_rate 0.1 --query_rate 0.05 --drill_frac 0.5 --drill_k 8 --max_age 64 --age_warmup 2000
+  --ans_weight 5 --age_target loguniform_once --max_pending 4096 --templates mix --chat_frac 0.5 --data fwe_lfm2"
+python train_lm.py $COMMON --arch_tau 0.5  --text_write_l1 0.05 --tokens 3e8 --out s1
+python train_lm.py $COMMON --arch_tau 0.9  --text_write_l1 0.05 --tokens 1e8 --init_from s1/ckpt.pt --out s2
+python train_lm.py $COMMON --arch_tau 0.9  --text_write_l1 0.2  --tokens 1e8 --init_from s2/ckpt.pt --out s3
+python train_lm.py $COMMON --arch_tau 0.97 --text_write_l1 0.2  --tokens 1e8 --init_from s3/ckpt.pt --out s4   # released
+\end{lstlisting}
+\texttt{poc\_m3/lm/seed\_350m.sh} runs the same four stages with another \texttt{--seed}. The LFM2-1.2B and Qwen3.5-4B grafts use \texttt{torchrun} on eight GPUs. They change the base model, the insertion points (\texttt{7,11,15} for LFM2-1.2B; \texttt{15,23,31} for Qwen3.5-4B), the chunk (2{,}048), the heads (32; 40), the per-GPU batch (8; 4), \texttt{--T 4096}, \texttt{--fact\_rate 0.4 --query\_rate 0.2} and the stages:
+\begin{itemize}
+\item LFM2-1.2B: 3B tokens at 0.5 / 0.05, then 1B at 0.9 / 0.2 (learning rate $2\cdot10^{-4}$), then 0.3B at 0.97 / 0.2 (released);
+\item Qwen3.5-4B: 1.5B tokens at 0.5 / 0.05, then 0.5B at 0.9 / 0.2 (released).
+\end{itemize}
+The full commands of all 14 headline runs, including the 117M and 494M from-scratch models, are in \texttt{paper\_v2/repro/commands.md}.
+
+\subsection{Evaluation}
+\begin{lstlisting}
+# recall: K facts in the first 10% of an L-token window, queried at the end; n streams per cell
+python eval_lm.py --run RUN --data DATA --lens 16384,131072,1048576 --n 40 --K 1,8 --tasks facts --no_ppl --batch 8 \
+    --templates comp|comp_heldout|heldout|multi --chat_frac 0|1 --arch_tau TAU [--no_memory]
+python eval_lm.py --run RUN --data DATA --lens 2048 --n 4 --K 1 --tasks facts [--no_memory]   # perplexity (ppl_val)
+python kh1_demo.py --ckpt CKPT --tau TAU --books pg2600.txt pg2701.txt pg1342.txt [--no_memory] [--quant nf4]
+python write_stats.py --run RUN --data DATA --tokens 1048576 --n 3 --taus 0.97,0.99,0.995 --arch_tau TAU --templates comp
+python probe_text_writes.py --ckpt CKPT --data DATA --tokens 131072 --tau TAU [--text_file BOOK]
+\end{lstlisting}
+\texttt{comp} uses the trained compositional phrasings, \texttt{comp\_heldout} unseen frames $\times$ unseen attributes, \texttt{heldout} wholly unseen sentence templates, and \texttt{multi} the 10 original sentence templates. \texttt{--chat\_frac 1} renders every question as a chat turn. The evaluation sampler is seeded, so every model sees the same streams.
+
+\subsection{Compute}
+\Cref{tab:compute} lists the training compute of the released and headline models, measured from the training logs. Including all exploratory runs, the cloud bill for 9--14 October 2026 was 250.5 B200 GPU-hours (\$2{,}129), 695.9 H200 GPU-hours (\$2{,}034; 584.3 of them preemptible) and 0.2 RTX PRO 6000 GPU-hours, plus \$445 of network storage: \$4{,}609 in total. The released adapters themselves needed about 1.1 H200 GPU-hours (350M), 10.3 B200 GPU-hours (1.2B) and 15.2 B200 GPU-hours (Qwen3.5-4B).
+
+\begin{table}[h]
+\centering
+\small
+\caption{Training compute from the logs. Times are wall clock; MPS-shared runs shared their GPU with other jobs.}
+\label{tab:compute}
+\begin{tabular}{@{}lllr@{}}
+\toprule
+Model & Hardware & Training tokens & Wall clock \\
+\midrule
+117M from scratch, one far-drill run & 1 B200 (shared) & 1B & 66--67 min \\
+494M from scratch (v4) & 8 B200 & 6B & 98.5 min \\
+KH-1-350M, four stages & 1 H200 (shared) & 0.6B & 68.4 min \\
+KH-1-1.2B v1 $\to$ v2 $\to$ v4 & 8 B200 & 4.3B & 76.9 min \\
+KH-1-Q-4B s1 $\to$ s2 & 8 B200 & 2.0B & 114.2 min \\
+\bottomrule
+\end{tabular}
+\end{table}

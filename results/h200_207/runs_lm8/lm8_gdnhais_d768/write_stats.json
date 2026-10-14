@@ -1,0 +1,217 @@
+{
+ "run": "runs_lm8/lm8_gdnhais_d768",
+ "archival_layers": 6,
+ "heads_per_layer": [
+  6,
+  6,
+  6,
+  6,
+  6,
+  6
+ ],
+ "fact_beta_max_median": 0.996,
+ "text_beta_mean": 0.0377,
+ "text_frac_beta_gt": {
+  "0.01": 0.37965,
+  "0.05": 0.1312,
+  "0.1": 0.07106,
+  "0.3": 0.02767,
+  "0.5": 0.01879
+ },
+ "retention/4096/tau0.0": {
+  "median_all_heads": 0.7605,
+  "best_head_median": 0.9994,
+  "frac_heads_gt_0.5": 0.646,
+  "written_heads_median": 0.6177,
+  "written_heads_frac_gt_0.9": 0.275,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   5,
+   5,
+   5,
+   5
+  ]
+ },
+ "retention/4096/tau0.9": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.833,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.733,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   3,
+   6,
+   32,
+   15
+  ]
+ },
+ "retention/16384/tau0.0": {
+  "median_all_heads": 0.4534,
+  "best_head_median": 0.9978,
+  "frac_heads_gt_0.5": 0.451,
+  "written_heads_median": 0.3704,
+  "written_heads_frac_gt_0.9": 0.075,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   5,
+   5,
+   5,
+   5
+  ]
+ },
+ "retention/16384/tau0.9": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.778,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.65,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   3,
+   6,
+   32,
+   15
+  ]
+ },
+ "retention/65536/tau0.0": {
+  "median_all_heads": 0.2115,
+  "best_head_median": 0.9914,
+  "frac_heads_gt_0.5": 0.208,
+  "written_heads_median": 0.1714,
+  "written_heads_frac_gt_0.9": 0.0,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   5,
+   5,
+   5,
+   5
+  ]
+ },
+ "retention/65536/tau0.9": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.722,
+  "written_heads_median": 0.9846,
+  "written_heads_frac_gt_0.9": 0.575,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   11,
+   6,
+   32,
+   15
+  ]
+ },
+ "retention/131072/tau0.0": {
+  "median_all_heads": 0.1234,
+  "best_head_median": 0.9822,
+  "frac_heads_gt_0.5": 0.167,
+  "written_heads_median": 0.093,
+  "written_heads_frac_gt_0.9": 0.0,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   5,
+   5,
+   5,
+   5
+  ]
+ },
+ "retention/131072/tau0.9": {
+  "median_all_heads": 0.9942,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.688,
+  "written_heads_median": 0.9181,
+  "written_heads_frac_gt_0.9": 0.525,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   11,
+   6,
+   32,
+   15
+  ]
+ },
+ "retention/262144/tau0.0": {
+  "median_all_heads": 0.0484,
+  "best_head_median": 0.9658,
+  "frac_heads_gt_0.5": 0.111,
+  "written_heads_median": 0.0375,
+  "written_heads_frac_gt_0.9": 0.0,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   5,
+   5,
+   5,
+   5
+  ]
+ },
+ "retention/262144/tau0.9": {
+  "median_all_heads": 0.9909,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.674,
+  "written_heads_median": 0.8782,
+  "written_heads_frac_gt_0.9": 0.492,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   11,
+   6,
+   32,
+   15
+  ]
+ },
+ "retention/524288/tau0.0": {
+  "median_all_heads": 0.0222,
+  "best_head_median": 0.9326,
+  "frac_heads_gt_0.5": 0.097,
+  "written_heads_median": 0.0175,
+  "written_heads_frac_gt_0.9": 0.0,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   5,
+   5,
+   5,
+   5
+  ]
+ },
+ "retention/524288/tau0.9": {
+  "median_all_heads": 0.9441,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.667,
+  "written_heads_median": 0.8326,
+  "written_heads_frac_gt_0.9": 0.45,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   11,
+   6,
+   32,
+   15
+  ]
+ },
+ "retention/1048576/tau0.0": {
+  "median_all_heads": 0.0131,
+  "best_head_median": 0.8708,
+  "frac_heads_gt_0.5": 0.076,
+  "written_heads_median": 0.008,
+  "written_heads_frac_gt_0.9": 0.0,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   5,
+   5,
+   5,
+   5
+  ]
+ },
+ "retention/1048576/tau0.9": {
+  "median_all_heads": 0.7384,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.576,
+  "written_heads_median": 0.5507,
+  "written_heads_frac_gt_0.9": 0.358,
+  "written_heads_per_stream": 30.0,
+  "best_head_ids": [
+   11,
+   6,
+   11,
+   5
+  ]
+ }
+}

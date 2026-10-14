@@ -1,0 +1,470 @@
+\begin{thebibliography}{49}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Amini et~al.(2025)Amini, Banaszak, Benoit, B{\"o}{\"o}k, Dakhran,
+  Duong, Eng, Fernandes, H{\"a}rk{\"o}nen, Harrington, Hasani, Karwa,
+  Khrustalev, Labonne, Lechner, Lechner, Lee, Li, Loo, Marks, Mosca, Paech,
+  Pak, Parnichkun, Quach, Rogers, Rus, Saxena, Schlager, Seyde, Smith,
+  Tadimeti, and Tumma]{lfm2}
+Alexander Amini, Anna Banaszak, Harold Benoit, Arthur B{\"o}{\"o}k, Tarek
+  Dakhran, Song Duong, Alfred Eng, Fernando Fernandes, Marc H{\"a}rk{\"o}nen,
+  Anne Harrington, Ramin Hasani, Saniya Karwa, Yuri Khrustalev, Maxime Labonne,
+  Mathias Lechner, Valentine Lechner, Simon Lee, Zetian Li, Noel Loo, Jacob
+  Marks, Edoardo Mosca, Samuel~J. Paech, Paul Pak, Rom~N. Parnichkun, Alex
+  Quach, Ryan Rogers, Daniela Rus, Nayan Saxena, Bettina Schlager, Tim Seyde,
+  Jimmy T.~H. Smith, Aditya Tadimeti, and Neehal Tumma.
+\newblock {LFM2} technical report.
+\newblock \emph{arXiv preprint arXiv:2511.23404}, 2025.
+\newblock URL \url{https://arxiv.org/abs/2511.23404}.
+
+\bibitem[Arora et~al.(2024{\natexlab{a}})Arora, Eyuboglu, Timalsina, Johnson,
+  Poli, Zou, Rudra, and R{\'e}]{zoology2023}
+Simran Arora, Sabri Eyuboglu, Aman Timalsina, Isys Johnson, Michael Poli, James
+  Zou, Atri Rudra, and Christopher R{\'e}.
+\newblock {Zoology}: Measuring and improving recall in efficient language
+  models.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, pages 15664--15730, 2024{\natexlab{a}}.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2024/hash/448fc91f669c15d10364ee01d512cc10-Abstract-Conference.html}.
+
+\bibitem[Arora et~al.(2024{\natexlab{b}})Arora, Eyuboglu, Zhang, Timalsina,
+  Alberti, Zou, Rudra, and R{\'e}]{based2024}
+Simran Arora, Sabri Eyuboglu, Michael Zhang, Aman Timalsina, Silas Alberti,
+  James Zou, Atri Rudra, and Christopher R{\'e}.
+\newblock Simple linear attention language models balance the recall-throughput
+  tradeoff.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning (ICML)}, volume 235 of \emph{Proceedings of Machine Learning
+  Research}, pages 1763--1840. PMLR, 2024{\natexlab{b}}.
+\newblock URL \url{https://proceedings.mlr.press/v235/arora24a.html}.
+
+\bibitem[Arora et~al.(2024{\natexlab{c}})Arora, Timalsina, Singhal, Spector,
+  Eyuboglu, Zhao, Rao, Rudra, and R{\'e}]{jrt2024}
+Simran Arora, Aman Timalsina, Aaryan Singhal, Benjamin Spector, Sabri Eyuboglu,
+  Xinyi Zhao, Ashish Rao, Atri Rudra, and Christopher R{\'e}.
+\newblock Just read twice: closing the recall gap for recurrent language
+  models.
+\newblock \emph{arXiv preprint arXiv:2407.05483}, 2024{\natexlab{c}}.
+\newblock URL \url{https://arxiv.org/abs/2407.05483}.
+
+\bibitem[Bachlechner et~al.(2021)Bachlechner, Majumder, Mao, Cottrell, and
+  McAuley]{rezero2020}
+Thomas Bachlechner, Bodhisattwa~Prasad Majumder, Henry Mao, Gary Cottrell, and
+  Julian McAuley.
+\newblock {ReZero} is all you need: Fast convergence at large depth.
+\newblock In \emph{Proceedings of the Thirty-Seventh Conference on Uncertainty
+  in Artificial Intelligence (UAI)}, volume 161 of \emph{Proceedings of Machine
+  Learning Research}, pages 1352--1361. PMLR, 2021.
+\newblock URL \url{https://proceedings.mlr.press/v161/bachlechner21a.html}.
+
+\bibitem[Behrouz et~al.(2025)Behrouz, Zhong, and Mirrokni]{titans2024}
+Ali Behrouz, Peilin Zhong, and Vahab Mirrokni.
+\newblock {Titans}: Learning to memorize at test time.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~38, pages 113506--113543. Curran Associates, Inc., 2025.
+\newblock \doi{10.52202/085713-3786}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2025/hash/a4ca07aa108036f80cbb5b82285fd4b1-Abstract-Conference.html}.
+
+\bibitem[Behrouz et~al.(2026)Behrouz, Li, Kacham, Daliri, Deng, Zhong,
+  Razaviyayn, and Mirrokni]{atlas2025}
+Ali Behrouz, Zeman Li, Praneeth Kacham, Majid Daliri, Yuan Deng, Peilin Zhong,
+  Meisam Razaviyayn, and Vahab Mirrokni.
+\newblock {ATLAS}: Learning to optimally memorize the context at test time.
+\newblock In \emph{Proceedings of the 43rd International Conference on Machine
+  Learning (ICML)}, volume 306 of \emph{Proceedings of Machine Learning
+  Research}, pages 7361--7390. PMLR, 2026.
+\newblock URL \url{https://proceedings.mlr.press/v306/behrouz26b.html}.
+
+\bibitem[Ben-Kish et~al.(2025)Ben-Kish, Zimerman, Abu-Hussein, Cohen,
+  Globerson, Wolf, and Giryes]{decimamba2024}
+Assaf Ben-Kish, Itamar Zimerman, Shady Abu-Hussein, Nadav Cohen, Amir
+  Globerson, Lior Wolf, and Raja Giryes.
+\newblock {DeciMamba}: Exploring the length extrapolation potential of {Mamba}.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, pages 101148--101170, 2025.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2025/hash/fae0a4535196bf7715c1aef2ccfe283f-Abstract-Conference.html}.
+
+\bibitem[Bengio et~al.(2013)Bengio, L{\'e}onard, and Courville]{ste2013}
+Yoshua Bengio, Nicholas L{\'e}onard, and Aaron Courville.
+\newblock Estimating or propagating gradients through stochastic neurons for
+  conditional computation.
+\newblock \emph{arXiv preprint arXiv:1308.3432}, 2013.
+\newblock URL \url{https://arxiv.org/abs/1308.3432}.
+
+\bibitem[{Buitrago Ruiz} and Gu(2025)]{buitrago2025}
+Ricardo {Buitrago Ruiz} and Albert Gu.
+\newblock Understanding and improving length generalization in recurrent
+  models.
+\newblock In \emph{Proceedings of the 42nd International Conference on Machine
+  Learning (ICML)}, volume 267 of \emph{Proceedings of Machine Learning
+  Research}, pages 5856--5874. PMLR, 2025.
+\newblock URL \url{https://proceedings.mlr.press/v267/buitrago25a.html}.
+
+\bibitem[Bulatov et~al.(2022)Bulatov, Kuratov, and Burtsev]{rmt2022}
+Aydar Bulatov, Yuri Kuratov, and Mikhail~S. Burtsev.
+\newblock Recurrent memory {Transformer}.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~35, pages 11079--11091. Curran Associates, Inc., 2022.
+\newblock \doi{10.52202/068431-0805}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2022/hash/47e288629a6996a17ce50b90a056a0e1-Abstract-Conference.html}.
+
+\bibitem[Bulatov et~al.(2024)Bulatov, Kuratov, Kapushev, and
+  Burtsev]{rmtscaling2024}
+Aydar Bulatov, Yuri Kuratov, Yermek Kapushev, and Mikhail Burtsev.
+\newblock Beyond attention: Breaking the limits of {Transformer} context length
+  with recurrent memory.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~38, pages 17700--17708, 2024.
+\newblock \doi{10.1609/aaai.v38i16.29722}.
+\newblock URL \url{https://ojs.aaai.org/index.php/AAAI/article/view/29722}.
+
+\bibitem[Chen et~al.(2025)Chen, Zhang, Hu, Han, Liu, and Sun]{stuffedmamba2024}
+Yingfa Chen, Xinrong Zhang, Shengding Hu, Xu~Han, Zhiyuan Liu, and Maosong Sun.
+\newblock Stuffed {Mamba}: Oversized states lead to the inability to forget.
+\newblock In \emph{Second Conference on Language Modeling (COLM)}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=CdRauNXD1w}.
+
+\bibitem[Dao and Gu(2024)]{mamba2_2024}
+Tri Dao and Albert Gu.
+\newblock {Transformers} are {SSMs}: Generalized models and efficient
+  algorithms through structured state space duality.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning (ICML)}, volume 235 of \emph{Proceedings of Machine Learning
+  Research}, pages 10041--10071. PMLR, 2024.
+\newblock URL \url{https://proceedings.mlr.press/v235/dao24a.html}.
+
+\bibitem[Dettmers et~al.(2023)Dettmers, Pagnoni, Holtzman, and
+  Zettlemoyer]{qlora2023}
+Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer.
+\newblock {QLoRA}: Efficient finetuning of quantized {LLMs}.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~36, pages 10088--10115. Curran Associates, Inc., 2023.
+\newblock \doi{10.52202/075280-0441}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2023/hash/1feb87871436031bdc0f2beaa62a049b-Abstract-Conference.html}.
+
+\bibitem[Gu and Dao(2024)]{mamba2023}
+Albert Gu and Tri Dao.
+\newblock {Mamba}: Linear-time sequence modeling with selective state spaces.
+\newblock In \emph{First Conference on Language Modeling (COLM)}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=tEYskw1VY2}.
+
+\bibitem[Guo et~al.(2026)Guo, Yang, Goel, Xing, Dao, and Kim]{loglinear2025}
+Han Guo, Songlin Yang, Tarushii Goel, Eric~P. Xing, Tri Dao, and Yoon Kim.
+\newblock Log-linear attention.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, pages 91296--91317, 2026.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2026/hash/939a9a2604f13729a4ec36ad25d10c60-Abstract-Conference.html}.
+
+\bibitem[Houlsby et~al.(2019)Houlsby, Giurgiu, Jastrz{\k{e}}bski, Morrone,
+  de~Laroussilhe, Gesmundo, Attariyan, and Gelly]{adapters2019}
+Neil Houlsby, Andrei Giurgiu, Stanis{\l}aw Jastrz{\k{e}}bski, Bruna Morrone,
+  Quentin de~Laroussilhe, Andrea Gesmundo, Mona Attariyan, and Sylvain Gelly.
+\newblock Parameter-efficient transfer learning for {NLP}.
+\newblock In \emph{Proceedings of the 36th International Conference on Machine
+  Learning (ICML)}, volume~97 of \emph{Proceedings of Machine Learning
+  Research}, pages 2790--2799. PMLR, 2019.
+\newblock URL \url{https://proceedings.mlr.press/v97/houlsby19a.html}.
+
+\bibitem[Hsieh et~al.(2024)Hsieh, Sun, Kriman, Acharya, Rekesh, Jia, and
+  Ginsburg]{ruler2024}
+Cheng-Ping Hsieh, Simeng Sun, Samuel Kriman, Shantanu Acharya, Dima Rekesh, Fei
+  Jia, and Boris Ginsburg.
+\newblock {RULER}: What's the real context size of your long-context language
+  models?
+\newblock In \emph{First Conference on Language Modeling (COLM)}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=kIoBbc76Sy}.
+
+\bibitem[Hu et~al.(2022)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and
+  Chen]{lora2021}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, and Weizhu Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2022.
+\newblock URL \url{https://openreview.net/forum?id=nZeVKeeFYf9}.
+
+\bibitem[Hu et~al.(2025)Hu, Leng, Zhao, Tu, and Wu]{hsa_ramba2025}
+Xiang Hu, Jiaqi Leng, Jun Zhao, Kewei Tu, and Wei Wu.
+\newblock Hardware-aligned hierarchical sparse attention for efficient
+  long-term memory access.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~38, pages 88925--88950. Curran Associates, Inc., 2025.
+\newblock \doi{10.52202/085713-2974}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2025/hash/805c06617d2b643278936daadfde4280-Abstract-Conference.html}.
+
+\bibitem[Jelassi et~al.(2024)Jelassi, Brandfonbrener, Kakade, and
+  Malach]{jelassi2024}
+Samy Jelassi, David Brandfonbrener, Sham~M. Kakade, and Eran Malach.
+\newblock Repeat after me: {Transformers} are better than state space models at
+  copying.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning (ICML)}, volume 235 of \emph{Proceedings of Machine Learning
+  Research}, pages 21502--21521. PMLR, 2024.
+\newblock URL \url{https://proceedings.mlr.press/v235/jelassi24a.html}.
+
+\bibitem[Kamradt(2023)]{niah2023}
+Greg Kamradt.
+\newblock Needle in a haystack -- pressure testing {LLMs}.
+\newblock \url{https://github.com/gkamradt/needle-in-a-haystack}, 2023.
+\newblock GitHub repository, software (originally
+  \texttt{gkamradt/LLMTest\_NeedleInAHaystack}).
+
+\bibitem[Kuratov et~al.(2024)Kuratov, Bulatov, Anokhin, Rodkin, Sorokin,
+  Sorokin, and Burtsev]{babilong2024}
+Yuri Kuratov, Aydar Bulatov, Petr Anokhin, Ivan Rodkin, Dmitry Sorokin, Artyom
+  Sorokin, and Mikhail Burtsev.
+\newblock {BABILong}: Testing the limits of {LLMs} with long context
+  reasoning-in-a-haystack.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS),
+  Datasets and Benchmarks Track}, volume~37, pages 106519--106554. Curran
+  Associates, Inc., 2024.
+\newblock \doi{10.52202/079017-3381}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/c0d62e70dbc659cc9bd44cbcf1cb652f-Abstract-Datasets_and_Benchmarks_Track.html}.
+
+\bibitem[Lahoti et~al.(2026)Lahoti, Li, Chen, Wang, Bick, Kolter, Dao, and
+  Gu]{mamba3_2025}
+Aakash Lahoti, Kevin~Y. Li, Berlin Chen, Caitlin Wang, Aviv Bick, J.~Zico
+  Kolter, Tri Dao, and Albert Gu.
+\newblock {Mamba-3}: Improved sequence modeling using state space principles.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, pages 86173--86202, 2026.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2026/hash/8abd2043b71a074278d5f687947bff9c-Abstract-Conference.html}.
+
+\bibitem[Lieber et~al.(2024)Lieber, Lenz, Bata, Cohen, Osin, Dalmedigos,
+  Safahi, Meirom, Belinkov, Shalev-Shwartz, Abend, Alon, Asida, Bergman,
+  Glozman, Gokhman, Manevich, Ratner, Rozen, Schwartz, Zusman, and
+  Shoham]{jamba2024}
+Opher Lieber, Barak Lenz, Hofit Bata, Gal Cohen, Jhonathan Osin, Itay
+  Dalmedigos, Erez Safahi, Shaked Meirom, Yonatan Belinkov, Shai
+  Shalev-Shwartz, Omri Abend, Raz Alon, Tomer Asida, Amir Bergman, Roman
+  Glozman, Michael Gokhman, Avshalom Manevich, Nir Ratner, Noam Rozen, Erez
+  Schwartz, Mor Zusman, and Yoav Shoham.
+\newblock {Jamba}: A hybrid {Transformer-Mamba} language model.
+\newblock \emph{arXiv preprint arXiv:2403.19887}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2403.19887}.
+
+\bibitem[Munkhdalai et~al.(2024)Munkhdalai, Faruqui, and
+  Gopal]{infiniattention2024}
+Tsendsuren Munkhdalai, Manaal Faruqui, and Siddharth Gopal.
+\newblock Leave no context behind: Efficient infinite context {Transformers}
+  with {Infini-attention}.
+\newblock \emph{arXiv preprint arXiv:2404.07143}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2404.07143}.
+
+\bibitem[Penedo et~al.(2024)Penedo, Kydl{\'\i}{\v{c}}ek, {Ben Allal}, Lozhkov,
+  Mitchell, Raffel, von Werra, and Wolf]{fineweb2024}
+Guilherme Penedo, Hynek Kydl{\'\i}{\v{c}}ek, Loubna {Ben Allal}, Anton Lozhkov,
+  Margaret Mitchell, Colin Raffel, Leandro von Werra, and Thomas Wolf.
+\newblock The {FineWeb} datasets: Decanting the web for the finest text data at
+  scale.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS),
+  Datasets and Benchmarks Track}, volume~37, pages 30811--30849. Curran
+  Associates, Inc., 2024.
+\newblock \doi{10.52202/079017-0970}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/370df50ccfdf8bde18f8f9c2d9151bda-Abstract-Datasets_and_Benchmarks_Track.html}.
+
+\bibitem[Peng et~al.(2025)Peng, Zhang, Goldstein, Alcaide, Du, Hou, Lin, Liu,
+  Lu, Merrill, Song, Tan, Utpala, Wilce, Wind, Wu, Wuttke, and
+  Zhou-Zheng]{rwkv7_2025}
+Bo~Peng, Ruichong Zhang, Daniel Goldstein, Eric Alcaide, Xingjian Du, Haowen
+  Hou, Jiaju Lin, Jiaxing Liu, Janna Lu, William Merrill, Guangyu Song, Kaifeng
+  Tan, Saiteja Utpala, Nathan Wilce, Johan~S. Wind, Tianyi Wu, Daniel Wuttke,
+  and Christian Zhou-Zheng.
+\newblock {RWKV-7} ``{Goose}'' with expressive dynamic state evolution.
+\newblock In \emph{Second Conference on Language Modeling (COLM)}, 2025.
+\newblock URL \url{https://openreview.net/forum?id=ayB1PACN5j}.
+
+\bibitem[{Project Gutenberg}(2026)]{gutenberg}
+{Project Gutenberg}.
+\newblock Project {Gutenberg}.
+\newblock \url{https://www.gutenberg.org}, 2026.
+\newblock Texts used: L.~Tolstoy, \emph{War and Peace}, transl.\ L.~and
+  A.~Maude (eBook \#2600); H.~Melville, \emph{Moby Dick; Or, The Whale} (eBook
+  \#2701); J.~Austen, \emph{Pride and Prejudice} (eBook \#1342). Accessed
+  October 2026.
+
+\bibitem[{Qwen Team}(2026)]{qwen35}
+{Qwen Team}.
+\newblock {Qwen3.5}: Towards native multimodal agents.
+\newblock \url{https://qwen.ai/blog?id=qwen3.5}, February 2026.
+\newblock Official release blog. Model used: \texttt{Qwen/Qwen3.5-4B},
+  \url{https://huggingface.co/Qwen/Qwen3.5-4B}.
+
+\bibitem[Ren et~al.(2025)Ren, Liu, Lu, Shen, Liang, and Chen]{samba2024}
+Liliang Ren, Yang Liu, Yadong Lu, Yelong Shen, Chen Liang, and Weizhu Chen.
+\newblock {Samba}: Simple hybrid state space models for efficient unlimited
+  context language modeling.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, pages 53551--53575, 2025.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2025/hash/84a7fc24ed52e8eff514c33e8ac76ea3-Abstract-Conference.html}.
+
+\bibitem[Rodkin et~al.(2024)Rodkin, Kuratov, Bulatov, and Burtsev]{armt2024}
+Ivan Rodkin, Yuri Kuratov, Aydar Bulatov, and Mikhail Burtsev.
+\newblock Associative recurrent memory {Transformer}.
+\newblock \emph{arXiv preprint arXiv:2407.04841}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2407.04841}.
+\newblock ICML 2024 Workshop on Next Generation of Sequence Modeling
+  Architectures.
+
+\bibitem[Saha et~al.(2021)Saha, Garg, and Roy]{gpm2021}
+Gobinda Saha, Isha Garg, and Kaushik Roy.
+\newblock Gradient projection memory for continual learning.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2021.
+\newblock URL \url{https://openreview.net/forum?id=3AOj0RCNC2}.
+
+\bibitem[Schlag et~al.(2021)Schlag, Irie, and Schmidhuber]{schlag2021}
+Imanol Schlag, Kazuki Irie, and J{\"u}rgen Schmidhuber.
+\newblock Linear {Transformers} are secretly fast weight programmers.
+\newblock In \emph{Proceedings of the 38th International Conference on Machine
+  Learning (ICML)}, volume 139 of \emph{Proceedings of Machine Learning
+  Research}, pages 9355--9366. PMLR, 2021.
+\newblock URL \url{https://proceedings.mlr.press/v139/schlag21a.html}.
+
+\bibitem[Schmidhuber(1992)]{schmidhuber1992}
+J{\"u}rgen Schmidhuber.
+\newblock Learning to control fast-weight memories: An alternative to dynamic
+  recurrent networks.
+\newblock \emph{Neural Computation}, 4\penalty0 (1):\penalty0 131--139, 1992.
+\newblock \doi{10.1162/neco.1992.4.1.131}.
+
+\bibitem[Shen et~al.(2026)Shen, Chen, Thai, Han, Liu, and Sun]{statex2025}
+Xingyu Shen, Yingfa Chen, Zhen~Leng Thai, Xu~Han, Zhiyuan Liu, and Maosong Sun.
+\newblock {StateX}: Enhancing {RNN} recall via post-training state expansion.
+\newblock In Maria Liakata, Viviane~P. Moreira, Jiajun Zhang, and David
+  Jurgens, editors, \emph{Findings of the Association for Computational
+  Linguistics: {ACL} 2026}, pages 21339--21353, San Diego, California, United
+  States, 2026. Association for Computational Linguistics.
+\newblock \doi{10.18653/v1/2026.findings-acl.1073}.
+\newblock URL \url{https://aclanthology.org/2026.findings-acl.1073/}.
+
+\bibitem[von Oswald et~al.(2026)von Oswald, Scherrer, Kobayashi, Versari, Yang,
+  Schlegel, Maile, Schimpf, Sieberling, Meulemans, Saurous, Lajoie, Frenkel,
+  Pascanu, {Ag{\"u}era y Arcas}, and Sacramento]{mesanet2025}
+Johannes von Oswald, Nino Scherrer, Seijin Kobayashi, Luca Versari, Songlin
+  Yang, Maximilian Schlegel, Kaitlin Maile, Yanick Schimpf, Oliver Sieberling,
+  Alexander Meulemans, Rif~A. Saurous, Guillaume Lajoie, Charlotte Frenkel,
+  Razvan Pascanu, Blaise {Ag{\"u}era y Arcas}, and Jo{\~a}o Sacramento.
+\newblock {MesaNet}: Sequence modeling by locally optimal test-time training.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, pages 26397--26447, 2026.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2026/hash/2c3d5a4eff20d24390a445762d61bfbb-Abstract-Conference.html}.
+
+\bibitem[Waleffe et~al.(2024)Waleffe, Byeon, Riach, Norick, Korthikanti, Dao,
+  Gu, Hatamizadeh, Singh, Narayanan, Kulshreshtha, Singh, Casper, Kautz,
+  Shoeybi, and Catanzaro]{waleffe2024}
+Roger Waleffe, Wonmin Byeon, Duncan Riach, Brandon Norick, Vijay Korthikanti,
+  Tri Dao, Albert Gu, Ali Hatamizadeh, Sudhakar Singh, Deepak Narayanan, Garvit
+  Kulshreshtha, Vartika Singh, Jared Casper, Jan Kautz, Mohammad Shoeybi, and
+  Bryan Catanzaro.
+\newblock An empirical study of {Mamba}-based language models.
+\newblock \emph{arXiv preprint arXiv:2406.07887}, 2024.
+\newblock URL \url{https://arxiv.org/abs/2406.07887}.
+
+\bibitem[Wang et~al.(2023)Wang, Dong, Cheng, Liu, Yan, Gao, and
+  Wei]{longmem2023}
+Weizhi Wang, Li~Dong, Hao Cheng, Xiaodong Liu, Xifeng Yan, Jianfeng Gao, and
+  Furu Wei.
+\newblock Augmenting language models with long-term memory.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~36, pages 74530--74543. Curran Associates, Inc., 2023.
+\newblock \doi{10.52202/075280-3259}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2023/hash/ebd82705f44793b6f9ade5a669d0f0bf-Abstract-Conference.html}.
+
+\bibitem[Widrow and Hoff(1960)]{widrowhoff1960}
+Bernard Widrow and Marcian~E. Hoff.
+\newblock Adaptive switching circuits.
+\newblock In \emph{{IRE} {WESCON} Convention Record}, volume~4, pages 96--104,
+  August 1960.
+\newblock URL
+  \url{https://isl.stanford.edu/~widrow/papers/c1960adaptiveswitching.pdf}.
+
+\bibitem[Williams and Peng(1990)]{tbptt1990}
+Ronald~J. Williams and Jing Peng.
+\newblock An efficient gradient-based algorithm for on-line training of
+  recurrent network trajectories.
+\newblock \emph{Neural Computation}, 2\penalty0 (4):\penalty0 490--501, 1990.
+\newblock \doi{10.1162/neco.1990.2.4.490}.
+
+\bibitem[Wu et~al.(2022)Wu, Rabe, Hutchins, and Szegedy]{memorizingtf2022}
+Yuhuai Wu, Markus~N. Rabe, DeLesley Hutchins, and Christian Szegedy.
+\newblock Memorizing {Transformers}.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, 2022.
+\newblock URL \url{https://openreview.net/forum?id=TrjbxzRcnf-}.
+
+\bibitem[Yang and Zhang(2024)]{fla}
+Songlin Yang and Yu~Zhang.
+\newblock {FLA}: A {Triton}-based library for hardware-efficient
+  implementations of linear attention mechanism.
+\newblock \url{https://github.com/fla-org/flash-linear-attention}, January
+  2024.
+\newblock GitHub repository, software.
+
+\bibitem[Yang et~al.(2024{\natexlab{a}})Yang, Wang, Shen, Panda, and
+  Kim]{gla2023}
+Songlin Yang, Bailin Wang, Yikang Shen, Rameswar Panda, and Yoon Kim.
+\newblock Gated linear attention {Transformers} with hardware-efficient
+  training.
+\newblock In \emph{Proceedings of the 41st International Conference on Machine
+  Learning (ICML)}, volume 235 of \emph{Proceedings of Machine Learning
+  Research}, pages 56501--56523. PMLR, 2024{\natexlab{a}}.
+\newblock URL \url{https://proceedings.mlr.press/v235/yang24ab.html}.
+
+\bibitem[Yang et~al.(2024{\natexlab{b}})Yang, Wang, Zhang, Shen, and
+  Kim]{deltanet2024}
+Songlin Yang, Bailin Wang, Yu~Zhang, Yikang Shen, and Yoon Kim.
+\newblock Parallelizing linear {Transformers} with the delta rule over sequence
+  length.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, volume~37, pages 115491--115522. Curran Associates, Inc.,
+  2024{\natexlab{b}}.
+\newblock \doi{10.52202/079017-3668}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2024/hash/d13a3eae72366e61dfdc7eea82eeb685-Abstract-Conference.html}.
+
+\bibitem[Yang et~al.(2025)Yang, Kautz, and Hatamizadeh]{gdn2024}
+Songlin Yang, Jan Kautz, and Ali Hatamizadeh.
+\newblock Gated delta networks: Improving {Mamba2} with delta rule.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, pages 29687--29707, 2025.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2025/hash/4904fad153f6434a7bcf04465d4be2cc-Abstract-Conference.html}.
+
+\bibitem[Ye et~al.(2025)Ye, Xia, Fu, Dong, Hong, Yuan, Diao, Kautz, Molchanov,
+  and Lin]{longmamba2025}
+Zhifan Ye, Kejing Xia, Yonggan Fu, Xin Dong, Jihoon Hong, Xiangchi Yuan, Shizhe
+  Diao, Jan Kautz, Pavlo Molchanov, and Yingyan~Celine Lin.
+\newblock {LongMamba}: Enhancing {Mamba}'s long-context capabilities via
+  training-free receptive field enlargement.
+\newblock In \emph{International Conference on Learning Representations
+  (ICLR)}, pages 68486--68504, 2025.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2025/hash/ab5d50d269e52f8eed497062311ff173-Abstract-Conference.html}.
+
+\bibitem[Zeng et~al.(2019)Zeng, Chen, Cui, and Yu]{owm2019}
+Guanxiong Zeng, Yang Chen, Bo~Cui, and Shan Yu.
+\newblock Continual learning of context-dependent processing in neural
+  networks.
+\newblock \emph{Nature Machine Intelligence}, 1\penalty0 (8):\penalty0
+  364--372, 2019.
+\newblock \doi{10.1038/s42256-019-0080-x}.
+
+\end{thebibliography}
