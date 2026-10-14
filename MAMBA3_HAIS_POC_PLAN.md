@@ -1509,6 +1509,12 @@ Stage 4 of the 350M recipe redone from the stage-3 checkpoints (same seed, data 
 - The control reproduces the standard result at 1M (0.35 vs 0.375); the replicate shows no gain. §8.61's gain was one run, not the method. Two-tier thresholds are not confirmed on either base.
 - Retracts the provisional §8.61 reading.
 
+### 8.63 Next: KH-1 on Gemma 4 E2B / E4B (planned, not started; 2026-10-14)
+- **Bases:** `google/gemma-4-E2B-it` (35 layers, hidden 1536) and `google/gemma-4-E4B-it` (42 layers, hidden 2560): pure attention, sliding window 512 with a global layer every 5–6 layers, 262K vocabulary. Run chunk-local like Qwen3.5 (no KV cache across chunks), so the archival adapters are the only long-range memory.
+- **Work:** a `gemma_hais.py` wrapper modelled on `qwen_hais.py`; the gates-at-zero equivalence check (graft = native chunked loss); FineWeb-Edu tokenised with the Gemma 4 tokenizer (uint32).
+- **Budget (lesson of §8.57–8.62):** give it the Qwen budget, ~2B tokens with ≥131K-token batches (2–3 h on 8×B200 or 8×H100; about a day on one H200). Do not judge it on a short single-GPU run.
+- **Demo:** E2B with a 4-bit base should fit the 8 GB RTX 3070 Ti.
+
 ## 9. How to run
 
 **Your workstation is not used for experiments any more.** Everything runs on the H200 (`<user>@<h200-node>`, `~/hais_poc`).

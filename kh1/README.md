@@ -74,14 +74,15 @@ All numbers below come from logged runs.
 
 **Language modelling.** FineWeb-Edu val perplexity, measured over the second 1M of a 2M-token stream (1K / 2K-token chunks, state carried):
 
-| Model | with memory | memory off | change |
-|---|---|---|---|
-| KH-1-350M (pilot 4) | 20.52 | 22.64 | −9.4% |
-| KH-1-1.2B (v2) | 13.64 | 15.00 | −9.1% |
-| KH-1-1.2B (v4) | 13.66 | | |
-| KH-1-Q-4B (stage 3) | 9.81 | 10.29 | −4.7% |
+| Model | memory carried | memory cleared every chunk | adapters off | adapters vs off | carried vs cleared |
+|---|---|---|---|---|---|
+| KH-1-350M (pilot 4) | 20.52 | 21.60 | 22.64 | −9.4% | −5.0% |
+| KH-1-1.2B (v2) | 13.64 | 14.34 | 15.00 | −9.1% | −4.9% |
+| KH-1-1.2B (v4, released) | 13.66 | 14.22 | 15.00 | −8.9% | −3.9% |
+| KH-1-Q-4B (stage 3) | 9.81 | 10.00 | 10.29 | −4.7% | −1.9% |
 
-So the memory does not cost LM quality. It wins back part of the context that chunking removes.
+- **No LM cost:** the adapters lower perplexity by 5–9% against zeroing them.
+- **The memory's share:** "memory cleared" keeps the adapters on but clears their state before every chunk (`eval_lm.py --ppl_reset`). Carrying the memory across chunks accounts for 2–5%, about half of the total for the LFM2 grafts. The rest comes from the adapters' processing within a chunk.
 
 ## KH-1-Q: the same memory on Qwen3.5-4B
 **Setup:**
@@ -119,6 +120,11 @@ So the memory does not cost LM quality. It wins back part of the context that ch
 - **Seeds matter.** Two retrained seeds of the 350M recipe reach only 0.575–0.675 at 1M; the 1.2B and 4B grafts were trained once.
 - **Capacity is finite.** The state has a fixed size; we evaluated at most 8 planted facts per stream.
 - **The conversation is stored too.** Every chat turn is written to memory, so the order of questions can change later answers.
+
+## Next
+- **Gemma 4 E2B / E4B:** the same graft on Google's on-device models (pure attention, 262K vocabulary), with the full Qwen-sized training budget. Planned; see research log §8.63.
+- **LFM2.5-8B-A1B:** the mixture-of-experts graft works but recalls only 0.35–0.375 at 1M after a short single-GPU run; it needs a matched budget.
+- **KH-2:** teach the write gate to tell a fact from a rare name or number (paper §6, "Making fact heads quieter by design").
 
 ## Usage
 ```bash
