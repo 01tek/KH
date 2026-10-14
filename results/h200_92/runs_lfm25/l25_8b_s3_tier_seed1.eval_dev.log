@@ -1,0 +1,9 @@
+Loading weights:   0%|          | 0/234 [00:00<?, ?it/s]Loading weights:   9%|▊         | 20/234 [00:00<00:01, 123.99it/s]Loading weights:  15%|█▍        | 35/234 [00:00<00:01, 119.84it/s]Loading weights:  20%|██        | 47/234 [00:00<00:01, 102.16it/s]Loading weights:  25%|██▍       | 58/234 [00:00<00:01, 96.60it/s] Loading weights:  29%|██▉       | 68/234 [00:00<00:01, 90.39it/s]Loading weights:  33%|███▎      | 77/234 [00:00<00:01, 80.64it/s]Loading weights:  37%|███▋      | 86/234 [00:00<00:01, 77.78it/s]Loading weights:  40%|████      | 94/234 [00:01<00:01, 73.71it/s]Loading weights:  44%|████▎     | 102/234 [00:01<00:01, 67.57it/s]Loading weights:  48%|████▊     | 113/234 [00:01<00:01, 77.77it/s]Loading weights:  52%|█████▏    | 122/234 [00:01<00:01, 72.34it/s]Loading weights:  56%|█████▌    | 131/234 [00:01<00:01, 72.11it/s]Loading weights:  59%|█████▉    | 139/234 [00:01<00:01, 65.56it/s]Loading weights:  65%|██████▍   | 152/234 [00:01<00:01, 80.49it/s]Loading weights:  69%|██████▉   | 161/234 [00:01<00:00, 77.15it/s]Loading weights:  73%|███████▎  | 170/234 [00:02<00:00, 73.46it/s]Loading weights:  76%|███████▌  | 178/234 [00:02<00:00, 66.59it/s]Loading weights:  82%|████████▏ | 191/234 [00:02<00:00, 80.97it/s]Loading weights:  85%|████████▌ | 200/234 [00:02<00:00, 77.50it/s]Loading weights:  89%|████████▉ | 209/234 [00:02<00:00, 71.51it/s]Loading weights:  94%|█████████▍| 221/234 [00:02<00:00, 82.15it/s]Loading weights:  98%|█████████▊| 230/234 [00:02<00:00, 79.59it/s]Loading weights: 100%|██████████| 234/234 [00:02<00:00, 80.46it/s]
+{}
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+facts L=16384 K=1: 0.475
+facts L=16384 K=8: 0.713
+facts L=131072 K=1: 0.425
+facts L=131072 K=8: 0.500
+facts L=1048576 K=1: 0.275
+facts L=1048576 K=8: 0.331

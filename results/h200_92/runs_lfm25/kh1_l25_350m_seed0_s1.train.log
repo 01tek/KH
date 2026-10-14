@@ -1,0 +1,19 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 10110.05it/s]
+{"event": "config", "n_params": 370351235, "steps": 4577, "world": 1, "data": "/home/ucefkh/data/fwe_lfm2", "layout": null, "d_model": 512, "mem_heads": 16, "archival_heads": null, "min_decay": null, "beta_bias": null, "gdn_half_life": null, "v_norm": false, "write_budget": null, "arch_tau": 0.5, "write_l1": 0.0, "l1_scope": "archival", "text_write_l1": 0.05, "bs": 32, "T": 2048, "tokens": 300000000.0, "lr": 0.0003, "wd": 0.0, "ans_weight": 5.0, "p_fact": 0.1, "p_query": 0.1, "reset_every": 0, "fact_rate": 0.1, "query_rate": 0.05, "drill_frac": 0.5, "drill_k": 8, "no_think": false, "natural_names": 0.0, "chat_frac": 0.5, "drill_gap": "half", "max_age": 64, "age_warmup": 2000, "age_target": "loguniform_once", "max_pending": 4096, "templates": "mix", "ckpt_every": 500, "spike_guard": 0.0, "compile": false, "init_from": null, "lfm2": "LiquidAI/LFM2.5-350M", "lfm2_insert": "7,11,15", "lfm2_chunk": 1024, "lfm2_unfreeze": false, "text_write_bce": 0.0, "lm_loss_frac": 0.1, "seed": 0, "out": "runs_lfm25/kh1_l25_350m_seed0_s1"}
+Traceback (most recent call last):
+  File "/home/ucefkh/hais_poc/poc_m3/lm/train_lm.py", line 184, in <module>
+    h, new_states = net(x, states, head=False)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ucefkh/hais_poc/env_qwen/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1778, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ucefkh/hais_poc/env_qwen/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1789, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ucefkh/hais_poc/poc_m3/lfm2_hais.py", line 84, in forward
+    pos_emb = m.pos_emb(h, pos_ids)
+              ^^^^^^^^^
+  File "/home/ucefkh/hais_poc/env_qwen/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1967, in __getattr__
+    raise AttributeError(
+AttributeError: 'Lfm2Model' object has no attribute 'pos_emb'

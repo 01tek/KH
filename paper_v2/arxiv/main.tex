@@ -27,7 +27,7 @@
 \maketitle
 
 \begin{abstract}
-Fixed-state recurrent language models such as Gated DeltaNet and Mamba promise constant memory at any context length, yet in practice they recall a fact a few thousand tokens later and then lose it. We separate the two ways a delta-rule memory forgets, \emph{decay} and \emph{erasure by later writes}, and remove both on dedicated \emph{archival heads} whose decay is pinned to one and whose writes must pass a hard threshold. On synthetic streams this gives distance-invariant recall: 2.2M-parameter models trained on 256-token sequences recall up to 32 facts after 1M tokens in 9/9 seeds. For language models the architecture is necessary but not sufficient. With truncated backpropagation, writes are learned only from queries inside the same segment, and if a bounded-memory layer can answer those queries, recall is routed through that layer and ends at its horizon. Making in-segment queries unanswerable by bounded memory, the \emph{routing principle}, yields 117M-parameter models whose recall of facts spliced into FineWeb-Edu text is flat from 16K to 1M tokens in all six runs with a short non-archival half-life, and a 494M model at 0.88 at 1M. The same principle lets us graft the memory onto frozen pretrained models as small adapters: the base model runs on bounded chunks, and the adapters learn to carry facts across them. With a write-threshold curriculum (train one step below the inference threshold), the released LFM2-350M graft recalls 0.90 of facts read 1M tokens earlier on fresh evaluation streams, in 0.84\,GB of GPU memory, and a Qwen3.5-4B graft also 0.90. The curriculum raises 1M recall in all three training seeds we ran, but the level varies across seeds (0.575--0.95). The memory also lowers perplexity by 5--9\%. We document four training-signal traps that silently produce models which fail on fresh facts or never learn long-range recall, and release code, adapters and all evaluation logs.
+Fixed-state recurrent language models such as Gated DeltaNet and Mamba promise constant memory at any context length, yet in practice they recall a fact a few thousand tokens later and then lose it. We separate the two ways a delta-rule memory forgets, \emph{decay} and \emph{erasure by later writes}, and remove both on dedicated \emph{archival heads} whose decay is pinned to one and whose writes must pass a hard threshold. On synthetic streams this gives distance-invariant recall: 2.2M-parameter models trained on 256-token sequences recall up to 32 facts after 1M tokens in 9/9 seeds. For language models the architecture is necessary but not sufficient. With truncated backpropagation, writes are learned only from queries inside the same segment, and if a bounded-memory layer can answer those queries, recall is routed through that layer and ends at its horizon. Making in-segment queries unanswerable by bounded memory, the \emph{routing principle}, yields 117M-parameter models whose recall of facts spliced into FineWeb-Edu text is flat from 16K to 1M tokens in all six runs with a short non-archival half-life, and a 494M model at 0.88 at 1M. The same principle lets us graft the memory onto frozen pretrained models as small adapters: the base model runs on bounded chunks, and the adapters learn to carry facts across them. With a write-threshold curriculum (train one step below the inference threshold), the released LFM2-350M graft recalls 0.90 of facts read 1M tokens earlier on fresh evaluation streams, in 0.84\,GB of GPU memory, and a Qwen3.5-4B graft also 0.90. The curriculum raises 1M recall in all three training seeds we ran, but the level varies across seeds (0.575--0.95). Carrying the memory across chunks also lowers perplexity by 2--5\%. On a mixture-of-experts base (LFM2.5-8B-A1B) the graft transfers but, after a short single-GPU run, recalls only 0.35--0.375 at 1M. We document four training-signal traps that silently produce models which fail on fresh facts or never learn long-range recall, and release code, adapters and all evaluation logs.
 \end{abstract}
 
 \section{Introduction}
@@ -295,7 +295,7 @@ The gain is in the readout, not in retention. At 1M tokens the median written he
 
 What does not help: a second step (train at 0.99, run at 0.995); a stronger L1 penalty on text writes (0.6 instead of 0.2); a logit-space BCE penalty on text writes; and training facts about real-looking names. The BCE penalty lowers fact writes along with text writes (median fact write strength 0.984 versus 0.992); we expect the same of the stronger L1 penalty but did not measure it. Mixing thresholds across heads at inference (half the heads at 0.995) breaks the readout, which is tuned to the state statistics of a uniform threshold: on the book demo of \cref{sec:demo} it drops the 350M graft from 3 of 5 to 0 of 5.
 
-\paragraph{Seeds and fresh streams.} We retrained the full 350M recipe (all four stages) with two further seeds, and re-measured the three released models on 40 fresh streams (a different sampler seed), since their inference thresholds had been chosen on the development streams (\cref{tab:seeds}). The threshold step raises 1M recall in every seed (chat questions: $+0.075$, $+0.125$, $+0.175$), and short-range recall is stable (0.95--0.975 at 16K), but the 1M level varies across seeds from 0.575 to 0.95. On fresh streams the one-fact numbers drop by 0.05--0.10 and the eight-fact numbers by at most 0.03. The released 350M model is the best of the three seeds.
+\paragraph{Seeds and fresh streams.} We retrained the full 350M recipe (all four stages) with two further seeds, and re-measured the three released models on 40 fresh streams (a different sampler seed), since their inference thresholds had been chosen on the development streams (\cref{tab:seeds}). The threshold step raises 1M recall in every seed (chat questions: $+0.075$, $+0.125$, $+0.175$), and short-range recall is stable (0.95--0.975 at 16K), but the 1M level varies across seeds from 0.575 to 0.95. On fresh streams the one-fact numbers drop by 0.05--0.10 and the eight-fact numbers by at most 0.03. The released 350M model is the best of the three seeds. These differences sit close to the noise floor: with 40 streams, a one-fact recall near 0.7 has a 95\% binomial interval of about $\pm 0.14$, and retraining only the last stage of seed 2 with the same seed moved its 1M recall from 0.575 to 0.75. Single-run one-fact differences below about 0.15 should therefore be read as noise; eight-fact cells (160 facts) are tighter, and consistent signs across seeds carry more weight than any single gap.
 
 \begin{table}[t]
 \centering
@@ -323,11 +323,55 @@ Qwen3.5-4B (0.9 $\to$ 0.98) & \multicolumn{2}{c}{0.975 / 0.70} & \multicolumn{2}
 \end{tabular}
 \end{table}
 
+\paragraph{What differs between seeds.} Per-head write statistics (\texttt{write\_stats.py}, the same six 1M-token streams for every model, one planted fact each) show a robust relation \emph{within} a model: a fact-storing head's text-write rate correlates negatively with its retention of the fact at 1M ($r = -0.41$ to $-0.51$ over heads, in each of the three seeds), as the erasure term of the delta rule predicts, and the heads that keep a fact write about 13 text tokens per million. Across models the picture is weaker (\cref{tab:quiet}). The two seed-0 models have the highest median retention at 1M (0.063 and 0.049, against 0.006--0.034 for the other eight) and the highest recall, but over all ten 350M models (three seeds, two reruns of stage 4 and the variants below), 1M recall does not track the number of \emph{quiet fact heads}, heads that store the fact in at least half of the streams and write under 0.01\% of text tokens (Spearman $\rho = 0.02$ for one fact, 0.11 for eight), and tracks median retention only weakly ($\rho = 0.33$ and 0.39; $n = 10$, not significant). A ranking we first saw on the three seeds alone did not survive the larger set. What makes seed 0 better remains open.
+
+\begin{table}[t]
+\centering
+\small
+\caption{The ten 350M-recipe models: 1M recall (chat; mean of development and fresh streams where both were measured) and write statistics over the same six 1M-token streams (48 archival heads, inference at 0.99; two-tier at 0.99 / 0.998). Quiet fact heads: store the fact in $\ge$ 50\% of streams and write $<$ 0.01\% of text tokens.}
+\label{tab:quiet}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Model (stage 4) & 1M, $K = 1$ & 1M, $K = 8$ & quiet fact heads & median retention at 1M \\
+\midrule
+seed 0 & 0.93 & 0.77 & 10 & 0.063 \\
+seed 0, two-tier & 0.95 & 0.80 & 6 & 0.049 \\
+seed 1 & 0.68 & 0.64 & 6 & 0.006 \\
+seed 1, rerun & 0.73 & 0.57 & 5 & 0.015 \\
+seed 1, two-tier & 0.71 & 0.66 & 9 & 0.027 \\
+seed 1, quiet-head penalty & 0.54 & 0.50 & 8 & 0.034 \\
+seed 2 & 0.58 & 0.58 & 4 & 0.014 \\
+seed 2, rerun & 0.68 & 0.56 & 6 & 0.015 \\
+seed 2, two-tier & 0.73 & 0.62 & 4 & 0.011 \\
+seed 2, quiet-head penalty & 0.71 & 0.68 & 2 & 0.019 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Making fact heads quieter by design.} Following the within-model relation, we tried two ways to make fact heads write less ordinary text, each by redoing only stage 4 of seeds 1 and 2 and comparing against a rerun of the standard stage 4 (same seed and data): two-tier thresholds (half of each layer's heads train at 0.995 and run at 0.998, the rest at 0.97 and 0.99), and a five-fold text-write penalty on half of each layer's heads. Two-tier thresholds beat the rerun control on eight-fact recall at 1M in all four comparisons (two seeds, development and fresh streams; $+0.06$ to $+0.09$) and give the best 350M result on seed 0 (0.975, 0.925 on fresh streams), but their one-fact gains are within noise. On LFM2.5-8B-A1B (\cref{sec:lfm25}) one two-tier run raised 1M recall from 0.375 to 0.675 (0.525 on fresh streams), but a second seed gave 0.275 while a rerun of the standard stage gave 0.35, so the gain did not replicate. The extra penalty is mixed and lowers short-range recall. Write statistics show why both are partial: the strict tier writes 4--7 times less ordinary text but also stores facts less often, and the penalty raises retention but lowers the number of heads that store each fact. Both trade fact writes for quiet, because the write gate cannot yet tell a fact from a rare name or number (\cref{sec:shortcut}); separating them is the open problem for the next version.
+
 \subsection{An end-to-end check on a consumer GPU}
 \label{sec:demo}
 We greet the model in chat, then stream 1{,}318{,}920 tokens (\emph{War and Peace}, \emph{Moby Dick} and \emph{Pride and Prejudice}) with five facts planted at token 16{,}814, and finally ask the five questions as chat turns, about 1.30M tokens after the facts. Four facts use trained phrasings and one uses a phrasing never seen in training. On an 8\,GB RTX 3070 Ti, the 1.2B graft (trained at 0.97, run at 0.99) answers 4 of 5 exactly, including the made-up three-token password \emph{thuzoka}; it misses the unseen phrasing (``2879'' for 287). It reads the stream in 96\,s (13.7K tokens/s) at a constant 2.60\,GB (peak 2.81\,GB). The 350M graft answers 3 of 5 in 0.84\,GB at 32.5K tokens/s. With the memory switched off (ReZero gates zeroed, which leaves plain chunked LFM2), both models answer 0 of 5 and invent answers (the 1.2B model: ``12'', ``KRIBRISEN-WIFI'', ``123.456 MHz''). A five-fact demonstration is anecdotal; \cref{tab:kh1} gives the statistics. Because every chat turn is also written to memory, the order of the questions can change later answers.
 
-\paragraph{Controls and language-modelling quality.} With the memory switched off, recall at 16K is 0.00 (LFM2-350M). The memory \emph{lowers} validation perplexity by about 9\%, measured over the second 1M tokens of a 2M-token carried stream on the models trained at 0.9 (15.00 $\to$ 13.64 for the 1.2B graft; 22.64 $\to$ 20.52 for the 350M graft); the released 1.2B graft has 13.66. The memory recovers part of the cross-chunk context that chunking removes.
+\paragraph{Controls and language-modelling quality.} With the memory switched off, recall at 16K is 0.00 (LFM2-350M). The adapters cost no language-modelling quality: measured over the second 1M tokens of a 2M-token stream, they lower validation perplexity by 5--9\% relative to zeroing them (\cref{tab:ppl}). Part of that comes from the adapters' processing within a chunk. To isolate the memory, we keep the adapters on but clear the memory before every chunk: carrying it across chunks accounts for 2--5\% (for example 14.34 $\to$ 13.64 for the 1.2B graft trained at 0.9), about half of the total for the LFM2 grafts. The memory recovers part of the cross-chunk context that chunking removes.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Validation perplexity (FineWeb-Edu, second 1M tokens of a 2M-token stream). ``Cleared'': adapters on, memory state cleared before every chunk, so the difference to ``carried'' is the cross-chunk memory alone.}
+\label{tab:ppl}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Graft & memory carried & memory cleared & adapters off \\
+\midrule
+350M, trained at 0.9 & 20.52 & 21.60 & 22.64 \\
+1.2B, trained at 0.9 & 13.64 & 14.34 & 15.00 \\
+1.2B, released (trained at 0.97) & 13.66 & 14.22 & 15.00 \\
+Qwen3.5-4B, stage 3 & 9.81 & 10.00 & 10.29 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \subsection{\KH{}-Q on Qwen3.5-4B}
 \label{sec:qwen}
@@ -352,7 +396,32 @@ memory off & plain & 0.00 / 0.01 & 0.00 / 0.03 & 0.00 / 0.01 \\
 \end{tabular}}
 \end{table}
 
-A stronger base gives long-range recall early: stage 1 alone reaches 0.925 at 1M, where LFM2-1.2B reached 0.425 at the same stage. On wholly unseen sentence templates the 4B graft reaches 0.675 at 16K and 0.50 at 131K, but only 0.10 at 1M (the LFM2 grafts: 0.43--0.55 at 16K, at most 0.40 at 131K and 0.05 at 1M). The threshold step of \cref{sec:curriculum} does not transfer as is: a third stage trained at 0.97 collapses 1M recall to 0.25--0.45 at inference thresholds 0.99--0.995, while the stage-2 model peaks at inference threshold 0.98 among 0.97, 0.98 and 0.99 (0.975 at 1M; 3 of 5 on the book demo). Because this threshold was chosen on the evaluation streams, we re-measured it on 40 fresh streams: 0.90 / 0.70 (\cref{tab:seeds}). The inference threshold is a per-model setting that is cheap to sweep. The memory lowers validation perplexity of the stage-3 model from 10.29 to 9.81. With the frozen base quantised to 4-bit NF4 \citep{qlora2023}, the graft runs on the 8\,GB RTX 3070 Ti at 3.9\,GB peak and about 4.1K tokens/s, and answers 2 of 5 on the book demo at threshold 0.98 (3 of 5 in bf16).
+A stronger base gives long-range recall early: stage 1 alone reaches 0.925 at 1M, where LFM2-1.2B reached 0.425 at the same stage. On wholly unseen sentence templates the 4B graft reaches 0.675 at 16K and 0.50 at 131K, but only 0.10 at 1M (the LFM2 grafts: 0.43--0.55 at 16K, at most 0.40 at 131K and 0.05 at 1M). The threshold step of \cref{sec:curriculum} does not transfer as is: a third stage trained at 0.97 collapses 1M recall to 0.25--0.45 at inference thresholds 0.99--0.995, while the stage-2 model peaks at inference threshold 0.98 among 0.97, 0.98 and 0.99 (0.975 at 1M; 3 of 5 on the book demo). Because this threshold was chosen on the evaluation streams, we re-measured it on 40 fresh streams: 0.90 / 0.70 (\cref{tab:seeds}). The inference threshold is a per-model setting that is cheap to sweep. The adapters lower validation perplexity of the stage-3 model from 10.29 to 9.81, of which the cross-chunk memory accounts for 10.00 $\to$ 9.81 (\cref{tab:ppl}). With the frozen base quantised to 4-bit NF4 \citep{qlora2023}, the graft runs on the 8\,GB RTX 3070 Ti at 3.9\,GB peak and about 4.1K tokens/s, and answers 2 of 5 on the book demo at threshold 0.98 (3 of 5 in bf16).
+
+\subsection{A mixture-of-experts base: LFM2.5-8B-A1B}
+\label{sec:lfm25}
+LFM2.5-8B-A1B is a sparse mixture-of-experts model (8.5B parameters, about 1B active per token; 24 layers, of which 6 use attention; 128K-token vocabulary). We add three 32-head archival adapters after layers 11, 17 and 23 (63M trainable parameters) and run it on 2{,}048-token chunks. On one H200 (48K tokens/s) we trained 450M tokens at $\tauw = 0.5$, 200M at 0.9 and 100M at 0.97: 750M tokens in total with 32K-token batches, against 2B tokens and 131K-token batches for the Qwen3.5-4B graft.
+
+\begin{table}[t]
+\centering
+\small
+\caption{\KH{} on LFM2.5-8B-A1B (mixture of experts), recall $K = 1$ / $K = 8$ (40 / 20 streams), chat questions unless noted.}
+\label{tab:lfm25}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Stage (train $\to$ inference $\tauw$) & 16K & 131K & 1M \\
+\midrule
+s2 (0.9 $\to$ 0.98) & 0.425 / 0.55 & 0.375 / 0.325 & 0.275 / 0.33 \\
+s3 (0.97 $\to$ 0.99) & 0.675 / 0.875 & 0.55 / 0.57 & 0.375 / 0.36 \\
+s3, fresh streams & -- & -- & 0.375 / 0.33 \\
+s3, plain questions & -- & -- & 0.325 / 0.25 \\
+s3, unseen frames $\times$ attributes & 0.175 / 0.27 & -- & 0.20 / 0.18 \\
+memory off & 0.00 / 0.006 & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The memory transfers to the mixture-of-experts base (0.675 at 16K and 0.375 at 1M, against 0.00 without it; \cref{tab:lfm25}), and the threshold step helps again (1M: 0.275 $\to$ 0.375), but long-range recall stays far below the dense grafts. Training accuracy by fact age shows where: facts asked in the next chunk are answered (1.00), facts 16K--127K tokens back only 0.58 of the time. Its write statistics point the same way: fact-storing heads write 0.97\% of text tokens (the 350M models of \cref{tab:quiet}: 0.19--0.57\%), only 2 of the 96 heads are quiet fact heads, and median retention at 1M is 0.0017 (350M models: 0.006--0.063). With this short training run, the write gate has not learned to keep ordinary text out of the fact heads. The LFM2.5 bases are also poorly calibrated on plain text (LFM2.5-8B-A1B: loss 3.73 on \emph{Pride and Prejudice} with a BOS per chunk; LFM2.5-350M: 6.29 on a 4{,}096-token window of the same book, against 3.40 for LFM2-350M, although it chats normally), so on this base the adapters' language-modelling loss mostly recalibrates the output: perplexity falls from 42.5 (adapters off) to 17.7 (memory cleared every chunk) and 12.7 (memory carried). A rerun of stage 3 reproduces the 1M result (0.35 / 0.39). We read the gap to the dense grafts as a training-budget gap rather than a property of the architecture: the Qwen3.5-4B graft, also a hybrid base, reached 0.90 on fresh streams with 2B tokens and 131K-token batches on eight B200s, against 750M tokens and 32K-token batches here; we have not tested a matched budget. We do not use LFM2.5-350M as a base for this reason.
 
 \section{Related work}
 \label{sec:related}
@@ -376,14 +445,14 @@ A stronger base gives long-range recall early: stage 1 alone reaches 0.925 at 1M
 \item \textbf{Level versus profile.} With the full recipe, recall \emph{profiles} are flat across distance, but recall \emph{levels} vary across runs and models (0.275--0.925 at 1M for the six from-scratch far-drill runs with a short GDN cap).
 \item \textbf{Capacity and competition.} This is a fixed-state memory: distance-invariant, not unbounded in content. Name-dense text competes for it (0.825 inside novels versus 0.95 on FineWeb-Edu for the 350M graft), and every chat turn is written to it as well.
 \item \textbf{Evaluation.} Facts are synthetic templates spliced into real text; RULER- or BABILong-style evaluation is future work. Decoy robustness at 1M is unsolved.
-\item \textbf{Seeds.} The 350M recipe's 1M recall varies across training seeds (0.575--0.95 with chat questions); the released model is the best of three. The 1.2B and Qwen3.5-4B grafts were trained once.
+\item \textbf{Seeds.} The 350M recipe's 1M recall varies across training seeds (0.575--0.95 with chat questions), retraining only its last stage moves it by up to 0.175, and per-head write statistics do not explain the spread across models (\cref{tab:quiet}); the released model is the best of three. The 1.2B and Qwen3.5-4B grafts were trained once.
 \end{itemize}
 
 \section{Conclusion}
 A fixed-state memory can recall facts after a million tokens of arbitrary text when two conditions hold: the heads that hold facts neither decay nor accept routine writes, and training makes those heads, rather than any bounded-memory layer, the way to answer. The same principle turns frozen pretrained models into constant-memory fact readers with small adapters that run on a consumer GPU. Recall of phrasings unseen in training, decoys, and standard long-context benchmarks remain open.
 
 \section*{Code, data and models}
-Code, training logs, evaluation outputs and the research log: \url{https://github.com/01TEK/KH} (tag \texttt{v2.1}).\\
+Code, training logs, evaluation outputs and the research log: \url{https://github.com/01TEK/KH} (tag \texttt{v2.2}).\\
 Adapters: \url{https://huggingface.co/01TEK} (\texttt{KH-1-350M}, \texttt{KH-1-1.2B}, \texttt{KH-1-Q-4B}).
 
 \section*{Acknowledgements}

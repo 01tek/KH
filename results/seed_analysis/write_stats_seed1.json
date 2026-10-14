@@ -1,0 +1,294 @@
+{
+ "run": "results/h200_92/runs_lfm2/kh1_350m_seed1_s4",
+ "archival_layers": 3,
+ "heads_per_layer": [
+  16,
+  16,
+  16
+ ],
+ "fact_beta_max_median": 0.0,
+ "text_beta_mean": 0.0035,
+ "text_frac_beta_gt": {
+  "0.01": 0.00354,
+  "0.05": 0.00354,
+  "0.1": 0.00354,
+  "0.3": 0.00354,
+  "0.5": 0.00354,
+  "0.9": 0.00354,
+  "0.97": 0.00354,
+  "0.99": 0.00335
+ },
+ "retention/4096/tau0.97": {
+  "median_all_heads": 0.8397,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.639,
+  "written_heads_median": 0.4775,
+  "written_heads_frac_gt_0.9": 0.236,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   32,
+   46
+  ]
+ },
+ "retention/4096/tau0.99": {
+  "median_all_heads": 0.8397,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.646,
+  "written_heads_median": 0.4787,
+  "written_heads_frac_gt_0.9": 0.25,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   32,
+   46
+  ]
+ },
+ "retention/4096/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.972,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.889,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   47,
+   32,
+   46
+  ]
+ },
+ "retention/16384/tau0.97": {
+  "median_all_heads": 0.5581,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.535,
+  "written_heads_median": 0.3422,
+  "written_heads_frac_gt_0.9": 0.125,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   32,
+   22
+  ]
+ },
+ "retention/16384/tau0.99": {
+  "median_all_heads": 0.5586,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.542,
+  "written_heads_median": 0.347,
+  "written_heads_frac_gt_0.9": 0.153,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   32,
+   46
+  ]
+ },
+ "retention/16384/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.938,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.75,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   47,
+   32,
+   46
+  ]
+ },
+ "retention/65536/tau0.97": {
+  "median_all_heads": 0.4632,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.479,
+  "written_heads_median": 0.1493,
+  "written_heads_frac_gt_0.9": 0.056,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   32,
+   22
+  ]
+ },
+ "retention/65536/tau0.99": {
+  "median_all_heads": 0.4637,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.486,
+  "written_heads_median": 0.1529,
+  "written_heads_frac_gt_0.9": 0.083,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   32,
+   46
+  ]
+ },
+ "retention/65536/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.882,
+  "written_heads_median": 1.0,
+  "written_heads_frac_gt_0.9": 0.611,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   47,
+   32,
+   46
+  ]
+ },
+ "retention/131072/tau0.97": {
+  "median_all_heads": 0.4206,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.458,
+  "written_heads_median": 0.1194,
+  "written_heads_frac_gt_0.9": 0.014,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   9,
+   22
+  ]
+ },
+ "retention/131072/tau0.99": {
+  "median_all_heads": 0.4375,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.465,
+  "written_heads_median": 0.1194,
+  "written_heads_frac_gt_0.9": 0.042,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   9,
+   46
+  ]
+ },
+ "retention/131072/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.854,
+  "written_heads_median": 0.8952,
+  "written_heads_frac_gt_0.9": 0.5,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   47,
+   32,
+   46
+  ]
+ },
+ "retention/262144/tau0.97": {
+  "median_all_heads": 0.346,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.41,
+  "written_heads_median": 0.0687,
+  "written_heads_frac_gt_0.9": 0.014,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   12,
+   31
+  ]
+ },
+ "retention/262144/tau0.99": {
+  "median_all_heads": 0.3278,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.417,
+  "written_heads_median": 0.0687,
+  "written_heads_frac_gt_0.9": 0.014,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   12,
+   31
+  ]
+ },
+ "retention/262144/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.826,
+  "written_heads_median": 0.7156,
+  "written_heads_frac_gt_0.9": 0.389,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   47,
+   32,
+   46
+  ]
+ },
+ "retention/524288/tau0.97": {
+  "median_all_heads": 0.2268,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.389,
+  "written_heads_median": 0.0431,
+  "written_heads_frac_gt_0.9": 0.014,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   12,
+   31
+  ]
+ },
+ "retention/524288/tau0.99": {
+  "median_all_heads": 0.2092,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.389,
+  "written_heads_median": 0.0448,
+  "written_heads_frac_gt_0.9": 0.014,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   12,
+   31
+  ]
+ },
+ "retention/524288/tau0.995": {
+  "median_all_heads": 1.0,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.764,
+  "written_heads_median": 0.6396,
+  "written_heads_frac_gt_0.9": 0.347,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   6,
+   32,
+   46
+  ]
+ },
+ "retention/1048576/tau0.97": {
+  "median_all_heads": 0.12,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.333,
+  "written_heads_median": 0.017,
+  "written_heads_frac_gt_0.9": 0.014,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   12,
+   31
+  ]
+ },
+ "retention/1048576/tau0.99": {
+  "median_all_heads": 0.1219,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.34,
+  "written_heads_median": 0.0175,
+  "written_heads_frac_gt_0.9": 0.014,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   12,
+   31
+  ]
+ },
+ "retention/1048576/tau0.995": {
+  "median_all_heads": 0.9999,
+  "best_head_median": 1.0,
+  "frac_heads_gt_0.5": 0.743,
+  "written_heads_median": 0.5098,
+  "written_heads_frac_gt_0.9": 0.306,
+  "written_heads_per_stream": 24.0,
+  "best_head_ids": [
+   9,
+   32,
+   46
+  ]
+ }
+}

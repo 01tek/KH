@@ -1,0 +1,11 @@
+{
+ "name": "LiquidAI/LFM2-350M",
+ "load_s": 2.0,
+ "trainable_M": 15.9,
+ "total_B": 0.37,
+ "loss_native_bos": 3.6367,
+ "loss_native_nobos": 5.7958,
+ "loss_graft_gates0": 3.6367,
+ "bs8_tok_s": 42581,
+ "bs8_peak_GB": 16.1
+}

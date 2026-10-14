@@ -1,0 +1,16 @@
+start seed1 tier 16:56
+done seed1 tier 17:05
+start seed1 quiet 17:05
+done seed1 quiet 17:14
+start seed2 tier 17:14
+done seed2 tier 17:23
+start seed2 quiet 17:23
+done seed2 quiet 17:32
+ALL DONE 17:54
+start seed1_ctrl 17:56
+done seed1_ctrl 18:05
+start seed2_ctrl 18:05
+done seed2_ctrl 18:13
+start seed0_tier 18:13
+done seed0_tier 18:21
+VERIFY DONE 18:38

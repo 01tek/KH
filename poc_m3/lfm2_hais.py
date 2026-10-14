@@ -81,7 +81,8 @@ class Lfm2Hais(nn.Module):
         h = m.embed_tokens(torch.cat([bos, ids.view(B * n, C)], 1))  # [B*n, C+1, D]
         pos = torch.arange(C + 1, device=ids.device)
         pos_ids = pos[None].expand(B * n, C + 1)
-        pos_emb = m.pos_emb(h, pos_ids)
+        rot = m.pos_emb if hasattr(m, "pos_emb") else m.rotary_emb  # LFM2-MoE / LFM2 on transformers 4.x: pos_emb; LFM2 on 5.x: rotary_emb
+        pos_emb = rot(h, pos_ids)
         states = list(states) if states else [None] * len(self.adapters)  # one state per adapter, in layer order
         new_states, j = [], 0
         for i, layer in enumerate(m.layers):

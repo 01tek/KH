@@ -33,6 +33,12 @@ p.add_argument("--write_budget", type=int, default=None)
 p.add_argument("--arch_tau", type=float, default=None)
 p.add_argument("--write_l1", type=float, default=0.0)
 p.add_argument("--l1_scope", default="archival", choices=["all", "archival"])
+p.add_argument("--arch_tau_hi", type=float, default=None,
+               help="two-tier memory: the last --hi_frac of each layer's archival heads train at this (higher) threshold")
+p.add_argument("--hi_frac", type=float, default=0.5)
+p.add_argument("--quiet_frac", type=float, default=0.0,
+               help="quiet heads: the last --quiet_frac of each layer's archival heads get --quiet_mult times the text-write L1")
+p.add_argument("--quiet_mult", type=float, default=1.0)
 p.add_argument("--text_write_l1", type=float, default=0.0,
                help="L1 on archival write strength at ordinary-text tokens only (inserted facts/queries are free)")
 p.add_argument("--bs", type=int, default=32)
@@ -113,6 +119,13 @@ if a.lfm2:  # pretrained-model graft: LiquidAI LFM2 (lfm2_hais.py) or Qwen3.5 (q
     cfg = model.cfg
 else:
     model = TinyLM(50304, a.d_model, a.layout, cfg).to(dev)  # vocab padded to a multiple of 64
+if a.arch_tau_hi is not None:  # per-head thresholds (same convention as eval_lm.py --arch_tau_hi / --hi_frac)
+    for blk in model.blocks:
+        A = getattr(blk.mixer, "archival_heads", 0)
+        if A:
+            n_hi = int(round(a.hi_frac * A))
+            blk.mixer.arch_tau = torch.tensor([a.arch_tau] * (A - n_hi) + [a.arch_tau_hi] * n_hi, device=dev)
+            print("per-head arch_tau:", blk.mixer.arch_tau.tolist(), flush=True)
 if a.compile:  # per-block, so checkpoints/state dicts are unchanged (no _orig_mod prefixes)
     for blk in model.blocks:
         blk.forward = torch.compile(blk.forward)
@@ -210,9 +223,17 @@ while step < steps:
             loss = loss + a.text_write_bce * torch.stack(pens).mean()
         if a.text_write_l1:
             txt = (~mem_b).to(dev, non_blocking=True)[..., None]  # [B, T, 1]
-            pens = [(b.mixer.last_beta[..., :b.mixer.archival_heads] * txt).sum() /
-                    (txt.sum() * b.mixer.archival_heads).clamp_min(1)
-                    for b in model.blocks if getattr(b.mixer, "archival_heads", 0) and hasattr(b.mixer, "last_beta")]
+            pens = []
+            for b in model.blocks:
+                A = getattr(b.mixer, "archival_heads", 0)
+                if not A or not hasattr(b.mixer, "last_beta"):
+                    continue
+                pb = b.mixer.last_beta[..., :A] * txt
+                if a.quiet_frac:  # quiet heads: a heavier text-write penalty on the last quiet_frac of the archival heads
+                    w = torch.ones(A, device=pb.device)
+                    w[A - int(round(a.quiet_frac * A)):] = a.quiet_mult
+                    pb = pb * w
+                pens.append(pb.sum() / (txt.sum() * A).clamp_min(1))
             loss = loss + a.text_write_l1 * torch.stack(pens).mean()
     opt.zero_grad(set_to_none=True)
     loss.backward()

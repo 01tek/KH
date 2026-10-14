@@ -35,6 +35,8 @@ ap.add_argument("--taus", default="0,0.1,0.3,0.5", help="simulated archival writ
 ap.add_argument("--templates", default="secret")
 ap.add_argument("--out", default=None, help="json path (default: <run>/write_stats.json)")
 ap.add_argument("--arch_tau", type=float, default=None, help="inference write threshold for the model itself")
+ap.add_argument("--arch_tau_hi", type=float, default=None, help="two-tier: the last --hi_frac of each layer's archival heads use this threshold")
+ap.add_argument("--hi_frac", type=float, default=0.5)
 a = ap.parse_args()
 dev = "cuda"
 
@@ -68,8 +70,10 @@ else:
     model.load_state_dict(ck["model"])
 if a.arch_tau is not None:
     for b in model.blocks:
-        if getattr(b.mixer, "archival_heads", 0):
-            b.mixer.arch_tau = a.arch_tau
+        A = getattr(b.mixer, "archival_heads", 0)
+        if A:
+            n_hi = int(round(a.hi_frac * A)) if a.arch_tau_hi is not None else 0
+            b.mixer.arch_tau = a.arch_tau if not n_hi else torch.tensor([a.arch_tau] * (A - n_hi) + [a.arch_tau_hi] * n_hi, device=dev)
 delta = [i for i, b in enumerate(model.blocks) if isinstance(b.mixer, layers.DeltaMemMixer)]
 arch = {j: model.blocks[i].mixer.archival_heads for j, i in enumerate(delta) if model.blocks[i].mixer.archival_heads}
 from lm_data import token_dtype  # noqa: E402
@@ -90,6 +94,8 @@ def fwd(ids, st):
 
 ret_all = {m: [] for m in marks}
 written_all = []
+head_text = {j: torch.zeros(A, device=dev) for j, A in arch.items()}  # per head: text tokens actually written
+n_text = 0
 frac = {t: [] for t in TH}
 mean_beta, fact_beta = [], []
 for s in range(a.n):
@@ -125,10 +131,12 @@ for s in range(a.n):
             _, S[j] = orig(kA, kA, z, g=torch.zeros_like(bT, dtype=torch.float32), beta=bT,
                            initial_state=S[j], output_final_state=True, use_qk_l2norm_in_kernel=True)
             bf = bA.float()
+            head_text[j] += (bf[0] > 0.5).float().sum(0)
             for t in TH:
                 frac[t].append((bf > t).float().mean().item())
             mean_beta.append(bf.mean().item())
         done += kA.shape[1]
+        n_text += kA.shape[1]
         if done in marks:
             r = torch.stack([(kf[j] * S[j][:, :, :, 0]).sum(-1) for j in arch], 1).cpu()  # [taus, layers, A]
             ret_all[done].append(r)
@@ -153,5 +161,15 @@ for m in marks:
                                           "written_heads_frac_gt_0.9": round((rw > 0.9).float().mean().item(), 3) if rw.numel() else None,
                                           "written_heads_per_stream": round(W.float().sum(1).mean().item(), 1),
                                           "best_head_ids": best.indices.tolist()}
+# per head: how often it writes ordinary text, how often it stores the fact, how much of the fact it keeps at the last mark
+tw = torch.cat([head_text[j] for j in arch]).cpu() / n_text          # [layers*A] text-write rate (model's own threshold)
+fs = torch.stack(written_all).float().mean(0)                        # [layers*A] share of streams in which the head stored the fact
+rl = torch.stack(ret_all[marks[-1]])[:, 0].flatten(1)                # [n, layers*A] retention at the last mark, first simulated tau
+out["per_head"] = {"text_write_rate": [round(x, 6) for x in tw.tolist()], "fact_store_rate": [round(x, 3) for x in fs.tolist()],
+                   f"retention_{marks[-1]}_median": [round(x, 4) for x in rl.median(0).values.tolist()]}
+out["fact_heads_text_write_rate"] = round(float((tw * fs).sum() / fs.sum().clamp_min(1e-9)), 6)  # text writes seen by fact-storing heads
+out["all_heads_text_write_rate"] = round(float(tw.mean()), 6)
+for q in (1e-4, 5e-4, 1e-3):
+    out[f"fact_heads_quiet_lt_{q:g}"] = int(((fs >= 0.5) & (tw < q)).sum())   # heads that usually store facts and rarely write text
 print(json.dumps(out, indent=1))
 json.dump(out, open(a.out or os.path.join(a.run, "write_stats.json"), "w"), indent=1)

@@ -43,6 +43,9 @@ ap.add_argument("--arch_tau_hi", type=float, default=None,
                 help="mixed thresholds: the last --hi_frac of each layer's archival heads use this (higher) threshold")
 ap.add_argument("--hi_frac", type=float, default=0.5)
 ap.add_argument("--eval_seed", type=int, default=1234, help="sampler seed for the eval streams (1234 in all reported tables)")
+ap.add_argument("--ppl_T", type=int, default=2048, help="perplexity: tokens per forward call")
+ap.add_argument("--ppl_reset", action="store_true",
+                help="perplexity control: adapters on, but the memory state is cleared before every forward call (use --ppl_T = chunk)")
 ap.add_argument("--no_memory", action="store_true", help="control: zero the archival adapters' ReZero gates (plain chunked base model)")
 ap.add_argument("--gdn_half_life", type=float, default=None, help="inference override: cap memory half-life (tokens) of non-archival delta layers")
 a = ap.parse_args()
@@ -183,13 +186,14 @@ def facts_batched(L, K, n):
 
 
 @torch.no_grad()
-def ppl(n_tokens=2_000_000, T=2048):
+def ppl(n_tokens=2_000_000, T=None):
+    T = T or a.ppl_T
     st, losses = None, []
     start = 0
     for s in range(0, n_tokens, T):
         x = torch.from_numpy(val[start + s:start + s + T + 1].astype(np.int64)).to(dev)[None]
         with torch.autocast("cuda", torch.bfloat16):
-            lg, st = model(x[:, :-1], st)
+            lg, st = model(x[:, :-1], None if a.ppl_reset else st)
         if s >= n_tokens // 2:  # warm state for the first half
             losses.append(F.cross_entropy(lg.float()[0], x[0, 1:]).item())
     return float(np.exp(np.mean(losses)))

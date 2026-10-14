@@ -1,0 +1,5 @@
+l25_8b_s3 reset {"ppl_val": 17.699}
+q4b_s3 carried {"ppl_val": 9.808}
+q4b_s3 reset {"ppl_val": 9.999}
+q4b_s3 off {"ppl_val": 10.292}
+DONE

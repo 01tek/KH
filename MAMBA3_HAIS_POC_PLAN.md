@@ -183,8 +183,8 @@ If (ii) fails because GDN + state passing is also flat, Claim A is a rediscovery
   1. **Blackwell (sm_100/103/120):** PyPI `mamba-ssm` 2.3.2.post1 silently corrupts the Mamba-3 SISO *forward* (Triton `num_stages` 2/3). Fixed on `main` @ e9594ce (PR #997). We overlay that file.
   2. **Hopper (H100/H200):** fla's gated chunk backward is wrong with Triton 3.4–3.7.0 (fla #640); fla raises an error. Fix: `triton==3.7.1`.
   3. **Verification:** official `test_mamba3_siso.py` passes (8 passed, 1 skipped) and `poc_m3/test_gdn_grad.py` (fla chunk kernel vs fp32 PyTorch reference, rel. err ≤ 0.5%) on the H200 with Triton 3.7.1.
-- **Compute in use (2026-10-11):** non-preemptible **H200** `<h200-node>` with `~/hais_poc/env` (torch 2.9.1, Triton 3.7.1, fla 0.5.2, mamba-ssm 2.3.2.post1 + #997 overlay). CUDA MPS runs 14 jobs in parallel at ~15 s per 100 steps each. The RTX PRO 6000 box `<b200-node-2>` is preemptible and has been down since ~16:35.
-- **H100 box `<h100-node>` is unreachable.** The `sync_h100.sh` cron has failed every 30 min (50/50 logs). Disable it, or fix it if that box still holds data.
+- **Compute in use (2026-10-11):** non-preemptible **H200** `<node>` with `~/hais_poc/env` (torch 2.9.1, Triton 3.7.1, fla 0.5.2, mamba-ssm 2.3.2.post1 + #997 overlay). CUDA MPS runs 14 jobs in parallel at ~15 s per 100 steps each. The RTX PRO 6000 box `<node>` is preemptible and has been down since ~16:35.
+- **H100 box `<node>` is unreachable.** The `sync_h100.sh` cron has failed every 30 min (50/50 logs). Disable it, or fix it if that box still holds data.
 
 ---
 
@@ -737,7 +737,7 @@ That is within lm9's seed spread and costs ~4 ppl. Dropped.
 - Batched facts eval (`--batch 8`): identical samples and scores, ~3× faster.
 - DDP path tested with 2 ranks (gloo on one GPU), including checkpoint and resume.
 
-**Node (8× B200, <b200-node>):**
+**Node (8× B200, <node>):**
 - Gate results:
   - Mamba-3 SISO test: 1 failed, 8 passed. Mamba-3 is not used in the LMs.
   - GDN_GRAD_OK.
@@ -1394,6 +1394,120 @@ K = 1 drops by 0.05–0.10; K = 8 by at most 0.03. Files: `results/h200_92/runs_
 - **Reading:** the τ 0.97 step raises 1M recall in every seed (+0.075 / +0.125 / +0.175) and short range is stable, but the 1M level depends on the seed. The released 350M model is the best of three.
 - **Perplexity** (second 1M of a 2M-token stream): seed 1 20.692, seed 2 20.459 (seed 0 / pilot 4: 20.52).
 - **Paper:** Table 7 (`tab:seeds`), abstract, contribution 4, §6.3 and Limitations now quote the fresh numbers and the seed spread.
+
+### 8.54 LFM2.5-8B-A1B stage-1 pilot: the memory works on the MoE base but needs more tokens (2026-10-14 ~10:45 UTC, H200 #1)
+- **Setup:** `poc_m3/lm/pilot_lfm25.sh`. Frozen LFM2.5-8B-A1B (MoE, 24 layers, 128K vocab; experts via `grouped_mm`), adapters after layers 11/17/23 (32 heads), 2,048-token chunks, τ 0.5, text-write L1 0.05, 150M tokens, bs 8 × T 4096 on one H200 at ~46K tok/s (55 min). Data: `~/data/fwe_lfm25` (LFM2.5 tokenizer, 300M train / 20M val tokens).
+- **Training curve:** ans_acc flat at ~0.33 to 92M tokens, then 0.41 (105M), 0.46 (144M), 0.50 (150M). Qwen3.5-4B stage 1 looked the same (0.33 at 98M, 0.60 at 190M, 1.00 at 374M), so the onset is normal for a larger base.
+- **Evaluation** (chat questions, 40 streams, K = 1 / K = 8): at the training threshold 0.5, 16K recall is **0.35 / 0.256** (identical at 0.7); at 0.9 it is 0.075 / 0.044 (16K) and 0.05 / 0.094 (131K); memory off 0.00 / 0.006. The memory carries facts across chunks on LFM2.5, but writes are not yet decisive enough for a 0.9 threshold. Files: `results/h200_92/runs_lfm25/`.
+- **LFM2.5 line-up checked on Hugging Face:** text models at 230M, 350M, 1.2B (65K vocab, like LFM2), 2.6B (dense `lfm2`, 30 layers, 128K vocab), 8B-A1B and 24B-A2B (MoE, 128K vocab). There is no 4B. The 2.6B, 8B-A1B and 24B-A2B share one tokenizer, so `fwe_lfm25` serves all three.
+- **Next:** `poc_m3/lm/go_lfm25.sh` on 8×B200: 8B-A1B, then 2.6B, then 24B-A2B; stage 1 1B tokens, stage 2 0.4B, stage 3 0.2B; evals on development and fresh streams.
+
+### 8.55 Back on one H200: LFM2.5-8B-A1B full curriculum; LFM2.5-350M is a poor base (2026-10-14 ~12:15 UTC)
+- **Compute:** the B200 and an 8×H100 node were not available; an RTX PRO 6000 box was tried briefly (fla gated-delta-rule gradient check passes on sm_120 with Triton 3.7.1: `GDN_GRAD_OK`) and stopped. Work continues on H200 #1 (restarted, disk intact).
+- **Running:** `poc_m3/lm/go_l25_8b_h200.sh`. LFM2.5-8B-A1B graft, continuing the 150M-token pilot: stage 1b τ 0.5 / L1 0.05 / 300M tokens → stage 2 τ 0.9 / 0.2 / 200M → stage 3 τ 0.97 / 0.2 / 100M; evals at 0.99 (stage 3) and 0.98 (stage 2) on development and fresh streams, memory off, perplexity. Stage 1b starts at ans_acc ~0.50 (where the pilot stopped), 48K tok/s.
+- **transformers 5 fix:** dense `Lfm2Model` names its rotary embedding `rotary_emb` in transformers 5.x (`Lfm2MoeModel` keeps `pos_emb`); `lfm2_hais.py` now takes either. Check: with the gates at zero the graft reproduces the native loss exactly (LFM2.5-350M 6.4781 = 6.4781; LFM2-350M 3.6367 under transformers 5.19 and 3.6363 under 4.57).
+- **LFM2.5-350M is badly calibrated on plain text.** Same architecture and identical token ids as LFM2-350M (checked on 14,781 tokens of *Pride and Prejudice*), and it chats normally ("Paris"), but its loss on book text is **6.29** against **3.40** for LFM2-350M (4,096 tokens, BOS, both transformers versions, tied embeddings verified). LFM2.5-1.2B-Instruct is healthy (**2.88** vs 2.98 for LFM2-1.2B). We do not use LFM2.5-350M as a memory base: adapters could lower its loss by recalibrating rather than remembering. Files: `results/h200_92/runs_lfm25/feasibility_350m.json`, `feasibility_lfm2_350m_*.json`.
+
+### 8.56 Why seeds differ at 1M: quiet fact heads (2026-10-14 ~12:50 UTC, RTX 3070 Ti)
+> **Correction (§8.60):** the cross-seed ranking below (3 models) did not hold over 10 models (Spearman ρ = 0.02 / 0.11). Only the within-model relation (text-write rate vs retention over heads) stands.
+
+`write_stats.py` (now with per-head outputs), the three KH-1-350M seeds at τ 0.99, the same 6 streams of 1M FineWeb-Edu tokens, one planted fact each (`results/seed_analysis/write_stats_n6_seed*.json`):
+
+| | Seed 0 | Seed 1 | Seed 2 |
+|---|---|---|---|
+| 1M recall, chat (n = 40) | **0.95** | 0.675 | 0.575 |
+| Heads storing the fact, per stream (of 48) | 32.5 | 26.7 | 28.2 |
+| Quiet fact heads: store the fact in ≥ 50% of streams, write < 0.01% of text tokens | **10** | 6 | 4 |
+| Fact heads still holding the fact at 1M (retention > 0.5) | **5** | 1 | 0 |
+| Median retention at 1M, written heads | **0.063** | 0.006 | 0.014 |
+| Text-write rate seen by fact heads | 0.21% | 0.57% | 0.19% |
+| Correlation of a fact head's text-write rate with its 1M retention | −0.51 | −0.41 | −0.47 |
+
+- **Reading:** a fact survives 1M tokens only in heads that almost never write ordinary text (median ~13 text writes per 1M tokens among the heads that keep it). How many such heads a run grows is left to chance, and recall ranks exactly with their number. The overall text-write rate does not explain it (seed 2 writes less text than seed 0); where the text writes land does.
+- **KH-2 candidates** (`poc_m3/lm/kh2_stage4.sh`, queued after the LFM2.5-8B chain): redo only stage 4 of seeds 1 and 2 with (a) two-tier thresholds (half of each layer's heads train at 0.995 and run at 0.998) or (b) quiet heads (5× text-write L1 on half of each layer's heads). Local smoke tests at batch 1: quiet heads keep baseline gradient norms (4.5–9.7 vs 6.7–8.2); two-tier starts with large gradient norms (190–821), presumably because half the heads are suddenly silenced; clipping bounds the update.
+
+### 8.57 LFM2.5-8B-A1B learns next-chunk recall but does not keep facts: 2 quiet fact heads of 96 (2026-10-14 ~16:00 UTC, H200 #1)
+> **Correction (§8.60):** "across four models, 1M recall tracks the number of quiet fact heads" is withdrawn; see §8.60.
+
+- **Chain** (`go_l25_8b_h200.sh`): stage 1b done 13:49 (training ans_acc 0.50 → 0.95–0.97), stage 2 (τ 0.9, L1 0.2, 200M) done 14:58, stage 3 (τ 0.97, L1 0.2, 100M) done 15:57; 450M + 200M + 100M = 750M tokens in total (the 1.2B and Qwen grafts used 4.3B and 2B), batch 32K tokens per step (one GPU; the B200 runs used 131K–262K).
+- **Stage 1b, 16K, chat (K = 1 / K = 8):** 0.50 / 0.68 at τ 0.5; 0.375 / 0.44 at τ 0.9 (the 350M's stage 1: 0.225 / 0.31 at τ 0.9).
+- **Stage 2 at τ 0.98:** 0.425 / 0.55 (16K), 0.375 / 0.325 (131K), 0.275 / 0.33 (1M); at τ 0.97, 1M: 0.375 / 0.33.
+- **Training accuracy hides it.** By fact age, stage 2 answers next-chunk facts (1.00) but 0.58 at 4–31 segments (16K–127K tokens) and 0.22 at 32+ segments; the overall ans_acc (0.97) is dominated by short ages. The 350M (pilot 6): 0.86 at 4+.
+- **Mechanism (`write_stats.py`, stage 2 at τ 0.98, 3 × 1M tokens):** only **2** quiet fact heads of 96 (< 0.01% text writes); fact heads write 0.97% of text tokens (350M seeds: 0.19–0.57%); median retention at 1M 0.0017. Across four models, 1M recall tracks the number of quiet fact heads: 10 → 0.95, 6 → 0.675, 4 → 0.575, 2 → 0.275–0.375 (§8.56).
+- **Next:** stage-3 evals (0.99, dev and fresh); then KH-2 on the 350M seeds (`kh2_stage4.sh`) and the winning variant on the 8B (`kh2_8b.sh`).
+
+### 8.58 How much of the perplexity gain is the memory? About half (2026-10-14 ~17:30 UTC)
+New control `eval_lm.py --ppl_reset --ppl_T <chunk>`: adapters on, memory state cleared before every chunk, so "carried vs cleared" isolates the cross-chunk memory. FineWeb-Edu val, second 1M tokens of a 2M-token stream:
+
+| Graft | carried | cleared | adapters off | adapters vs off | carried vs cleared |
+|---|---|---|---|---|---|
+| 350M (pilot 4) | 20.52 | 21.60 | 22.64 | −9.4% | **−5.0%** |
+| 1.2B v2 | 13.64 | 14.34 | 15.00 | −9.1% | **−4.9%** |
+| 1.2B v4 (released) | 13.66 | 14.22 | 15.00 | −8.9% | **−3.9%** |
+| Qwen3.5-4B stage 3 | 9.81 | 10.00 | 10.29 | −4.7% | **−1.9%** |
+| LFM2.5-8B-A1B stage 3 | 12.71 | 17.70 | 42.51 | −70% | −28% |
+
+- **Correction (paper v2.2, README, blog, deck):** v2.1 attributed the whole 5–9% to the memory. Carrying the memory across chunks accounts for 2–5% (about half for the LFM2 grafts); the rest is the adapters' processing within a chunk.
+- **LFM2.5-8B:** its plain-text calibration is poor (3.73 on *Pride and Prejudice* with BOS, like LFM2.5-350M at 6.29), so the adapters, trained with a small LM loss, recalibrate it; its perplexity gains are not comparable with the other grafts.
+- Checks: both 1.2B models give 15.00 with the adapters off (same plain base); every v2.1 number reproduces (20.52, 13.64, 13.66, 9.81, 10.29).
+
+### 8.59 KH-2 candidates against a rerun control: small gains, and a noise floor (2026-10-14 ~18:40 UTC)
+Stage 4 of the 350M recipe redone from the stage-3 checkpoints (same seed, data and settings; `kh2_stage4.sh`, `kh2_verify.sh`). Chat questions, 1M, K = 1 / K = 8, development streams (fresh streams):
+
+| Seed | KH-1 stage 4 (original) | KH-1 stage 4 rerun (control) | Two-tier (0.97 / 0.995 → 0.99 / 0.998) | Quiet heads (5× text-write L1 on half the heads) |
+|---|---|---|---|---|
+| 1 | 0.675 / 0.644 | 0.625 / 0.581 (0.825 / 0.562) | 0.725 / **0.675** (0.70 / **0.644**) | 0.575 / 0.475 (0.50 / 0.531) |
+| 2 | 0.575 / 0.581 | 0.75 / 0.606 (0.60 / 0.512) | 0.775 / **0.662** (0.675 / **0.575**) | 0.775 / 0.70 (0.65 / 0.662) |
+| 0 | 0.95 / 0.781 (0.90 / 0.75) | — | **0.975 / 0.806** (0.925 / 0.787) | — |
+
+- **Noise floor.** Rerunning only stage 4 with the same seed moved seed 2 from 0.575 to 0.75 (K = 1), and the control's development and fresh streams differ by up to 0.20. With 40 streams a K = 1 recall near 0.7 has a 95% interval of about ±0.14. Single-run K = 1 differences below ~0.15 are noise; K = 8 cells (160 facts) are tighter.
+- **Two-tier:** beats the rerun control at K = 8 in all four comparisons (+0.06 to +0.09; sign test p = 0.06), does not hurt seed 0 (0.975 / 0.806, the best 350M result), and keeps short range (131K: 0.925–1.00). K = 1 differences are within noise. A small, consistent gain, not a fix.
+- **Quiet-head penalty:** mixed (seed 1 worse, seed 2 better) and lowers 16K recall (0.85–0.875).
+- **Mechanism (`write_stats.py`, same 6 streams):** two-tier grew quiet fact heads for seed 1 (9 vs 6; median 1M retention 0.027 vs 0.006) but not for seed 2 (4 vs 4; fewer heads store each fact, 21 vs 28). The 0.998 tier writes 4–7× less text (median 0.011–0.014% vs 0.057–0.075%) but also stores facts less often. The quiet-head penalty raised seed 1's retention (0.034) yet lowered its recall (22 vs 27 heads store each fact). Both interventions trade fact writes for quiet: the gate cannot yet tell a fact from a rare name or number, which is the problem KH-2 has to solve.
+- **Next:** two-tier stage 3 on LFM2.5-8B-A1B is running (`kh2_8b.sh`).
+
+### 8.60 The quiet-head ranking does not generalise: 10 models (2026-10-14 ~19:15 UTC, RTX 3070 Ti)
+`paper_v2/quiet_heads_corr.py`: all ten 350M-recipe models (seeds 0–2, stage-4 reruns of seeds 1–2, two-tier and quiet-head variants of seeds 1–2, two-tier seed 0), write statistics over the same 6 streams, 1M recall = mean of development and fresh streams where both exist.
+
+| Model | 1M K = 1 | 1M K = 8 | quiet fact heads | median retention at 1M |
+|---|---|---|---|---|
+| seed 0 | 0.925 | 0.766 | 10 | 0.063 |
+| seed 0, two-tier | 0.95 | 0.796 | 6 | 0.049 |
+| seed 1 | 0.675 | 0.644 | 6 | 0.006 |
+| seed 1, rerun | 0.725 | 0.572 | 5 | 0.015 |
+| seed 1, two-tier | 0.712 | 0.659 | 9 | 0.027 |
+| seed 1, quiet-head penalty | 0.537 | 0.503 | 8 | 0.034 |
+| seed 2 | 0.575 | 0.581 | 4 | 0.014 |
+| seed 2, rerun | 0.675 | 0.559 | 6 | 0.015 |
+| seed 2, two-tier | 0.725 | 0.619 | 4 | 0.011 |
+| seed 2, quiet-head penalty | 0.713 | 0.681 | 2 | 0.019 |
+
+- **Spearman ρ with 1M recall (K = 1 / K = 8):** quiet fact heads +0.02 / +0.11; fact heads keeping the fact +0.29 / +0.27; heads storing the fact +0.06 / +0.22; median retention +0.33 / +0.39; fact-head text-write rate +0.07 / −0.20. With n = 10, none is significant (|ρ| ≳ 0.65 needed).
+- **Conclusion:** the three-seed ranking of §8.56 was a coincidence of three points (a 1-in-6 chance). What holds: within a model, heads that write more text keep facts less (r −0.41 to −0.51); the seed-0 lineage has the highest retention and recall. What makes seed 0 better is open; recall noise (±0.14 at K = 1, n = 40; reruns moving by 0.175) limits any such analysis.
+- **Corrected:** paper v2.2 draft (Table 9 now lists all ten models; "Why seeds differ" → "What differs between seeds"; LFM2.5 and Limitations text softened).
+
+### 8.61 Two-tier thresholds on LFM2.5-8B-A1B: a large gain, pending a control (2026-10-14 ~19:40 UTC, H200 #1)
+`kh2_8b.sh` (VARIANT=tier): stage 3 redone from the stage-2 checkpoint (τ 0.97, L1 0.2, 100M tokens, seed 0) with half of each adapter's 32 heads at 0.995; run at 0.99 / 0.998. Chat questions, K = 1 / K = 8:
+
+| LFM2.5-8B stage 3 | 16K | 131K | 1M | 1M, fresh streams |
+|---|---|---|---|---|
+| KH-1 (standard) | 0.675 / 0.875 | 0.55 / 0.569 | 0.375 / 0.356 | 0.375 / 0.331 |
+| **Two-tier** | **0.95 / 0.894** | **0.85 / 0.769** | **0.675 / 0.588** | **0.525 / 0.456** |
+
+- Gains at every distance (+0.275 at 16K, +0.30 at 131K and 1M on development streams; +0.15 / +0.125 on fresh streams), about twice the stage-4 rerun noise seen on the 350M (§8.59). Single run: **not a claim until** the control (standard stage 3 rerun, seed 0) and a replicate (two-tier, seed 1) are in (`kh2_8b_verify.sh`, running).
+
+### 8.62 The 8B two-tier gain does not replicate (2026-10-14 ~21:35 UTC, H200 #1)
+`kh2_8b_verify.sh`, chat questions, 1M, K = 1 / K = 8, development (fresh) streams:
+
+| LFM2.5-8B stage 3 | 16K | 131K | 1M | 1M fresh |
+|---|---|---|---|---|
+| standard, seed 0 (original) | 0.675 / 0.875 | 0.55 / 0.569 | 0.375 / 0.356 | 0.375 / 0.331 |
+| standard, seed 0 rerun (control) | 0.50 / 0.725 | 0.45 / 0.481 | 0.35 / 0.388 | 0.35 / 0.338 |
+| two-tier, seed 0 | 0.95 / 0.894 | 0.85 / 0.769 | 0.675 / 0.588 | 0.525 / 0.456 |
+| two-tier, seed 1 (replicate) | 0.475 / 0.713 | 0.425 / 0.50 | 0.275 / 0.331 | 0.225 / 0.344 |
+
+- The control reproduces the standard result at 1M (0.35 vs 0.375); the replicate shows no gain. §8.61's gain was one run, not the method. Two-tier thresholds are not confirmed on either base.
+- Retracts the provisional §8.61 reading.
 
 ## 9. How to run
 
