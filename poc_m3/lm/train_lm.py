@@ -110,7 +110,9 @@ for k in ("archival_heads", "min_decay", "beta_bias"):
     if getattr(a, k) is not None:
         cfg[k] = getattr(a, k)
 if a.lfm2:  # pretrained-model graft: LiquidAI LFM2 (lfm2_hais.py) or Qwen3.5 (qwen_hais.py)
-    if "qwen" in a.lfm2.lower():
+    if "gemma" in a.lfm2.lower():
+        from gemma_hais import GemmaHais as Graft  # noqa: E402
+    elif "qwen" in a.lfm2.lower():
         from qwen_hais import QwenHais as Graft  # noqa: E402
     else:
         from lfm2_hais import Lfm2Hais as Graft  # noqa: E402

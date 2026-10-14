@@ -20,7 +20,9 @@ ap.add_argument("--chunk", type=int, default=2048)
 ap.add_argument("--bs", default="2,4,8")
 ap.add_argument("--steps", type=int, default=6)
 a = ap.parse_args()
-if "qwen" in a.base.lower():
+if "gemma" in a.base.lower():
+    from gemma_hais import GemmaHais as Graft
+elif "qwen" in a.base.lower():
     from qwen_hais import QwenHais as Graft
 else:
     from lfm2_hais import Lfm2Hais as Graft

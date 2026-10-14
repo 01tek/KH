@@ -37,7 +37,9 @@ a = ap.parse_args()
 
 from kh1_load import load_adapters  # noqa: E402
 cfg, adapter_sd = load_adapters(a.ckpt)
-if cfg.get("family") == "qwen3_5":
+if cfg.get("family") == "gemma4":
+    from gemma_hais import GemmaHais as Graft  # noqa: E402
+elif cfg.get("family") == "qwen3_5":
     from qwen_hais import QwenHais as Graft  # noqa: E402
 else:
     from lfm2_hais import Lfm2Hais as Graft  # noqa: E402

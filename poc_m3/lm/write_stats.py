@@ -55,7 +55,9 @@ from transformers import AutoTokenizer  # noqa: E402
 ck = torch.load(os.path.join(a.run, "ckpt.pt"), map_location=dev, weights_only=False)
 cfg = ck["cfg"]
 if "name" in cfg:  # pretrained base + archival adapters (KH-1 / Qwen graft): only the adapters call the recorded kernel
-    if cfg.get("family") == "qwen3_5":
+    if cfg.get("family") == "gemma4":
+        from gemma_hais import GemmaHais as Graft  # noqa: E402
+    elif cfg.get("family") == "qwen3_5":
         from qwen_hais import QwenHais as Graft  # noqa: E402
     else:
         from lfm2_hais import Lfm2Hais as Graft  # noqa: E402

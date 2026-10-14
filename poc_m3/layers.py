@@ -16,8 +16,37 @@ import torch.nn as nn
 import torch.nn.functional as F
 from einops import rearrange
 
-from fla.modules.conv.causal_conv1d import causal_conv1d
-from fla.ops.gated_delta_rule import chunk_gated_delta_rule
+try:  # GPU kernels (Triton); CPU-only installs (e.g. the Hugging Face Space) use the PyTorch paths below
+    from fla.modules.conv.causal_conv1d import causal_conv1d
+    from fla.ops.gated_delta_rule import chunk_gated_delta_rule as _fla_gated_delta_rule
+except ImportError:
+    causal_conv1d = _fla_gated_delta_rule = None
+
+
+def naive_gated_delta_rule(q, k, v, g, beta, initial_state=None, output_final_state=True, use_qk_l2norm_in_kernel=True,
+                           scale=None, **kw):
+    """Reference recurrence with fla's conventions (state [B, H, K, V], scale K^-0.5, l2-normalised q and k):
+    S <- S * exp(g_t);  S <- S + k_t (beta_t (v_t - S^T k_t))^T;  o_t = S^T (scale * q_t)."""
+    dt = q.dtype
+    q, k, v, g, beta = (x.float() for x in (q, k, v, g, beta))
+    if use_qk_l2norm_in_kernel:
+        q, k = F.normalize(q, dim=-1), F.normalize(k, dim=-1)
+    B, T, H, K = q.shape
+    S = initial_state.float() if initial_state is not None else q.new_zeros(B, H, K, v.shape[-1])
+    q = q * (scale or K ** -0.5)
+    o = q.new_empty(B, T, H, v.shape[-1])
+    for t in range(T):
+        S = S * g[:, t].exp()[..., None, None]
+        u = (v[:, t] - torch.einsum("bhk,bhkv->bhv", k[:, t], S)) * beta[:, t][..., None]
+        S = S + torch.einsum("bhk,bhv->bhkv", k[:, t], u)
+        o[:, t] = torch.einsum("bhk,bhkv->bhv", q[:, t], S)
+    return o.to(dt), (S if output_final_state else None)
+
+
+def chunk_gated_delta_rule(q, k, v, g, beta, **kw):
+    if q.is_cuda and _fla_gated_delta_rule is not None:
+        return _fla_gated_delta_rule(q, k, v, g=g, beta=beta, **kw)
+    return naive_gated_delta_rule(q, k, v, g, beta, **kw)
 try:
     from mamba_ssm.modules.mamba3 import Mamba3
     from mamba_ssm.ops.triton.mamba3.mamba3_siso_combined import mamba3_siso_combined
@@ -88,13 +117,15 @@ class ShortConv(nn.Module):
         self.weight = nn.Parameter(torch.randn(dim, 1, k) / math.sqrt(k))
 
     def forward(self, x, tail=None):  # x: [B, T, D]
-        if x.is_cuda and (tail is None or tail.dim() == 3 and tail.shape[-1] == self.k):
+        if x.is_cuda and causal_conv1d is not None and (tail is None or tail.dim() == 3 and tail.shape[-1] == self.k):
             y, state = causal_conv1d(x, weight=self.weight[:, 0].to(x.dtype), activation="silu",
                                      initial_state=tail, output_final_state=True)
             return y, state.detach()
         b, t, d = x.shape
         if tail is None:
             tail = x.new_zeros(b, self.k - 1, d)
+        elif tail.dim() == 3 and tail.shape[1] == d and tail.shape[2] == self.k:  # fla state [B, D, k] from a GPU run
+            tail = tail[..., 1:].transpose(1, 2).to(x.dtype)
         xx = torch.cat([tail, x], dim=1)
         y = F.conv1d(xx.transpose(1, 2), self.weight.to(x.dtype), groups=d).transpose(1, 2)
         return F.silu(y), xx[:, -(self.k - 1):].detach()

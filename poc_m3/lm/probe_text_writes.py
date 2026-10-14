@@ -29,7 +29,9 @@ layers.chunk_gated_delta_rule = lambda q, k, v, g=None, beta=None, **kw: (REC.ap
 from transformers import AutoTokenizer  # noqa: E402
 ck = torch.load(a.ckpt, map_location="cpu", weights_only=False)
 cfg = ck["cfg"]
-if cfg.get("family") == "qwen3_5":
+if cfg.get("family") == "gemma4":
+    from gemma_hais import GemmaHais as Graft  # noqa: E402
+elif cfg.get("family") == "qwen3_5":
     from qwen_hais import QwenHais as Graft  # noqa: E402
 else:
     from lfm2_hais import Lfm2Hais as Graft  # noqa: E402

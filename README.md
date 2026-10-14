@@ -9,6 +9,8 @@ KH-1 grafts a small **archival memory** (three gated delta-rule layers) onto a f
 - the adapters carry facts across chunks in a fixed-size state;
 - so GPU memory stays the same at any length. On an 8 GB RTX 3070 Ti, KH-1-1.2B read 1.3M tokens (three novels) in 2.6 GB and answered 4 of 5 questions about facts planted near the start.
 
+**Try it:** [open the demo in Colab](https://colab.research.google.com/github/01tek/KH/blob/main/space/KH1_demo_colab.ipynb) (free CPU runtime). It loads the 1.87 MB memory of three novels and answers questions about them; the app is in [`space/`](space/).
+
 ## Results
 Recall of a fact read 1M tokens earlier: FineWeb-Edu text, chat questions, one fact per stream, 40 fresh streams per model.
 

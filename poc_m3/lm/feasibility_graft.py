@@ -25,11 +25,14 @@ ap.add_argument("--experts", default="grouped_mm", help="transformers experts im
 ap.add_argument("--out", default=None)
 a = ap.parse_args()
 from transformers import AutoTokenizer  # noqa: E402
-from lfm2_hais import Lfm2Hais  # noqa: E402
+if "gemma" in a.name.lower():
+    from gemma_hais import GemmaHais as Graft  # noqa: E402
+else:
+    from lfm2_hais import Lfm2Hais as Graft  # noqa: E402
 res = {"name": a.name}
 tok = AutoTokenizer.from_pretrained(a.name)
 t0 = time.time()
-model = Lfm2Hais(a.name, insert_after=[int(i) for i in a.insert.split(",")], n_heads=a.heads, tau=0.5, chunk=a.chunk).cuda()
+model = Graft(a.name, insert_after=[int(i) for i in a.insert.split(",")], n_heads=a.heads, tau=0.5, chunk=a.chunk).cuda()
 if a.experts and hasattr(model.base, "set_experts_implementation"):
     try:
         model.base.set_experts_implementation(a.experts); res["experts"] = a.experts
@@ -40,7 +43,7 @@ res["trainable_M"] = round(sum(p.numel() for p in model.parameters() if p.requir
 res["total_B"] = round(sum(p.numel() for p in model.parameters()) / 1e9, 2)
 ids = tok(open(a.text, encoding="utf-8", errors="ignore").read(), add_special_tokens=False)["input_ids"][:8 * a.chunk]
 x = torch.tensor(ids, device="cuda").view(8, a.chunk)
-bos = model.base.config.bos_token_id
+bos = getattr(model, "bos_id", None) or model.base.config.bos_token_id
 with torch.no_grad(), torch.autocast("cuda", torch.bfloat16):
     nat = model.base(torch.cat([torch.full((8, 1), bos, device="cuda"), x], 1)).logits[:, 1:].float()
     l_nat = F.cross_entropy(nat[:, :-1].flatten(0, 1), x[:, 1:].flatten()).item()
@@ -51,7 +54,7 @@ with torch.no_grad(), torch.autocast("cuda", torch.bfloat16):
 res.update(loss_native_bos=round(l_nat, 4), loss_native_nobos=round(l_nobos, 4), loss_graft_gates0=round(l_graft, 4))
 print(json.dumps(res), flush=True)
 opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=1e-4, fused=True)
-V = model.base.config.vocab_size
+V = getattr(model.base.config, "text_config", model.base.config).vocab_size
 for bs in map(int, a.bs.split(",")):
     T = 2 * a.chunk
     try:
