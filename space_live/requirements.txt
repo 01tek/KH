@@ -1,0 +1,5 @@
+transformers==5.19.0
+einops
+safetensors
+flash-linear-attention==0.5.2
+fla-core==0.5.2
