@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Pull run logs/summaries (not weights) from a cloud box until N runs matching PATTERN have summary.json.
-# Usage: ./pull_results.sh <user>@<h200-node> runs/h200 'p2_*' 14
+# Usage: ./pull_results.sh <user>@<node> runs/h200 'p2_*' 14
 set -uo pipefail
 cd "$(dirname "$0")"
 HOST=$1; DIR=$2; PAT=${3:-'*'}; N=${4:-1}; EVERY=${EVERY:-300}

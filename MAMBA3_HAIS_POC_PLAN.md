@@ -1515,9 +1515,63 @@ Stage 4 of the 350M recipe redone from the stage-3 checkpoints (same seed, data 
 - **Budget (lesson of §8.57–8.62):** give it the Qwen budget, ~2B tokens with ≥131K-token batches (2–3 h on 8×B200 or 8×H100; about a day on one H200). Do not judge it on a short single-GPU run.
 - **Demo:** E2B with a 4-bit base should fit the 8 GB RTX 3070 Ti.
 
+### 8.64 BABILong: zero-shot 0; a short fine-tune beats RAG from 4K to 128K (2026-10-15 ~02:40 UTC, H200 #1)
+`lm/babilong_eval.py` on the test split (RMT-team/babilong), chat question + "Answer with one word.", correct if the target is among the first six words; 50 samples per cell (20 at 1M). Fine-tune: `lm/babilong_train.py`, KH-1-350M adapters (pilot 6) on RMT-team/babilong-train-5k-samples (qa1–qa5, 0K–16K), 6,000 samples, τ 0.97, answer-token loss only. Mean over qa1–qa5:
+
+| | 0K | 4K | 16K | 64K | 128K | 1M |
+|---|---|---|---|---|---|---|
+| KH-1 zero-shot | 0.03 | 0.00 | 0.00 | | | |
+| fine-tuned, τ 0.97 | 0.41 | 0.43 | 0.40 | 0.34 | 0.32 | |
+| fine-tuned, τ 0.99 | 0.04 | 0.39 | 0.44 | 0.39 | 0.35 | 0.21 |
+| RAG (BM25 top-10, same base) | 0.36 | 0.24 | 0.23 | 0.20 | 0.21 | 0.25 |
+| memory off | 0.02 | 0.02 | 0.02 | | | |
+
+- KH-1 never learned bAbI sentences, so zero-shot it answers nothing. After a short fine-tune it beats RAG from 4K to 128K, mainly on the multi-hop tasks (qa2/qa3: 0.2–0.36 vs RAG ≈ 0). It fades with length (0.21 at 1M; RAG 0.25, n = 20). Far below fine-tuned RMT/ARMT (~0.9 on qa1 at 1M). Round 2 (12K more samples, up to 32K) running: `go_babilong2.sh`.
+- Files: `results/babilong/`.
+
+### 8.65 BABILong round 2: about twice RAG from 4K to 128K (2026-10-15 ~07:30 UTC)
+Round 1 checkpoint + 12,000 more training samples (qa1–qa5, 0K–32K, τ 0.97, seed 1; first-token accuracy 0.43 → 0.54). Mean over qa1–qa5 (50 per cell, 20 at 1M):
+
+| | 0K | 4K | 16K | 64K | 128K | 1M |
+|---|---|---|---|---|---|---|
+| round 2, τ 0.97 | 0.55 | 0.54 | 0.48 | 0.47 | 0.42 | 0.26 |
+| round 2, τ 0.99 | 0.47 | 0.55 | 0.50 | 0.46 | 0.42 | |
+| RAG | 0.36 | 0.24 | 0.23 | 0.20 | 0.21 | 0.25 |
+
+- qa5 0.84–0.90 to 128K, qa4 0.48–0.68; qa1–qa3 0.24–0.46. 1M ties RAG (0.26 vs 0.25, n = 20). Round 3 (4,000 samples at 16K–64K only, `go_babilong3.sh`) running.
+
+### 8.66 KH-1 on Gemma 4 E2B: flat to 1M at 0.4–0.575 after a single-GPU run (2026-10-15 ~11:50 UTC, H200 #1)
+`gemma_hais.py` (adapters as forward hooks inside Gemma's own forward; gates-at-zero loss = native 5.034), adapters after layers 16/25/34 (24 heads, 35.7M trainable), 2,048-token chunks, batch 4 × 4096 (16K tokens per step), 25K tok/s. Stage 1 τ 0.5 / L1 0.05 / 600M → stage 2 τ 0.9 / 0.2 / 250M → stage 3 τ 0.97 / 0.2 / 150M (1B tokens, `go_gemma_h200.sh`). Chat questions, K = 1 / K = 8:
+
+| | 16K | 131K | 1M |
+|---|---|---|---|
+| stage 1, τ 0.9 | 0.00 / 0.04 | | |
+| stage 2 (mid-run), τ 0.9 | 0.55 / 0.51 | | |
+| stage 2 (end), τ 0.98 | 0.325 / 0.36 | 0.45 / 0.32 | 0.525 / 0.34 |
+| **stage 3, τ 0.99** | **0.575 / 0.49** | **0.55 / 0.40** | **0.575 / 0.42** |
+| stage 3, fresh streams | | | 0.40 / 0.44 |
+| stage 3, unseen frames × attributes | 0.20 / 0.24 | | 0.225 / 0.20 |
+| memory off | 0.00 / 0.006 | | |
+
+- Stage 1 learned slowly (training ans_acc 0.27 → 0.45 over 600M tokens; age 4+ accuracy 0.17); stage 2 switched the memory on. Recall is flat from 16K to 1M, at a level below the dense LFM2/Qwen grafts (0.75–0.90 fresh) and above the LFM2.5-8B single-GPU run (0.35–0.375). Same budget caveat: 1B tokens and 16K-token batches against Qwen's 2B and 131K.
+- Files: `results/gemma/`.
+
+### 8.67 BABILong round 3: flat from 0K to 1M at about twice RAG (2026-10-15 ~14:07 UTC, H200 #1)
+Round 2 checkpoint + 4,000 training samples at 16K–64K only (`go_babilong3.sh`, τ 0.97, seed 2). Test split, mean over qa1–qa5 (50 per cell, 20 at 1M):
+
+| | 0K | 4K | 16K | 64K | 128K | 1M |
+|---|---|---|---|---|---|---|
+| **round 3, τ 0.97** | **0.60** | **0.55** | **0.58** | **0.61** | **0.57** | **0.50** |
+| round 3, τ 0.99 | 0.42 | 0.56 | 0.57 | 0.59 | 0.54 | |
+| RAG (BM25 top-10, same base) | 0.36 | 0.24 | 0.23 | 0.20 | 0.21 | 0.25 |
+
+- Per task (τ 0.97): qa1 0.48–0.56 (1M 0.45), qa2 0.28–0.34 (1M 0.45), qa3 0.36–0.42 (1M 0.25), qa4 0.64–0.84 (1M 0.40), qa5 0.96–0.98 (1M 0.95).
+- Training on long samples removed the fade with length. Total BABILong fine-tuning: 22,000 samples, about 4 h on a shared H200. Fine-tuned RMT/ARMT remain stronger on qa1 (~0.9 at 1M).
+- Checkpoint: `results/babilong/kh1_350m_bl3/ckpt.pt` (63 MB, adapters only).
+
 ## 9. How to run
 
-**Your workstation is not used for experiments any more.** Everything runs on the H200 (`<user>@<h200-node>`, `~/hais_poc`).
+**Your workstation is not used for experiments any more.** Everything runs on the H200 (`<user>@<node>`, `~/hais_poc`).
 
 ```bash
 # one-time per new GPU box: env + kernel checks (see §7 for the two traps)
@@ -1530,7 +1584,7 @@ cd poc_m3 && ../env/bin/python test_gdn_grad.py                  # expect GDN_GR
 PAR=14 setsid nohup ./h200_launch.sh > launch.out 2>&1 < /dev/null &
 
 # from the workstation: pull logs (not weights), then tables / figures / diagnostics
-./pull_results.sh <user>@<h200-node> runs/h200 'p2_*' 15
+./pull_results.sh <user>@<node> runs/h200 'p2_*' 15
 python report.py runs/h200 --group
 python plot_results.py runs/h200 fig.png "gdn_lr3e-3_sp0.5=GDN" "p2_haishx_l1=HAIS-X" ...
 python analyze_keys.py runs/h200/<run>     # per-head write gates, decay, key overlap

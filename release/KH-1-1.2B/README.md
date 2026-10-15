@@ -18,7 +18,7 @@ KH-1-1.2B adds a small **archival memory** (63M trainable parameters, three delt
 
 GPU memory therefore stays constant at any length: 2.8 GB on an 8 GB RTX 3070 Ti, reading at 13.7K tokens/s.
 
-*Research preview. Paper: "Write Where Short Memory Cannot Reach: Distance-Invariant Fact Recall in Fixed-State Language Models" (Youssef Khouidi, 01TEK, 2026). Code: https://github.com/01TEK/KH (tag `v2.2`).*
+*Research preview. Paper: "Write Where Short Memory Cannot Reach: Distance-Invariant Fact Recall in Fixed-State Language Models" (Youssef Khouidi, 01TEK, 2026). Code: https://github.com/01TEK/KH (tag `v2.3`).*
 
 ## Results
 - **Task:** facts spliced into FineWeb-Edu validation text, asked 16K / 131K / 1M tokens later.
@@ -40,7 +40,7 @@ With the memory switched off (adapter gates zeroed), recall is 0 and the book de
 
 ## Usage
 ```bash
-git clone https://github.com/01TEK/KH && cd KH && git checkout v2.2
+git clone https://github.com/01TEK/KH && cd KH && git checkout v2.3
 hf download 01TEK/KH-1-1.2B --local-dir KH-1-1.2B      # config.json + adapters.safetensors
 python poc_m3/kh1_chat.py --ckpt ./KH-1-1.2B --tau 0.99          # interactive: /load book.txt, /ask Q || answer prefix, /mem
 python poc_m3/kh1_demo.py --ckpt ./KH-1-1.2B --tau 0.99 --books pg2600.txt pg2701.txt pg1342.txt

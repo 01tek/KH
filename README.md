@@ -29,6 +29,17 @@ Read these with the caveats:
 - Retrained with two more seeds, the 350M recipe reaches 0.675 and 0.575 at 1M; the released model is the best of three.
 - KH-1 recalls stored facts, not whole documents. Fact phrasings unseen in training reach 0.375–0.575 at 1M.
 
+**BABILong** (standard benchmark, test split, mean over qa1–qa5; 50 samples per cell, 20 at 1M). KH-1-350M with only its adapters fine-tuned on the BABILong training split, against retrieval with the same base:
+
+| | 4K | 16K | 64K | 128K | 1M |
+|---|---|---|---|---|---|
+| **KH-1-350M (BABILong-tuned)** | **0.55** | **0.58** | **0.61** | **0.57** | **0.50** |
+| RAG (BM25 top-10, same base) | 0.24 | 0.23 | 0.20 | 0.21 | 0.25 |
+
+Out of the box KH-1 scores 0 here (it never saw bAbI-style sentences); weights: [01TEK/KH-1-350M-BABILong](https://huggingface.co/01TEK/KH-1-350M-BABILong). Scripts: `poc_m3/lm/babilong_train.py`, `babilong_eval.py`.
+
+**Other bases** (short single-GPU runs): Gemma 4 E2B recalls 0.40–0.575 at 1M, flat from 16K; LFM2.5-8B-A1B (mixture of experts) 0.35–0.375. See the paper.
+
 Details: [`kh1/README.md`](kh1/README.md) and the paper ([`paper_v2/arxiv/main.pdf`](paper_v2/arxiv/main.pdf)).
 
 ## Quick start (LFM2 grafts)

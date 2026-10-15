@@ -58,11 +58,18 @@ enc = lambda s: tok(s, add_special_tokens=False)["input_ids"]
 END = next(t for t in (tok.convert_tokens_to_ids("<|im_end|>"), tok.convert_tokens_to_ids("<end_of_turn>"), tok.eos_token_id)
            if isinstance(t, int) and t >= 0)
 
-pool = []
+from huggingface_hub import list_repo_files  # noqa: E402
+have = set(list_repo_files("RMT-team/babilong-train-5k-samples", repo_type="dataset"))
+pool, used = [], []
 for task in a.tasks.split(","):
     for L in a.lengths.split(","):
-        rows = json.load(open(hf_hub_download("RMT-team/babilong-train-5k-samples", f"data/{task}/{L}.json", repo_type="dataset")))
+        f = f"data/{task}/{L}.json"
+        if f not in have:  # not every task has every length in the training split
+            continue
+        rows = json.load(open(hf_hub_download("RMT-team/babilong-train-5k-samples", f, repo_type="dataset")))
         pool += [(task, L, r) for r in rows]
+        used.append(f"{task}/{L}")
+print("training files:", used, flush=True)
 random.shuffle(pool)
 pool = pool[:a.samples]
 params = [p for p in model.parameters() if p.requires_grad]

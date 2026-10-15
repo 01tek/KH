@@ -1,0 +1,19 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+shards: ['/home/ucefkh/.cache/huggingface/hub/datasets--HuggingFaceFW--fineweb-edu/snapshots/87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/sample/10BT/000_00000.parquet', '/home/ucefkh/.cache/huggingface/hub/datasets--HuggingFaceFW--fineweb-edu/snapshots/87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/sample/10BT/001_00000.parquet', '/home/ucefkh/.cache/huggingface/hub/datasets--HuggingFaceFW--fineweb-edu/snapshots/87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/sample/10BT/002_00000.parquet']
+  val.bin: 0M tokens
+  train.bin: 1M tokens
+  train.bin: 100M tokens
+  train.bin: 200M tokens
+  train.bin: 300M tokens
+  train.bin: 400M tokens
+  train.bin: 500M tokens
+  train.bin: 600M tokens
+  train.bin: 700M tokens
+  train.bin: 800M tokens
+  train.bin: 900M tokens
+  train.bin: 1000M tokens
+  train.bin: 1100M tokens
+  train.bin: 1201M tokens
+  train.bin: 1300M tokens
+  train.bin: 1400M tokens
+done 20000000 1500000000

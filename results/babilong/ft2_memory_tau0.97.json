@@ -1,0 +1,10037 @@
+{
+ "ckpt": "runs_babilong/kh1_350m_bl2/ckpt.pt",
+ "base": "LiquidAI/LFM2-350M",
+ "tau": 0.97,
+ "mode": "memory",
+ "k": 10,
+ "n": 50,
+ "scores": {
+  "qa1/0k": 0.46,
+  "qa1/4k": 0.36,
+  "qa1/16k": 0.32,
+  "qa1/64k": 0.4,
+  "qa1/128k": 0.32,
+  "qa2/0k": 0.44,
+  "qa2/4k": 0.4,
+  "qa2/16k": 0.36,
+  "qa2/64k": 0.26,
+  "qa2/128k": 0.24,
+  "qa3/0k": 0.34,
+  "qa3/4k": 0.36,
+  "qa3/16k": 0.3,
+  "qa3/64k": 0.38,
+  "qa3/128k": 0.3,
+  "qa4/0k": 0.68,
+  "qa4/4k": 0.68,
+  "qa4/16k": 0.56,
+  "qa4/64k": 0.48,
+  "qa4/128k": 0.36,
+  "qa5/0k": 0.84,
+  "qa5/4k": 0.9,
+  "qa5/16k": 0.86,
+  "qa5/64k": 0.84,
+  "qa5/128k": 0.88
+ },
+ "samples": [
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 0,
+   "target": "bathroom",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 3,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 4,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 6,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 7,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 9,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 10,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 11,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 13,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 14,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 15,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 16,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 17,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 18,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 19,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 20,
+   "target": "hallway",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 23,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 25,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 26,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 27,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 28,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 29,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 30,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 32,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 34,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 36,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 37,
+   "target": "garden",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 38,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 42,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 44,
+   "target": "office",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 45,
+   "target": "office",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 46,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 48,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 49,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 0,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 3,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 4,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 6,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 7,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 9,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 10,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 11,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 13,
+   "target": "bathroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 14,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 15,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 16,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 17,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 18,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 19,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 20,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 23,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 25,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 26,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 27,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 28,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 29,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 30,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 32,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 34,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 36,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 37,
+   "target": "garden",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 38,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 42,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 44,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 45,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 46,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 48,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 49,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 0,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 3,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 4,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 6,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 7,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 9,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 10,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 11,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 13,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 14,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 15,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 16,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 17,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 18,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 19,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 20,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 23,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 25,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 26,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 27,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 28,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 29,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 30,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 32,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 34,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 36,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 37,
+   "target": "garden",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 38,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 42,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 44,
+   "target": "office",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 45,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 46,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 48,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 49,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 0,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 3,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 4,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 6,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 7,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 9,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 10,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 11,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 13,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 14,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 15,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 16,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 17,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 18,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 19,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 20,
+   "target": "hallway",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 23,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 25,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 26,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 27,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 28,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 29,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 30,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 32,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 34,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 36,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 37,
+   "target": "garden",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 38,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 42,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 44,
+   "target": "office",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 45,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 46,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 48,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "64k",
+   "i": 49,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 0,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 3,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 4,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 6,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 7,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 9,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 10,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 11,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 13,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 14,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 15,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 16,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 17,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 18,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 19,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 20,
+   "target": "hallway",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 23,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 25,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 26,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 27,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 28,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 29,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 30,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 32,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 34,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 36,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 37,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 38,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 42,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 44,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 45,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 46,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 48,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "128k",
+   "i": 49,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 1,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 2,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 3,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 5,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 6,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 7,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 8,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 10,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 11,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 13,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 15,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 17,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 18,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 19,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 20,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 22,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 23,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 24,
+   "target": "office",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 25,
+   "target": "garden",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 26,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 28,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 29,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 31,
+   "target": "garden",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 32,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 36,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 37,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 40,
+   "target": "bathroom",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 41,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 42,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 45,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 46,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 47,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 48,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 1,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 2,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 3,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 5,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 6,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 7,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 8,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 10,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 11,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 13,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 15,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 17,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 18,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 19,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 20,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 22,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 23,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 24,
+   "target": "office",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 25,
+   "target": "garden",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 26,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 28,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 29,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 31,
+   "target": "garden",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 32,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 36,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 37,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 40,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 41,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 42,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 45,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 46,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 47,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 48,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 1,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 2,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 3,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 5,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 6,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 7,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 8,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 10,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 11,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 13,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 15,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 17,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 18,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 19,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 20,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 22,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 23,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 24,
+   "target": "office",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 25,
+   "target": "garden",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 26,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 28,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 29,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 31,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 32,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 36,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 37,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 40,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 41,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 42,
+   "target": "garden",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 45,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 46,
+   "target": "hallway",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 47,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 48,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 1,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 2,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 3,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 5,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 6,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 7,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 8,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 10,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 11,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 13,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 15,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 17,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 18,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 19,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 20,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 22,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 23,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 24,
+   "target": "office",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 25,
+   "target": "garden",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 26,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 28,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 29,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 31,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 32,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 36,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 37,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 40,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 41,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 42,
+   "target": "garden",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 45,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 46,
+   "target": "hallway",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 47,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 48,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "64k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 1,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 2,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 3,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 5,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 6,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 7,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 8,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 10,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 11,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 13,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 15,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 17,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 18,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 19,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 20,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 22,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 23,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 24,
+   "target": "office",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 25,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 26,
+   "target": "garden",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 28,
+   "target": "hallway",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 29,
+   "target": "hallway",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 31,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 32,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 36,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 37,
+   "target": "hallway",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 40,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 41,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 42,
+   "target": "garden",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 45,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 46,
+   "target": "hallway",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 47,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 48,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "128k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 1,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 3,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 6,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 7,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 8,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 9,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 10,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 11,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 15,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 17,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 18,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 19,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 20,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 21,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 23,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 25,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 26,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 27,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 28,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 31,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 32,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 35,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 36,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 37,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 38,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 39,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 40,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 42,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 45,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 46,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 47,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 48,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 1,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 3,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 6,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 7,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 8,
+   "target": "hallway",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 9,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 10,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 11,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 15,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 17,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 18,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 19,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 20,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 21,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 23,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 25,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 26,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 27,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 28,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 31,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 32,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 35,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 36,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 37,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 38,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 39,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 40,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 42,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 45,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 46,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 47,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 48,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 1,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 3,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 6,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 7,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 8,
+   "target": "hallway",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 9,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 10,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 11,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 15,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 17,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 18,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 19,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 20,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 21,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 23,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 25,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 26,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 27,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 28,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 31,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 32,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 35,
+   "target": "hallway",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 36,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 37,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 38,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 39,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 40,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 42,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 45,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 46,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 47,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 48,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 1,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 3,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 6,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 7,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 8,
+   "target": "hallway",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 9,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 10,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 11,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 15,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 17,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 18,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 19,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 20,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 21,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 23,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 25,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 26,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 27,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 28,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 31,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 32,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 35,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 36,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 37,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 38,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 39,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 40,
+   "target": "hallway",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 42,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 45,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 46,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 47,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 48,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "64k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 1,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 3,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 6,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 7,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 8,
+   "target": "hallway",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 9,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 10,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 11,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 15,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 17,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 18,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 19,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 20,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 21,
+   "target": "kitchen",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 23,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 25,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 26,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 27,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 28,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 31,
+   "target": "kitchen",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 32,
+   "target": "office",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 35,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 36,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 37,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 38,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 39,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 40,
+   "target": "hallway",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 42,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 45,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 46,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 47,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 48,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "128k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 0,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 2,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 3,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 4,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 6,
+   "target": "bathroom",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 7,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 10,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 11,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 14,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 15,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 16,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 17,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 18,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 19,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 20,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 21,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 23,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 25,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 26,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 28,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 30,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 32,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 34,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 36,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 37,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 39,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 41,
+   "target": "garden",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 42,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 43,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 44,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 45,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 46,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 48,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 49,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 0,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 2,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 3,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 4,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 6,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 7,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 10,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 11,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 14,
+   "target": "hallway",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 15,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 16,
+   "target": "bathroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 17,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 18,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 19,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 20,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 21,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 23,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 25,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 26,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 28,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 30,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 32,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 34,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 36,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 37,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 39,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 41,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 42,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 43,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 44,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 45,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 46,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 48,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 49,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 0,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 2,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 3,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 4,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 6,
+   "target": "bathroom",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 7,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 10,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 11,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 14,
+   "target": "hallway",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 15,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 16,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 17,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 18,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 19,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 20,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 21,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 23,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 25,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 26,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 28,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 30,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 32,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 34,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 36,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 37,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 39,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 41,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 42,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 43,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 44,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 45,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 46,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 48,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 49,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 0,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 2,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 3,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 4,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 6,
+   "target": "bathroom",
+   "reply": "bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 7,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 10,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 11,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 14,
+   "target": "hallway",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 15,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 16,
+   "target": "bathroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 17,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 18,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 19,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 20,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 21,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 23,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 25,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 26,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 28,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 30,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "bathroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 32,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 34,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 36,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 37,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 39,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 41,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 42,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 43,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 44,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 45,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 46,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 48,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "64k",
+   "i": 49,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 0,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 2,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 3,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 4,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 5,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 6,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 7,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 10,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 11,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 14,
+   "target": "hallway",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 15,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 16,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 17,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 18,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 19,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 20,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 21,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 23,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 25,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 26,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 28,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 30,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 32,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 34,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 36,
+   "target": "bathroom",
+   "reply": "hallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 37,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 39,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 41,
+   "target": "garden",
+   "reply": "garden",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 42,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 43,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 44,
+   "target": "bathroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 45,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 46,
+   "target": "kitchen",
+   "reply": "kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "bedroom",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 48,
+   "target": "office",
+   "reply": "office",
+   "ok": true
+  },
+  {
+   "task": "qa4",
+   "len": "128k",
+   "i": 49,
+   "target": "hallway",
+   "reply": "hallway",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 0,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 1,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 2,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 3,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 4,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 5,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 6,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 7,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 8,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 9,
+   "target": "Fred",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 10,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 11,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 12,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 13,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 14,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 15,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 16,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 17,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 18,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 19,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 20,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 21,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 22,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 23,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 24,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 25,
+   "target": "football",
+   "reply": "football",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 26,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 27,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 28,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 29,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 30,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 31,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 32,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 33,
+   "target": "football",
+   "reply": "apple",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 34,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 35,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 36,
+   "target": "Jeff",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 37,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 38,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 39,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 40,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 41,
+   "target": "Mary",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 42,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 43,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 44,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 45,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 46,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 47,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 48,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 49,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 0,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 1,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 2,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 3,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 4,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 5,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 6,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 7,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 8,
+   "target": "Jeff",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 9,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 10,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 11,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 12,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 13,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 14,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 15,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 16,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 17,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 18,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 19,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 20,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 21,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 22,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 23,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 24,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 25,
+   "target": "football",
+   "reply": "football",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 26,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 27,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 28,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 29,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 30,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 31,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 32,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 33,
+   "target": "football",
+   "reply": "apple",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 34,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 35,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 36,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 37,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 38,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 39,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 40,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 41,
+   "target": "Mary",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 42,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 43,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 44,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 45,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 46,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 47,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 48,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 49,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 0,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 1,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 2,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 3,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 4,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 5,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 6,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 7,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 8,
+   "target": "Jeff",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 9,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 10,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 11,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 12,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 13,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 14,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 15,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 16,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 17,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 18,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 19,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 20,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 21,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 22,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 23,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 24,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 25,
+   "target": "football",
+   "reply": "football",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 26,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 27,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 28,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 29,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 30,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 31,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 32,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 33,
+   "target": "football",
+   "reply": "apple",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 34,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 35,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 36,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 37,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 38,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 39,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 40,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 41,
+   "target": "Mary",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 42,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 43,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 44,
+   "target": "Fred",
+   "reply": "Mary",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 45,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 46,
+   "target": "Fred",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 47,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 48,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 49,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 0,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 1,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 2,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 3,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 4,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 5,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 6,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 7,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 8,
+   "target": "Jeff",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 9,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 10,
+   "target": "Jeff",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 11,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 12,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 13,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 14,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 15,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 16,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 17,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 18,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 19,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 20,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 21,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 22,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 23,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 24,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 25,
+   "target": "football",
+   "reply": "football",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 26,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 27,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 28,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 29,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 30,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 31,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 32,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 33,
+   "target": "football",
+   "reply": "apple",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 34,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 35,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 36,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 37,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 38,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 39,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 40,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 41,
+   "target": "Mary",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 42,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 43,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 44,
+   "target": "Fred",
+   "reply": "Mary",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 45,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 46,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 47,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 48,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "64k",
+   "i": 49,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 0,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 1,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 2,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 3,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 4,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 5,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 6,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 7,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 8,
+   "target": "Jeff",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 9,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 10,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 11,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 12,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 13,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 14,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 15,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 16,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 17,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 18,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 19,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 20,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 21,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 22,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 23,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 24,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 25,
+   "target": "football",
+   "reply": "football",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 26,
+   "target": "Mary",
+   "reply": "Bill",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 27,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 28,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 29,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 30,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 31,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 32,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 33,
+   "target": "football",
+   "reply": "apple",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 34,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 35,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 36,
+   "target": "Jeff",
+   "reply": "Jeff",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 37,
+   "target": "Bill",
+   "reply": "Bill",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 38,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 39,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 40,
+   "target": "milk",
+   "reply": "milk",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 41,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 42,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 43,
+   "target": "Mary",
+   "reply": "Fred",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 44,
+   "target": "Fred",
+   "reply": "Mary",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 45,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 46,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 47,
+   "target": "Fred",
+   "reply": "Fred",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 48,
+   "target": "Mary",
+   "reply": "Mary",
+   "ok": true
+  },
+  {
+   "task": "qa5",
+   "len": "128k",
+   "i": 49,
+   "target": "apple",
+   "reply": "apple",
+   "ok": true
+  }
+ ]
+}

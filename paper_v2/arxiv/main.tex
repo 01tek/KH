@@ -27,7 +27,7 @@
 \maketitle
 
 \begin{abstract}
-Fixed-state recurrent language models such as Gated DeltaNet and Mamba promise constant memory at any context length, yet in practice they recall a fact a few thousand tokens later and then lose it. We separate the two ways a delta-rule memory forgets, \emph{decay} and \emph{erasure by later writes}, and remove both on dedicated \emph{archival heads} whose decay is pinned to one and whose writes must pass a hard threshold. On synthetic streams this gives distance-invariant recall: 2.2M-parameter models trained on 256-token sequences recall up to 32 facts after 1M tokens in 9/9 seeds. For language models the architecture is necessary but not sufficient. With truncated backpropagation, writes are learned only from queries inside the same segment, and if a bounded-memory layer can answer those queries, recall is routed through that layer and ends at its horizon. Making in-segment queries unanswerable by bounded memory, the \emph{routing principle}, yields 117M-parameter models whose recall of facts spliced into FineWeb-Edu text is flat from 16K to 1M tokens in all six runs with a short non-archival half-life, and a 494M model at 0.88 at 1M. The same principle lets us graft the memory onto frozen pretrained models as small adapters: the base model runs on bounded chunks, and the adapters learn to carry facts across them. With a write-threshold curriculum (train one step below the inference threshold), the released LFM2-350M graft recalls 0.90 of facts read 1M tokens earlier on fresh evaluation streams, in 0.84\,GB of GPU memory, and a Qwen3.5-4B graft also 0.90. The curriculum raises 1M recall in all three training seeds we ran, but the level varies across seeds (0.575--0.95). Carrying the memory across chunks also lowers perplexity by 2--5\%. On a mixture-of-experts base (LFM2.5-8B-A1B) the graft transfers but, after a short single-GPU run, recalls only 0.35--0.375 at 1M. We document four training-signal traps that silently produce models which fail on fresh facts or never learn long-range recall, and release code, adapters and all evaluation logs.
+Fixed-state recurrent language models such as Gated DeltaNet and Mamba promise constant memory at any context length, yet in practice they recall a fact a few thousand tokens later and then lose it. We separate the two ways a delta-rule memory forgets, \emph{decay} and \emph{erasure by later writes}, and remove both on dedicated \emph{archival heads} whose decay is pinned to one and whose writes must pass a hard threshold. On synthetic streams this gives distance-invariant recall: 2.2M-parameter models trained on 256-token sequences recall up to 32 facts after 1M tokens in 9/9 seeds. For language models the architecture is necessary but not sufficient. With truncated backpropagation, writes are learned only from queries inside the same segment, and if a bounded-memory layer can answer those queries, recall is routed through that layer and ends at its horizon. Making in-segment queries unanswerable by bounded memory, the \emph{routing principle}, yields 117M-parameter models whose recall of facts spliced into FineWeb-Edu text is flat from 16K to 1M tokens in all six runs with a short non-archival half-life, and a 494M model at 0.88 at 1M. The same principle lets us graft the memory onto frozen pretrained models as small adapters: the base model runs on bounded chunks, and the adapters learn to carry facts across them. With a write-threshold curriculum (train one step below the inference threshold), the released LFM2-350M graft recalls 0.90 of facts read 1M tokens earlier on fresh evaluation streams, in 0.84\,GB of GPU memory, and a Qwen3.5-4B graft also 0.90. The curriculum raises 1M recall in all three training seeds we ran, but the level varies across seeds (0.575--0.95). Carrying the memory across chunks also lowers perplexity by 2--5\%. After short single-GPU runs the graft also transfers to a mixture-of-experts base (LFM2.5-8B-A1B, 0.35--0.375 at 1M) and to an attention-only base (Gemma 4 E2B, flat from 16K to 1M at 0.40--0.575). On BABILong, a short adapter fine-tune of the 350M graft gives 0.50--0.61 from 0K to 1M, two to three times a retrieval baseline from 4K up. We document four training-signal traps that silently produce models which fail on fresh facts or never learn long-range recall, and release code, adapters and all evaluation logs.
 \end{abstract}
 
 \section{Introduction}
@@ -423,6 +423,55 @@ memory off & 0.00 / 0.006 & -- & -- \\
 
 The memory transfers to the mixture-of-experts base (0.675 at 16K and 0.375 at 1M, against 0.00 without it; \cref{tab:lfm25}), and the threshold step helps again (1M: 0.275 $\to$ 0.375), but long-range recall stays far below the dense grafts. Training accuracy by fact age shows where: facts asked in the next chunk are answered (1.00), facts 16K--127K tokens back only 0.58 of the time. Its write statistics point the same way: fact-storing heads write 0.97\% of text tokens (the 350M models of \cref{tab:quiet}: 0.19--0.57\%), only 2 of the 96 heads are quiet fact heads, and median retention at 1M is 0.0017 (350M models: 0.006--0.063). With this short training run, the write gate has not learned to keep ordinary text out of the fact heads. The LFM2.5 bases are also poorly calibrated on plain text (LFM2.5-8B-A1B: loss 3.73 on \emph{Pride and Prejudice} with a BOS per chunk; LFM2.5-350M: 6.29 on a 4{,}096-token window of the same book, against 3.40 for LFM2-350M, although it chats normally), so on this base the adapters' language-modelling loss mostly recalibrates the output: perplexity falls from 42.5 (adapters off) to 17.7 (memory cleared every chunk) and 12.7 (memory carried). A rerun of stage 3 reproduces the 1M result (0.35 / 0.39). We read the gap to the dense grafts as a training-budget gap rather than a property of the architecture: the Qwen3.5-4B graft, also a hybrid base, reached 0.90 on fresh streams with 2B tokens and 131K-token batches on eight B200s, against 750M tokens and 32K-token batches here; we have not tested a matched budget. We do not use LFM2.5-350M as a base for this reason.
 
+\subsection{An attention-only base: Gemma 4 E2B}
+\label{sec:gemma}
+Gemma 4 E2B \citep{gemma4} is an attention-only model (35 layers, sliding-window attention with a global layer every fifth layer, per-layer embeddings, key--value sharing across its last layers, 262K-token vocabulary). Because of that machinery we do not re-implement its layer loop: the adapters run as forward hooks inside Gemma's own forward pass on [BOS] + chunk, with no key--value cache across chunks (with the gates at zero the graft reproduces the native chunked loss exactly). We add three 24-head adapters after layers 16, 25 and 34 (36M trainable parameters) and train on one H200 (25K tokens/s): 600M tokens at $\tauw = 0.5$, 250M at 0.9 and 150M at 0.97, with 16K-token batches.
+
+\begin{table}[t]
+\centering
+\small
+\caption{\KH{} on Gemma 4 E2B, recall $K = 1$ / $K = 8$ (40 / 20 streams), chat questions unless noted.}
+\label{tab:gemma}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Stage (train $\to$ inference $\tauw$) & 16K & 131K & 1M \\
+\midrule
+s1 (0.5 $\to$ 0.9) & 0.00 / 0.04 & -- & -- \\
+s3 (0.97 $\to$ 0.99) & 0.575 / 0.49 & 0.55 / 0.40 & 0.575 / 0.42 \\
+s3, fresh streams & -- & -- & 0.40 / 0.44 \\
+s3, unseen frames $\times$ attributes & 0.20 / 0.24 & -- & 0.225 / 0.20 \\
+memory off & 0.00 / 0.006 & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Stage 1 alone stores almost nothing (0.00 at 16K); the threshold curriculum switches the memory on, and after stage 3 recall is flat from 16K to 1M (\cref{tab:gemma}), at a level between the LFM2.5-8B graft and the dense LFM2 and Qwen3.5 grafts. As for LFM2.5, the run had about half of the Qwen3.5 graft's tokens and an eighth of its batch size.
+
+\section{A standard benchmark: BABILong}
+\label{sec:babilong}
+BABILong \citep{babilong2024} hides bAbI stories (``Mary went to the bathroom.'') in PG19 books and asks a one-word question at the end; qa1--qa5 need one to three supporting facts. We stream each test sample through the 350M graft and ask its question as a chat turn, so the frozen base never sees the story and the question together unless the whole sample fits in one chunk; an answer counts if the target is among its first words. Baselines on the same samples: the base with the memory off, and retrieval (BM25, ten best sentences in story order, put in the prompt of the same base).
+
+\begin{table}[t]
+\centering
+\small
+\caption{BABILong test split, mean accuracy over qa1--qa5 (50 samples per task and length; 20 at 1M). Fine-tuning trains only the 16M adapter parameters on the BABILong training split; inference threshold 0.97.}
+\label{tab:babilong}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+ & 0K & 4K & 16K & 64K & 128K & 1M \\
+\midrule
+\KH{}-350M, no BABILong training & 0.03 & 0.00 & 0.00 & -- & -- & -- \\
+memory off & 0.02 & 0.02 & 0.02 & -- & -- & -- \\
+RAG (BM25 top-10, same base) & 0.36 & 0.24 & 0.23 & 0.20 & 0.21 & 0.25 \\
+fine-tuned, 6K samples (0K--16K) & 0.41 & 0.43 & 0.40 & 0.34 & 0.32 & -- \\
++ 12K samples (0K--32K) & 0.55 & 0.54 & 0.48 & 0.47 & 0.42 & 0.26 \\
+\textbf{+ 4K samples (16K--64K)} & \textbf{0.60} & \textbf{0.55} & \textbf{0.58} & \textbf{0.61} & \textbf{0.57} & \textbf{0.50} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Out of the box \KH{} answers nothing (\cref{tab:babilong}): its gate learned to store ``a name's attribute is a value'', not story sentences. Fine-tuning only the adapters on the training split (22K samples in three rounds, about four hours on one shared H200) makes recall flat from 0K to 1M at 0.50--0.61, between two and three times the retrieval baseline at every length from 4K; training on longer samples removed the fade with length. By task, qa5 reaches 0.96--0.98 to 128K (0.95 at 1M) and qa4 0.64--0.84, while qa1 stays near 0.5 (0.45 at 1M) and the multi-hop qa2 and qa3 at 0.25--0.45. Recurrent-memory Transformers fine-tuned on BABILong reach about 0.9 on qa1 at 1M \citep{babilong2024,armt2024}; our numbers come from a 350M frozen base with a 1.9\,MB memory and a short fine-tune.
+
 \section{Related work}
 \label{sec:related}
 \paragraph{Recall in efficient sequence models.} Associative-recall benchmarks such as MQAR \citep{zoology2023} and the recall--throughput analysis of \citet{based2024} show that fixed-state models trade recall for memory; \citet{jelassi2024} prove and measure a copying gap to Transformers, large-scale comparisons find the same weakness in Mamba-based language models \citep{waleffe2024}, and \citet{jrt2024} narrow the gap by letting a recurrent model read its context twice. We target a different regime: a few facts read once, recalled after very long, arbitrary text, where the limiting factor is how the state is written rather than its size.
@@ -435,7 +484,7 @@ The memory transfers to the mixture-of-experts base (0.675 at 16K and 0.375 at 1
 
 \paragraph{Interference and orthogonal subspaces.} Keeping stored items safe from later writes resembles orthogonal-subspace methods for continual learning such as OWM and GPM \citep{owm2019,gpm2021}; our write threshold and text-write penalty act on the same erasure term, but per token at inference time.
 
-\paragraph{Long-context evaluation.} Needle-in-a-haystack tests \citep{niah2023}, RULER \citep{ruler2024} and BABILong \citep{babilong2024} evaluate retrieval and reasoning over long contexts. Our facts are synthetic templates spliced into real text; standard benchmarks are future work.
+\paragraph{Long-context evaluation.} Needle-in-a-haystack tests \citep{niah2023}, RULER \citep{ruler2024} and BABILong \citep{babilong2024} evaluate retrieval and reasoning over long contexts. Most of our facts are synthetic templates spliced into real text; \cref{sec:babilong} adds BABILong.
 
 \section{Limitations}
 \label{sec:limitations}
@@ -444,16 +493,16 @@ The memory transfers to the mixture-of-experts base (0.675 at 16K and 0.375 at 1
 \item \textbf{Phrasings.} Recall is strongest for trained phrasings. Unseen combinations reach 0.375--0.575 at 1M with pretrained bases, and wholly unseen sentence templates are near zero at 1M.
 \item \textbf{Level versus profile.} With the full recipe, recall \emph{profiles} are flat across distance, but recall \emph{levels} vary across runs and models (0.275--0.925 at 1M for the six from-scratch far-drill runs with a short GDN cap).
 \item \textbf{Capacity and competition.} This is a fixed-state memory: distance-invariant, not unbounded in content. Name-dense text competes for it (0.825 inside novels versus 0.95 on FineWeb-Edu for the 350M graft), and every chat turn is written to it as well.
-\item \textbf{Evaluation.} Facts are synthetic templates spliced into real text; RULER- or BABILong-style evaluation is future work. Decoy robustness at 1M is unsolved.
+\item \textbf{Evaluation.} Most results use synthetic facts spliced into real text. On BABILong (\cref{sec:babilong}) the memory needs fine-tuning on the task's own sentences and reaches 0.50--0.61; RULER-style evaluation is future work. Decoy robustness at 1M is unsolved.
 \item \textbf{Seeds.} The 350M recipe's 1M recall varies across training seeds (0.575--0.95 with chat questions), retraining only its last stage moves it by up to 0.175, and per-head write statistics do not explain the spread across models (\cref{tab:quiet}); the released model is the best of three. The 1.2B and Qwen3.5-4B grafts were trained once.
 \end{itemize}
 
 \section{Conclusion}
-A fixed-state memory can recall facts after a million tokens of arbitrary text when two conditions hold: the heads that hold facts neither decay nor accept routine writes, and training makes those heads, rather than any bounded-memory layer, the way to answer. The same principle turns frozen pretrained models into constant-memory fact readers with small adapters that run on a consumer GPU. Recall of phrasings unseen in training, decoys, and standard long-context benchmarks remain open.
+A fixed-state memory can recall facts after a million tokens of arbitrary text when two conditions hold: the heads that hold facts neither decay nor accept routine writes, and training makes those heads, rather than any bounded-memory layer, the way to answer. The same principle turns frozen pretrained models into constant-memory fact readers with small adapters that run on a consumer GPU. On BABILong a short adapter fine-tune gives recall that is flat to 1M at two to three times a retrieval baseline. Recall of phrasings unseen in training, decoys, and multi-hop questions remain open.
 
 \section*{Code, data and models}
-Code, training logs, evaluation outputs and the research log: \url{https://github.com/01TEK/KH} (tag \texttt{v2.2}).\\
-Adapters: \url{https://huggingface.co/01TEK} (\texttt{KH-1-350M}, \texttt{KH-1-1.2B}, \texttt{KH-1-Q-4B}).
+Code, training logs, evaluation outputs and the research log: \url{https://github.com/01TEK/KH} (tag \texttt{v2.3}).\\
+Adapters: \url{https://huggingface.co/01TEK} (\texttt{KH-1-350M}, \texttt{KH-1-1.2B}, \texttt{KH-1-Q-4B}). Live demo: \url{https://huggingface.co/spaces/01TEK/KH-1-live}.
 
 \section*{Acknowledgements}
 We thank Nebius for the GPU credits, provided through the NVIDIA Inception program, that paid for the NVIDIA H200 and B200 compute used in this work; the remaining experiments ran on a local RTX 3070 Ti. Much of the engineering, experimentation and drafting was carried out with an AI coding assistant (Claude); the author takes responsibility for all content.

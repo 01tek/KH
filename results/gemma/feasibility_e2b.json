@@ -1,0 +1,14 @@
+{
+ "name": "google/gemma-4-E2B-it",
+ "load_s": 3.5,
+ "trainable_M": 35.7,
+ "total_B": 5.14,
+ "loss_native_bos": 5.034,
+ "loss_native_nobos": 10.6012,
+ "loss_graft_gates0": 5.034,
+ "bs2_tok_s": 24393,
+ "bs2_peak_GB": 77.6,
+ "bs4_tok_s": 26917,
+ "bs4_peak_GB": 101.6,
+ "bs8": "OOM"
+}

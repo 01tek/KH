@@ -1,0 +1,22 @@
+{"event": "config", "init": "runs_babilong/kh1_350m_bl2/ckpt.pt", "tasks": "qa1,qa2,qa3,qa4,qa5", "lengths": "16k,32k,64k", "samples": 4000, "accum": 8, "lr": 0.0001, "tau": 0.97, "seed": 2, "out": "runs_babilong/kh1_350m_bl3", "cfg": {"name": "LiquidAI/LFM2-350M", "insert_after": [7, 11, 15], "n_heads": 16, "head_dim": 64, "tau": 0.97, "chunk": 1024, "freeze_base": true, "bos_per_chunk": true}, "pool": 4000}
+{"event": "train", "sample": 200, "loss": 0.3816, "first_token_acc": 0.55, "grad_norm": 7.453, "tok_per_s": 26064}
+{"event": "train", "sample": 400, "loss": 0.3666, "first_token_acc": 0.53, "grad_norm": 7.122, "tok_per_s": 26046}
+{"event": "train", "sample": 600, "loss": 0.3497, "first_token_acc": 0.56, "grad_norm": 3.68, "tok_per_s": 26071}
+{"event": "train", "sample": 800, "loss": 0.3707, "first_token_acc": 0.495, "grad_norm": 35.528, "tok_per_s": 26111}
+{"event": "train", "sample": 1000, "loss": 0.3443, "first_token_acc": 0.575, "grad_norm": 30.38, "tok_per_s": 26126}
+{"event": "train", "sample": 1200, "loss": 0.3557, "first_token_acc": 0.6, "grad_norm": 20.959, "tok_per_s": 26129}
+{"event": "train", "sample": 1400, "loss": 0.3465, "first_token_acc": 0.58, "grad_norm": 85.109, "tok_per_s": 26132}
+{"event": "train", "sample": 1600, "loss": 0.3299, "first_token_acc": 0.62, "grad_norm": 19.992, "tok_per_s": 26145}
+{"event": "train", "sample": 1800, "loss": 0.3728, "first_token_acc": 0.535, "grad_norm": 17.415, "tok_per_s": 26136}
+{"event": "train", "sample": 2000, "loss": 0.3291, "first_token_acc": 0.595, "grad_norm": 12.487, "tok_per_s": 26095}
+{"event": "train", "sample": 2200, "loss": 0.3419, "first_token_acc": 0.575, "grad_norm": 27.749, "tok_per_s": 26089}
+{"event": "train", "sample": 2400, "loss": 0.3387, "first_token_acc": 0.575, "grad_norm": 7.418, "tok_per_s": 26082}
+{"event": "train", "sample": 2600, "loss": 0.3406, "first_token_acc": 0.595, "grad_norm": 41.033, "tok_per_s": 26076}
+{"event": "train", "sample": 2800, "loss": 0.3534, "first_token_acc": 0.605, "grad_norm": 14.156, "tok_per_s": 26059}
+{"event": "train", "sample": 3000, "loss": 0.3493, "first_token_acc": 0.565, "grad_norm": 9.756, "tok_per_s": 26060}
+{"event": "train", "sample": 3200, "loss": 0.3054, "first_token_acc": 0.585, "grad_norm": 7.562, "tok_per_s": 26052}
+{"event": "train", "sample": 3400, "loss": 0.3559, "first_token_acc": 0.55, "grad_norm": 7.494, "tok_per_s": 26039}
+{"event": "train", "sample": 3600, "loss": 0.2941, "first_token_acc": 0.63, "grad_norm": 12.258, "tok_per_s": 26034}
+{"event": "train", "sample": 3800, "loss": 0.3122, "first_token_acc": 0.605, "grad_norm": 12.863, "tok_per_s": 26035}
+{"event": "train", "sample": 4000, "loss": 0.3127, "first_token_acc": 0.59, "grad_norm": 64.546, "tok_per_s": 26029}
+{"event": "done", "train_time_s": 5628}

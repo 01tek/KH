@@ -1,0 +1,6027 @@
+{
+ "ckpt": "runs_lfm2/lfm2_350m_pilot6/ckpt.pt",
+ "base": "LiquidAI/LFM2-350M",
+ "tau": 0.99,
+ "mode": "memory",
+ "k": 10,
+ "n": 50,
+ "scores": {
+  "qa1/0k": 0.0,
+  "qa1/4k": 0.0,
+  "qa1/16k": 0.0,
+  "qa2/0k": 0.04,
+  "qa2/4k": 0.0,
+  "qa2/16k": 0.0,
+  "qa3/0k": 0.1,
+  "qa3/4k": 0.0,
+  "qa3/16k": 0.02,
+  "qa4/0k": 0.0,
+  "qa4/4k": 0.0,
+  "qa4/16k": 0.0,
+  "qa5/0k": 0.0,
+  "qa5/4k": 0.0,
+  "qa5/16k": 0.0
+ },
+ "samples": [
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 0,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 3,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 4,
+   "target": "bedroom",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 5,
+   "target": "office",
+   "reply": "John is in New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 6,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 7,
+   "target": "bathroom",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 9,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 10,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 11,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 13,
+   "target": "bathroom",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 14,
+   "target": "bathroom",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 15,
+   "target": "hallway",
+   "reply": "Mary is in New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 16,
+   "target": "kitchen",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 17,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 18,
+   "target": "kitchen",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 19,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 20,
+   "target": "hallway",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 23,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 25,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 26,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 27,
+   "target": "office",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 28,
+   "target": "office",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 29,
+   "target": "garden",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 30,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 32,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 34,
+   "target": "garden",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 36,
+   "target": "kitchen",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 37,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 38,
+   "target": "garden",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 42,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 44,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 45,
+   "target": "office",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 46,
+   "target": "bathroom",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 48,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "0k",
+   "i": 49,
+   "target": "bedroom",
+   "reply": "Sandra is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 0,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 3,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 4,
+   "target": "bedroom",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 5,
+   "target": "office",
+   "reply": "New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 6,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 7,
+   "target": "bathroom",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "New York\nMary is New York\nMary is New Jersey",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 9,
+   "target": "bedroom",
+   "reply": "New York\nJohn is in New York City.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 10,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 11,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 13,
+   "target": "bathroom",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 14,
+   "target": "bathroom",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 15,
+   "target": "hallway",
+   "reply": "Mary is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 16,
+   "target": "kitchen",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 17,
+   "target": "office",
+   "reply": "Dunz",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 18,
+   "target": "kitchen",
+   "reply": "Sandra is Austin.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 19,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 20,
+   "target": "hallway",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "Mari",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 23,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "Mary is Paris.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 25,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 26,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 27,
+   "target": "office",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 28,
+   "target": "office",
+   "reply": "Sandra is New York.\nSandra is Los Angeles.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 29,
+   "target": "garden",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 30,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 32,
+   "target": "office",
+   "reply": "New York\nMary\nMary\nMary\nMary\nMary",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 34,
+   "target": "garden",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 36,
+   "target": "kitchen",
+   "reply": "Sandra is London.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 37,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 38,
+   "target": "garden",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "Mari",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "Sandra is Paris.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 42,
+   "target": "office",
+   "reply": "Mary is London.\nReference: 1\nMary is",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 44,
+   "target": "office",
+   "reply": "New York\nDaniel is New York\nDaniel is New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 45,
+   "target": "office",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 46,
+   "target": "bathroom",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 48,
+   "target": "office",
+   "reply": "Dunbri",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "4k",
+   "i": 49,
+   "target": "bedroom",
+   "reply": "Sandra is Denver.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 0,
+   "target": "bathroom",
+   "reply": "Mary is baker.\nMary is chef.\nMary is",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "Sandra is Paris.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "Mary is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 3,
+   "target": "kitchen",
+   "reply": "New York\nJohn is a 2016 American film director",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 4,
+   "target": "bedroom",
+   "reply": "Sandra is Riga.\nSandra is Riga.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 5,
+   "target": "office",
+   "reply": "John is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 6,
+   "target": "garden",
+   "reply": "Mari",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 7,
+   "target": "bathroom",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 9,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 10,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 11,
+   "target": "office",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 13,
+   "target": "bathroom",
+   "reply": "Sandra is New York.\nReference: 1\nS",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 14,
+   "target": "bathroom",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 15,
+   "target": "hallway",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 16,
+   "target": "kitchen",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 17,
+   "target": "office",
+   "reply": "New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 18,
+   "target": "kitchen",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 19,
+   "target": "bedroom",
+   "reply": "New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 20,
+   "target": "hallway",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "John is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 23,
+   "target": "bedroom",
+   "reply": "Mary is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "New York\nMary is a famous actress.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 25,
+   "target": "garden",
+   "reply": "Mary is Oslo.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 26,
+   "target": "bedroom",
+   "reply": "Dun.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 27,
+   "target": "office",
+   "reply": "Sandra is New York.\nReference: 1",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 28,
+   "target": "office",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 29,
+   "target": "garden",
+   "reply": "Sandra is Austin.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 30,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "Mary is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 32,
+   "target": "office",
+   "reply": "Mary is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "Sandra is London.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 34,
+   "target": "garden",
+   "reply": "Sandra is Paris.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 36,
+   "target": "kitchen",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 37,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 38,
+   "target": "garden",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "Sandra is Austin.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "Mari",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 42,
+   "target": "office",
+   "reply": "Mari\nThe answer is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "Mary is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 44,
+   "target": "office",
+   "reply": "Dunz",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 45,
+   "target": "office",
+   "reply": "Sandra is Paris.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 46,
+   "target": "bathroom",
+   "reply": "Sandra is Riga.\nThe answer is Riga.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "Sandra is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 48,
+   "target": "office",
+   "reply": "Daniel is New York.",
+   "ok": false
+  },
+  {
+   "task": "qa1",
+   "len": "16k",
+   "i": 49,
+   "target": "bedroom",
+   "reply": "Sandra is New York.\nReference: 1",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 1,
+   "target": "garden",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 2,
+   "target": "bedroom",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 3,
+   "target": "bedroom",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "In the kitchen.",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 5,
+   "target": "hallway",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 6,
+   "target": "kitchen",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 7,
+   "target": "garden",
+   "reply": "in the fridge.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 8,
+   "target": "bedroom",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 10,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 11,
+   "target": "bedroom",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 13,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 15,
+   "target": "garden",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 17,
+   "target": "bedroom",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 18,
+   "target": "garden",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 19,
+   "target": "garden",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 20,
+   "target": "office",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 22,
+   "target": "garden",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 23,
+   "target": "bathroom",
+   "reply": "in the fridge.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 24,
+   "target": "office",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 25,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 26,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 28,
+   "target": "hallway",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 29,
+   "target": "hallway",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 31,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 32,
+   "target": "hallway",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "In the kitchen.",
+   "ok": true
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 36,
+   "target": "office",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 37,
+   "target": "hallway",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 40,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 41,
+   "target": "hallway",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 42,
+   "target": "garden",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 45,
+   "target": "bedroom",
+   "reply": "in the fridge.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 46,
+   "target": "hallway",
+   "reply": "In the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 47,
+   "target": "garden",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 48,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "0k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 1,
+   "target": "garden",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 2,
+   "target": "bedroom",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 3,
+   "target": "bedroom",
+   "reply": "An apple.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "Biramec",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 5,
+   "target": "hallway",
+   "reply": "orange",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 6,
+   "target": "kitchen",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 7,
+   "target": "garden",
+   "reply": "Mountain.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 8,
+   "target": "bedroom",
+   "reply": "Milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "milk\nThe answer is milk.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 10,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 11,
+   "target": "bedroom",
+   "reply": "Bottle",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 13,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "Biram.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 15,
+   "target": "garden",
+   "reply": "orange",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 17,
+   "target": "bedroom",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 18,
+   "target": "garden",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 19,
+   "target": "garden",
+   "reply": "Milk is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 20,
+   "target": "office",
+   "reply": "Apple",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 22,
+   "target": "garden",
+   "reply": "milk\nThe answer is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 23,
+   "target": "bathroom",
+   "reply": "milk is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 24,
+   "target": "office",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 25,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 26,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "Apple.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 28,
+   "target": "hallway",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 29,
+   "target": "hallway",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "Apple",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 31,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 32,
+   "target": "hallway",
+   "reply": "An apple",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "New York.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "milk.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "Birch.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 36,
+   "target": "office",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 37,
+   "target": "hallway",
+   "reply": "Milk is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "Milk.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "milk.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 40,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 41,
+   "target": "hallway",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 42,
+   "target": "garden",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "Biramec",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 45,
+   "target": "bedroom",
+   "reply": "Milk is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 46,
+   "target": "hallway",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 47,
+   "target": "garden",
+   "reply": "Milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 48,
+   "target": "kitchen",
+   "reply": "Basketball",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "4k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 1,
+   "target": "garden",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 2,
+   "target": "bedroom",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 3,
+   "target": "bedroom",
+   "reply": "orange",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "An apple.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 5,
+   "target": "hallway",
+   "reply": "orange.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 6,
+   "target": "kitchen",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 7,
+   "target": "garden",
+   "reply": "Milk is cheese.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 8,
+   "target": "bedroom",
+   "reply": "milk\nThe answer is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "milk\nThe answer is in the desert.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 10,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 11,
+   "target": "bedroom",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 12,
+   "target": "bathroom",
+   "reply": "Biramex",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 13,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "Birame",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 15,
+   "target": "garden",
+   "reply": "Birame",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "Bridon.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 17,
+   "target": "bedroom",
+   "reply": "apple",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 18,
+   "target": "garden",
+   "reply": "Milk is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 19,
+   "target": "garden",
+   "reply": "milk.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 20,
+   "target": "office",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 21,
+   "target": "bedroom",
+   "reply": "Milk is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 22,
+   "target": "garden",
+   "reply": "milk\nThe answer is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 23,
+   "target": "bathroom",
+   "reply": "milk\nI'm sorry, I'm not sure.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 24,
+   "target": "office",
+   "reply": "Birim",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 25,
+   "target": "garden",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 26,
+   "target": "garden",
+   "reply": "Basketball",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 28,
+   "target": "hallway",
+   "reply": "Apple",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 29,
+   "target": "hallway",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 31,
+   "target": "garden",
+   "reply": "Boston",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 32,
+   "target": "hallway",
+   "reply": "Birim.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 33,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "Milk is banana.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "orange",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 36,
+   "target": "office",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 37,
+   "target": "hallway",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "milk\nsweet\nsour\nsour",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 39,
+   "target": "bathroom",
+   "reply": "Milk.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 40,
+   "target": "bathroom",
+   "reply": "Briul",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 41,
+   "target": "hallway",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 42,
+   "target": "garden",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "Birch",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "milk.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 45,
+   "target": "bedroom",
+   "reply": "Milk.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 46,
+   "target": "hallway",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 47,
+   "target": "garden",
+   "reply": "milk.",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 48,
+   "target": "kitchen",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa2",
+   "len": "16k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "Football Park",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 1,
+   "target": "bathroom",
+   "reply": "in the orchard",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "in the orchard",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 3,
+   "target": "garden",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "Football",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 5,
+   "target": "office",
+   "reply": "Football Park",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 6,
+   "target": "garden",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 7,
+   "target": "office",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 8,
+   "target": "hallway",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 9,
+   "target": "kitchen",
+   "reply": "in the field",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 10,
+   "target": "kitchen",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 11,
+   "target": "garden",
+   "reply": "Football Park",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "in the barn",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 15,
+   "target": "kitchen",
+   "reply": "in the kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "in the refrigerator",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 17,
+   "target": "bathroom",
+   "reply": "Football Park",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 18,
+   "target": "garden",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 19,
+   "target": "bathroom",
+   "reply": "Football was played in the 19th century.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 20,
+   "target": "kitchen",
+   "reply": "in the kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 21,
+   "target": "kitchen",
+   "reply": "in the orchard",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 23,
+   "target": "hallway",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "in the orchard",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 25,
+   "target": "bathroom",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 26,
+   "target": "bathroom",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 27,
+   "target": "office",
+   "reply": "Football Park",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 28,
+   "target": "bedroom",
+   "reply": "Football Park",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "in the kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "Paris",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 31,
+   "target": "kitchen",
+   "reply": "in the field",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 32,
+   "target": "office",
+   "reply": "in the field",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "in the field",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "Football",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 35,
+   "target": "hallway",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 36,
+   "target": "office",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 37,
+   "target": "garden",
+   "reply": "Football",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 38,
+   "target": "office",
+   "reply": "in the refrigerator",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 39,
+   "target": "garden",
+   "reply": "in the fridge",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 40,
+   "target": "hallway",
+   "reply": "Cape Town",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "in the kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 42,
+   "target": "garden",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "in the orchard",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "in the kitchen",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 45,
+   "target": "garden",
+   "reply": "in the kitchen",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 46,
+   "target": "office",
+   "reply": "Football was played in the 19th century.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 47,
+   "target": "office",
+   "reply": "Football Park",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 48,
+   "target": "bathroom",
+   "reply": "in the orchard",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "0k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "Football was played in the streets before the office.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "Garden.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 1,
+   "target": "bathroom",
+   "reply": "Biramek",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "Birame.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 3,
+   "target": "garden",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "Bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 5,
+   "target": "office",
+   "reply": "The football was in the hallway.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 6,
+   "target": "garden",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 7,
+   "target": "office",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 8,
+   "target": "hallway",
+   "reply": "An apple.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 9,
+   "target": "kitchen",
+   "reply": "milk.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 10,
+   "target": "kitchen",
+   "reply": "milk\nThe answer is California.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 11,
+   "target": "garden",
+   "reply": "The football was in the hallway.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "milk\nThe answer is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "on the floor.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 15,
+   "target": "kitchen",
+   "reply": "milk\nmilk\nmilk\nmilk",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "in a barn.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 17,
+   "target": "bathroom",
+   "reply": "Boston\nThe football was before the kitchen in 195",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 18,
+   "target": "garden",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 19,
+   "target": "bathroom",
+   "reply": "Bedroom.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 20,
+   "target": "kitchen",
+   "reply": "milk\nThe milk was in the refrigerator.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 21,
+   "target": "kitchen",
+   "reply": "Birderel",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "milk\nmilk\nmilk\nmilk",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 23,
+   "target": "hallway",
+   "reply": "apple",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "apple",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 25,
+   "target": "bathroom",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 26,
+   "target": "bathroom",
+   "reply": "Milk was in the refrigerator.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 27,
+   "target": "office",
+   "reply": "Brighton.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 28,
+   "target": "bedroom",
+   "reply": "The football was in the hallway.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "Bathroom.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 31,
+   "target": "kitchen",
+   "reply": "in the barn.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 32,
+   "target": "office",
+   "reply": "milk\nThe milk was in the garden.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "milk in the field.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "Bath.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 35,
+   "target": "hallway",
+   "reply": "On a farm.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 36,
+   "target": "office",
+   "reply": "In the bathroom.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 37,
+   "target": "garden",
+   "reply": "Brighton",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 38,
+   "target": "office",
+   "reply": "in the bathroom.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 39,
+   "target": "garden",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 40,
+   "target": "hallway",
+   "reply": "Bathroom.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "Birch.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 42,
+   "target": "garden",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "Birkenstein",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 45,
+   "target": "garden",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 46,
+   "target": "office",
+   "reply": "Bright.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 47,
+   "target": "office",
+   "reply": "Garden.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 48,
+   "target": "bathroom",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "4k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 0,
+   "target": "kitchen",
+   "reply": "Garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 1,
+   "target": "bathroom",
+   "reply": "Baker.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 2,
+   "target": "kitchen",
+   "reply": "orange.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 3,
+   "target": "garden",
+   "reply": "apple.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 4,
+   "target": "kitchen",
+   "reply": "Bathroom.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 5,
+   "target": "office",
+   "reply": "The football was in the hallway.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 6,
+   "target": "garden",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 7,
+   "target": "office",
+   "reply": "milk\nThe answer is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 8,
+   "target": "hallway",
+   "reply": "mango.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 9,
+   "target": "kitchen",
+   "reply": "milk\nThe answer is in the rain.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 10,
+   "target": "kitchen",
+   "reply": "milk\nThe answer is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 11,
+   "target": "garden",
+   "reply": "The football was in the hallway.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "Milk was in the refrigerator.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 14,
+   "target": "bedroom",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 15,
+   "target": "kitchen",
+   "reply": "milk\nThe answer is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 16,
+   "target": "bedroom",
+   "reply": "milk\non the floor.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 17,
+   "target": "bathroom",
+   "reply": "The football was in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 18,
+   "target": "garden",
+   "reply": "milk\nMama\nMama\nMama",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 19,
+   "target": "bathroom",
+   "reply": "The football was in the bedroom.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 20,
+   "target": "kitchen",
+   "reply": "milk in the kitchen.",
+   "ok": true
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 21,
+   "target": "kitchen",
+   "reply": "Birim.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "milk\non the floor.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 23,
+   "target": "hallway",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 25,
+   "target": "bathroom",
+   "reply": "The apple was in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 26,
+   "target": "bathroom",
+   "reply": "milk\nThe answer is California.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 27,
+   "target": "office",
+   "reply": "The football was in the park.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 28,
+   "target": "bedroom",
+   "reply": "The football was in the hallway.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "Birder.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 30,
+   "target": "hallway",
+   "reply": "Bathroom",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 31,
+   "target": "kitchen",
+   "reply": "milk.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 32,
+   "target": "office",
+   "reply": "milk\nThe answer is in the garden.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "milk\nThe answer is in the fields.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 34,
+   "target": "hallway",
+   "reply": "The football was in the park.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 35,
+   "target": "hallway",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 36,
+   "target": "office",
+   "reply": "milk\nThe answer is in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 37,
+   "target": "garden",
+   "reply": "Bedroom.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 38,
+   "target": "office",
+   "reply": "milk\nThe milk was in the refrigerator.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 39,
+   "target": "garden",
+   "reply": "milk\nThe milk was in the refrigerator.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 40,
+   "target": "hallway",
+   "reply": "Bathroom.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 41,
+   "target": "kitchen",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 42,
+   "target": "garden",
+   "reply": "on the porch.\nThe answer is on the porch.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 43,
+   "target": "bedroom",
+   "reply": "mango.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 44,
+   "target": "kitchen",
+   "reply": "Birish.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 45,
+   "target": "garden",
+   "reply": "Apples were in the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 46,
+   "target": "office",
+   "reply": "Bedroom.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 47,
+   "target": "office",
+   "reply": "Garden",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 48,
+   "target": "bathroom",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa3",
+   "len": "16k",
+   "i": 49,
+   "target": "bathroom",
+   "reply": "New York",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 0,
+   "target": "bedroom",
+   "reply": "The toilet.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "The office is south of the street.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 2,
+   "target": "garden",
+   "reply": "The office is north of the street.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 3,
+   "target": "garden",
+   "reply": "The North.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 4,
+   "target": "garden",
+   "reply": "The bathroom south of the city of Rome.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 5,
+   "target": "office",
+   "reply": "The North Pole.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 6,
+   "target": "bathroom",
+   "reply": "The garden.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 7,
+   "target": "bedroom",
+   "reply": "The West Bank",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "The Garden South of",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "The hallway north of the library.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 10,
+   "target": "bedroom",
+   "reply": "The other side.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 11,
+   "target": "office",
+   "reply": "The ocean.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "The other side.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "The Garden West is located in the state of Texas.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 14,
+   "target": "hallway",
+   "reply": "The river.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 15,
+   "target": "bathroom",
+   "reply": "The office west of is the Westfield.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 16,
+   "target": "bathroom",
+   "reply": "The ocean.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 17,
+   "target": "kitchen",
+   "reply": "The hallway is north of the room.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 18,
+   "target": "bathroom",
+   "reply": "The ocean.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 19,
+   "target": "office",
+   "reply": "The ocean.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 20,
+   "target": "bedroom",
+   "reply": "The hallway is to the west.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 21,
+   "target": "office",
+   "reply": "The ocean",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "The office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 23,
+   "target": "kitchen",
+   "reply": "The ocean",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "The bathroom is south of the house.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 25,
+   "target": "hallway",
+   "reply": "The bathroom is to the west.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 26,
+   "target": "office",
+   "reply": "The bathroom.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "The",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 28,
+   "target": "garden",
+   "reply": "The river.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "The garden north of is the rose garden.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 30,
+   "target": "office",
+   "reply": "The river",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "The other side.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 32,
+   "target": "garden",
+   "reply": "The road.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "The hallway is south of the room.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 34,
+   "target": "garden",
+   "reply": "The office.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "The road",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 36,
+   "target": "bathroom",
+   "reply": "The West Coast.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 37,
+   "target": "kitchen",
+   "reply": "The toilet",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "The South.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 39,
+   "target": "bedroom",
+   "reply": "The Garden South",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "The bathroom is to the west.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 41,
+   "target": "garden",
+   "reply": "The",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 42,
+   "target": "bathroom",
+   "reply": "The hallway is to the west.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 43,
+   "target": "hallway",
+   "reply": "The door.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 44,
+   "target": "bathroom",
+   "reply": "The office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 45,
+   "target": "office",
+   "reply": "The bedroom south of the ocean.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 46,
+   "target": "kitchen",
+   "reply": "The office is to the west.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "The office is south of the city center.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 48,
+   "target": "office",
+   "reply": "The kitchen is to the east.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "0k",
+   "i": 49,
+   "target": "hallway",
+   "reply": "The bathroom is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 0,
+   "target": "bedroom",
+   "reply": "The bathroom east of is the bathroom right.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "South of the office is 4500.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 2,
+   "target": "garden",
+   "reply": "North of the office is the office building.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 3,
+   "target": "garden",
+   "reply": "North.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 4,
+   "target": "garden",
+   "reply": "sand.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 5,
+   "target": "office",
+   "reply": "The North Pole.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 6,
+   "target": "bathroom",
+   "reply": "North of the garden is the park.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 7,
+   "target": "bedroom",
+   "reply": "south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "garden.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "The hallway north of is the hallway south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 10,
+   "target": "bedroom",
+   "reply": "South of the hallway is 670.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 11,
+   "target": "office",
+   "reply": "sleeping",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "North of the garden is the park.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "Garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 14,
+   "target": "hallway",
+   "reply": "The bathroom is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 15,
+   "target": "bathroom",
+   "reply": "West\nThe office west of is 7286.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 16,
+   "target": "bathroom",
+   "reply": "sleeping.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 17,
+   "target": "kitchen",
+   "reply": "The hallway is north of the office.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 18,
+   "target": "bathroom",
+   "reply": "South of the kitchen is the garden.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 19,
+   "target": "office",
+   "reply": "South of the bedroom is the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 20,
+   "target": "bedroom",
+   "reply": "sand",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 21,
+   "target": "office",
+   "reply": "sleeping",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "The hallway south of is the hallway north.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 23,
+   "target": "kitchen",
+   "reply": "sleeping",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "South of the bathroom is the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 25,
+   "target": "hallway",
+   "reply": "West of the bathroom is 5608.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 26,
+   "target": "office",
+   "reply": "South of the hallway is the 1050.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "South.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 28,
+   "target": "garden",
+   "reply": "The bathroom is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 30,
+   "target": "office",
+   "reply": "salt.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "South of the hallway is the stairwell.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 32,
+   "target": "garden",
+   "reply": "South.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "South of the hallway is the park.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 34,
+   "target": "garden",
+   "reply": "The hallway east of is 135.\nReference: 1",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "South of the hallway is the park.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 36,
+   "target": "bathroom",
+   "reply": "The kitchen west of is the restaurant.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 37,
+   "target": "kitchen",
+   "reply": "The bathroom west of the hotel.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 39,
+   "target": "bedroom",
+   "reply": "garden",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "The bathroom is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 41,
+   "target": "garden",
+   "reply": "West of the office is 750.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 42,
+   "target": "bathroom",
+   "reply": "West.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 43,
+   "target": "hallway",
+   "reply": "The kitchen is north.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 44,
+   "target": "bathroom",
+   "reply": "The hallway north of is the hallway south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 45,
+   "target": "office",
+   "reply": "Bedroom",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 46,
+   "target": "kitchen",
+   "reply": "West of the office is 7509.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "South of the office is the office building.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 48,
+   "target": "office",
+   "reply": "The kitchen east of the ocean.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "4k",
+   "i": 49,
+   "target": "hallway",
+   "reply": "South of the bathroom is the kitchen.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 0,
+   "target": "bedroom",
+   "reply": "Bathroom west.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 1,
+   "target": "kitchen",
+   "reply": "South of the office is 4571.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 2,
+   "target": "garden",
+   "reply": "South.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 3,
+   "target": "garden",
+   "reply": "north\nThe bedroom north of is the bedroom south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 4,
+   "target": "garden",
+   "reply": "sand",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 5,
+   "target": "office",
+   "reply": "The bedroom is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 6,
+   "target": "bathroom",
+   "reply": "The garden is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 7,
+   "target": "bedroom",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 8,
+   "target": "kitchen",
+   "reply": "mari.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 9,
+   "target": "bathroom",
+   "reply": "The hallway north of is 515.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 10,
+   "target": "bedroom",
+   "reply": "South of the hallway is the hallway.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 11,
+   "target": "office",
+   "reply": "sleeping\nThe answer is east.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 12,
+   "target": "hallway",
+   "reply": "shorter.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 13,
+   "target": "bedroom",
+   "reply": "The garden west of is the garden of the West.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 14,
+   "target": "hallway",
+   "reply": "The bathroom is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 15,
+   "target": "bathroom",
+   "reply": "West\nThe office west of is the office in Riga",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 16,
+   "target": "bathroom",
+   "reply": "sleeping\nThe answer is bed",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 17,
+   "target": "kitchen",
+   "reply": "The hallway is north.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 18,
+   "target": "bathroom",
+   "reply": "The South of the kitchen is the dining room.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 19,
+   "target": "office",
+   "reply": "The bedroom is 455.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 20,
+   "target": "bedroom",
+   "reply": "The hallway is 886.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 21,
+   "target": "office",
+   "reply": "The bedroom is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 22,
+   "target": "bedroom",
+   "reply": "The hallway south of is 200.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 23,
+   "target": "kitchen",
+   "reply": "sleeping.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 24,
+   "target": "bedroom",
+   "reply": "South of the bathroom is the garden.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 25,
+   "target": "hallway",
+   "reply": "The bathroom is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 26,
+   "target": "office",
+   "reply": "South of the hallway is the road.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 27,
+   "target": "bedroom",
+   "reply": "south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 28,
+   "target": "garden",
+   "reply": "The bathroom is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 29,
+   "target": "kitchen",
+   "reply": "mountain.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 30,
+   "target": "office",
+   "reply": "The garden is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 31,
+   "target": "bathroom",
+   "reply": "South of the hallway is the park.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 32,
+   "target": "garden",
+   "reply": "South.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 33,
+   "target": "bedroom",
+   "reply": "The hallway is south of the office.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 34,
+   "target": "garden",
+   "reply": "The hallway east of is 4066.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 35,
+   "target": "kitchen",
+   "reply": "South of the hallway is the park.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 36,
+   "target": "bathroom",
+   "reply": "West\nThe kitchen west of is the kitchen in the south",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 37,
+   "target": "kitchen",
+   "reply": "toilet.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 38,
+   "target": "bathroom",
+   "reply": "garden\nThe garden south of is the rose garden.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 39,
+   "target": "bedroom",
+   "reply": "garden\nThe garden south of is the rose garden.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 40,
+   "target": "bedroom",
+   "reply": "sand",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 41,
+   "target": "garden",
+   "reply": "office",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 42,
+   "target": "bathroom",
+   "reply": "The hallway is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 43,
+   "target": "hallway",
+   "reply": "North of the kitchen is the farm.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 44,
+   "target": "bathroom",
+   "reply": "hallway\nnorth\nnorth\nhallway",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 45,
+   "target": "office",
+   "reply": "sleeping.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 46,
+   "target": "kitchen",
+   "reply": "south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 47,
+   "target": "bedroom",
+   "reply": "South of the office is 2509.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 48,
+   "target": "office",
+   "reply": "The kitchen is south.",
+   "ok": false
+  },
+  {
+   "task": "qa4",
+   "len": "16k",
+   "i": 49,
+   "target": "hallway",
+   "reply": "south of the bathroom.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 0,
+   "target": "Jeff",
+   "reply": "To the coach.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 1,
+   "target": "Bill",
+   "reply": "Babe",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 2,
+   "target": "Jeff",
+   "reply": "Mama",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 3,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 4,
+   "target": "Fred",
+   "reply": "The cow.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 5,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 6,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 7,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 8,
+   "target": "Jeff",
+   "reply": "Babe",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 9,
+   "target": "Fred",
+   "reply": "Aunt Marge",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 10,
+   "target": "Jeff",
+   "reply": "John",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 11,
+   "target": "Jeff",
+   "reply": "To the kids.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 12,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 13,
+   "target": "Bill",
+   "reply": "To the cow.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 14,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 15,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 16,
+   "target": "Mary",
+   "reply": "John",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 17,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 18,
+   "target": "Jeff",
+   "reply": "The person who ate it.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 19,
+   "target": "Bill",
+   "reply": "To the kids.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 20,
+   "target": "Fred",
+   "reply": "Mama",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 21,
+   "target": "Mary",
+   "reply": "The cow.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 22,
+   "target": "Mary",
+   "reply": "The cow.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 23,
+   "target": "milk",
+   "reply": "A book",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 24,
+   "target": "milk",
+   "reply": "A gift.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 25,
+   "target": "football",
+   "reply": "A gift.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 26,
+   "target": "Mary",
+   "reply": "The referee.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 27,
+   "target": "Mary",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 28,
+   "target": "Fred",
+   "reply": "The person who ate it.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 29,
+   "target": "Mary",
+   "reply": "Bee",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 30,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 31,
+   "target": "Mary",
+   "reply": "The cow.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 32,
+   "target": "Fred",
+   "reply": "Apricot",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 33,
+   "target": "football",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 34,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 35,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 36,
+   "target": "Jeff",
+   "reply": "The cow.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 37,
+   "target": "Bill",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 38,
+   "target": "Fred",
+   "reply": "The referee",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 39,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 40,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 41,
+   "target": "Mary",
+   "reply": "The referee",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 42,
+   "target": "Fred",
+   "reply": "The person who ate the apple.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 43,
+   "target": "Mary",
+   "reply": "Agen",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 44,
+   "target": "Fred",
+   "reply": "Banana",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 45,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 46,
+   "target": "Fred",
+   "reply": "The person who ate it.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 47,
+   "target": "Fred",
+   "reply": "The cow.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 48,
+   "target": "Mary",
+   "reply": "The winner",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "0k",
+   "i": 49,
+   "target": "apple",
+   "reply": "A book",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 0,
+   "target": "Jeff",
+   "reply": "Fred gave the football to his son.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 1,
+   "target": "Bill",
+   "reply": "Mommy",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 2,
+   "target": "Jeff",
+   "reply": "Mama",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 3,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 4,
+   "target": "Fred",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 5,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 6,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 7,
+   "target": "apple",
+   "reply": "A cookie.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 8,
+   "target": "Jeff",
+   "reply": "Beev",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 9,
+   "target": "Fred",
+   "reply": "Gala\nThe answer is apple.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 10,
+   "target": "Jeff",
+   "reply": "Morgan",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 11,
+   "target": "Jeff",
+   "reply": "Billy",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 12,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 13,
+   "target": "Bill",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 14,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 15,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 16,
+   "target": "Mary",
+   "reply": "Morgan.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 17,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 18,
+   "target": "Jeff",
+   "reply": "Apples.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 19,
+   "target": "Bill",
+   "reply": "Brian",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 20,
+   "target": "Fred",
+   "reply": "milk\nJeff\nThe cow\nThe farmer\nThe",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 21,
+   "target": "Mary",
+   "reply": "Mama.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 22,
+   "target": "Mary",
+   "reply": "milk\nThe cow\nThe milk is from the cow",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 23,
+   "target": "milk",
+   "reply": "A gift",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 24,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 25,
+   "target": "football",
+   "reply": "Auntie",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 26,
+   "target": "Mary",
+   "reply": "Berti",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 27,
+   "target": "Mary",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 28,
+   "target": "Fred",
+   "reply": "An apple.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 29,
+   "target": "Mary",
+   "reply": "Milk\nBill\nThe cow\nThe milk\nThe",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 30,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 31,
+   "target": "Mary",
+   "reply": "Bee.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 32,
+   "target": "Fred",
+   "reply": "Giovanni.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 33,
+   "target": "football",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 34,
+   "target": "apple",
+   "reply": "Auntie",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 35,
+   "target": "apple",
+   "reply": "A cookie.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 36,
+   "target": "Jeff",
+   "reply": "Bee.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 37,
+   "target": "Bill",
+   "reply": "Mango",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 38,
+   "target": "Fred",
+   "reply": "Bobby.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 39,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 40,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 41,
+   "target": "Mary",
+   "reply": "Bobby\nThe answer is football.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 42,
+   "target": "Fred",
+   "reply": "An apple.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 43,
+   "target": "Mary",
+   "reply": "An apple.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 44,
+   "target": "Fred",
+   "reply": "Biram.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 45,
+   "target": "apple",
+   "reply": "A cookie.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 46,
+   "target": "Fred",
+   "reply": "Apples.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 47,
+   "target": "Fred",
+   "reply": "Mama.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 48,
+   "target": "Mary",
+   "reply": "Morgan",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "4k",
+   "i": 49,
+   "target": "apple",
+   "reply": "A gift.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 0,
+   "target": "Jeff",
+   "reply": "Fred gave the football to his son.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 1,
+   "target": "Bill",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 2,
+   "target": "Jeff",
+   "reply": "Dairy.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 3,
+   "target": "milk",
+   "reply": "A cookie.\nMary gave Fred a cookie.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 4,
+   "target": "Fred",
+   "reply": "Mama",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 5,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 6,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 7,
+   "target": "apple",
+   "reply": "A lemonade.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 8,
+   "target": "Jeff",
+   "reply": "Mama.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 9,
+   "target": "Fred",
+   "reply": "Gala",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 10,
+   "target": "Jeff",
+   "reply": "John",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 11,
+   "target": "Jeff",
+   "reply": "Mary gave the football to Jake.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 12,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 13,
+   "target": "Bill",
+   "reply": "Beev",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 14,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 15,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 16,
+   "target": "Mary",
+   "reply": "Morgan",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 17,
+   "target": "apple",
+   "reply": "A cookie.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 18,
+   "target": "Jeff",
+   "reply": "Mango",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 19,
+   "target": "Bill",
+   "reply": "Billy.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 20,
+   "target": "Fred",
+   "reply": "milk\nThe cow\nThe cow",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 21,
+   "target": "Mary",
+   "reply": "Mama\nMom\nDaddy\nFather",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 22,
+   "target": "Mary",
+   "reply": "milk.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 23,
+   "target": "milk",
+   "reply": "A gift.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 24,
+   "target": "milk",
+   "reply": "A coffee.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 25,
+   "target": "football",
+   "reply": "A cookie.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 26,
+   "target": "Mary",
+   "reply": "Billy\nThe answer is rugby.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 27,
+   "target": "Mary",
+   "reply": "Birken.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 28,
+   "target": "Fred",
+   "reply": "Birim.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 29,
+   "target": "Mary",
+   "reply": "Beev\nThe milk to Bill was given by the",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 30,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 31,
+   "target": "Mary",
+   "reply": "milk.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 32,
+   "target": "Fred",
+   "reply": "Banana.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 33,
+   "target": "football",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 34,
+   "target": "apple",
+   "reply": "Auntie",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 35,
+   "target": "apple",
+   "reply": "A cookie.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 36,
+   "target": "Jeff",
+   "reply": "Bee",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 37,
+   "target": "Bill",
+   "reply": "apple\nMary",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 38,
+   "target": "Fred",
+   "reply": "Goal.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 39,
+   "target": "milk",
+   "reply": "A banana.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 40,
+   "target": "milk",
+   "reply": "A book.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 41,
+   "target": "Mary",
+   "reply": "Goal",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 42,
+   "target": "Fred",
+   "reply": "Morgan",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 43,
+   "target": "Mary",
+   "reply": "An apple.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 44,
+   "target": "Fred",
+   "reply": "Gala",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 45,
+   "target": "apple",
+   "reply": "A grape.",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 46,
+   "target": "Fred",
+   "reply": "Apple",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 47,
+   "target": "Fred",
+   "reply": "milk",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 48,
+   "target": "Mary",
+   "reply": "Sabre",
+   "ok": false
+  },
+  {
+   "task": "qa5",
+   "len": "16k",
+   "i": 49,
+   "target": "apple",
+   "reply": "A book.",
+   "ok": false
+  }
+ ]
+}
