@@ -9,6 +9,8 @@ KH-1 grafts a small **archival memory** (three gated delta-rule layers) onto a f
 - the adapters carry facts across chunks in a fixed-size state;
 - so GPU memory stays the same at any length. On an 8 GB RTX 3070 Ti, KH-1-1.2B read 1.3M tokens (three novels) in 2.6 GB and answered 4 of 5 questions about facts planted near the start.
 
+**Watch:** [the 3-minute demo video](https://youtu.be/mCGc3_Mh0HI): three novels, 1.3M tokens, an 8 GB gaming GPU.
+
 **Try it:**
 - [KH-1 Live](https://huggingface.co/spaces/01TEK/KH-1-live): upload a book (up to 2M tokens), plant facts anywhere, read it into a fixed 1.9 MB memory on a GPU (1.3M tokens in about 75 s), then ask. Switch the memory off to see the same model fail.
 - [KH-1 Demo](https://huggingface.co/spaces/01TEK/KH-1-demo): CPU, a precomputed 1.87 MB memory of three novels (1.3M tokens).
