@@ -107,7 +107,7 @@ The base model only ever sees the current 2K-token chunk, so it can answer only 
 
 Ask the five questions **in the listed order** (each answer is also written into the memory, as in a chat; other orders can change later answers).
 On our 8 GB GPU this exact model answers 4 of 5; the fifth fact uses a phrasing never seen in training. With the memory switched off it answers 0 of 5.
-Research preview: it recalls facts, not whole books. Paper and code: [github.com/01tek/KH](https://github.com/01tek/KH).""")
+▶ [Watch the 3-minute demo video](https://youtu.be/mCGc3_Mh0HI). Research preview: it recalls facts, not whole books. Paper and code: [github.com/01tek/KH](https://github.com/01tek/KH).""")
     with gr.Tab("Three novels, 1.3M tokens"):
         book_state = gr.State(None)
         with gr.Row():

@@ -124,7 +124,7 @@ from the first pages. Switch the memory off to see the same model fail.
 2. **Read** (about 1–2 minutes for 1.3M tokens).
 3. Ask about the planted facts. KH-1 learned facts of the form *"a name's attribute is a value"*; it recalls facts, not summaries.
 
-Research preview from 01TEK R&D · paper, code and every eval log: [github.com/01tek/KH](https://github.com/01tek/KH) · CPU demo: [01TEK/KH-1-demo](https://huggingface.co/spaces/01TEK/KH-1-demo)""")
+▶ [Watch the 3-minute demo video](https://youtu.be/mCGc3_Mh0HI) · Research preview from 01TEK R&D · paper, code and every eval log: [github.com/01tek/KH](https://github.com/01tek/KH) · CPU demo: [01TEK/KH-1-demo](https://huggingface.co/spaces/01TEK/KH-1-demo)""")
     st = gr.State(None)
     with gr.Row():
         up = gr.File(label="Your book (.txt), optional", file_types=[".txt"], type="filepath")
