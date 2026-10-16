@@ -57,7 +57,7 @@ def feed(ids, st):
     return st
 
 
-@spaces.GPU(duration=240)
+@spaces.GPU(duration=60)  # 1.3M tokens take 30-75 s; ZeroGPU pads the request 1.5x and caps visitors
 def read(upload, facts, where):
     if upload is not None:
         text = open(upload, encoding="utf-8", errors="ignore").read()
@@ -84,7 +84,7 @@ def read(upload, facts, where):
     return to_cpu(st), report
 
 
-@spaces.GPU(duration=60)
+@spaces.GPU(duration=20)
 def ask(question, prefix, st, use_memory):
     if st is None:
         return "Read a book first.", st
@@ -143,4 +143,4 @@ Research preview from 01TEK R&D · paper, code and every eval log: [github.com/0
     read_btn.click(read, [up, facts, where], [st, report])
     ask_btn.click(ask, [q, p, st, use_mem], [out, st])
 
-demo.queue(max_size=20).launch()
+demo.queue(max_size=20).launch(ssr_mode=False)  # Gradio SSR sent "ping" into the optional File input
