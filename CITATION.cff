@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use KH-1, please cite the paper."
+title: "KH: constant-memory fact recall over 1M+ tokens (KH-1)"
+type: software
+authors:
+  - family-names: Khouidi
+    given-names: Youssef
+    affiliation: 01TEK LLC
+    orcid: "https://orcid.org/0009-0009-2125-7909"
+repository-code: "https://github.com/01tek/KH"
+license: Apache-2.0
+version: v2.3.1
+doi: 10.5281/zenodo.23447665
+preferred-citation:
+  type: article
+  title: "Write Where Short Memory Cannot Reach: Distance-Invariant Fact Recall in Fixed-State Language Models"
+  authors:
+    - family-names: Khouidi
+      given-names: Youssef
+      affiliation: 01TEK LLC
+      orcid: "https://orcid.org/0009-0009-2125-7909"
+  year: 2026
+  publisher:
+    name: Zenodo
+  doi: 10.5281/zenodo.23447665
+  url: "https://doi.org/10.5281/zenodo.23447665"
