@@ -18,7 +18,7 @@ KH-1-1.2B adds a small **archival memory** (63M trainable parameters, three delt
 
 GPU memory therefore stays constant at any length: 2.8 GB on an 8 GB RTX 3070 Ti, reading at 13.7K tokens/s.
 
-*Research preview. Paper: "Write Where Short Memory Cannot Reach: Distance-Invariant Fact Recall in Fixed-State Language Models" (Youssef Khouidi, 01TEK, 2026). Code: https://github.com/01TEK/KH (tag `v2.3`).*
+*Research preview. Paper ([doi:10.5281/zenodo.23447665](https://doi.org/10.5281/zenodo.23447665)): "Write Where Short Memory Cannot Reach: Distance-Invariant Fact Recall in Fixed-State Language Models" (Youssef Khouidi, 01TEK, 2026). Code: https://github.com/01TEK/KH (tag `v2.3`).*
 
 ## Results
 - **Task:** facts spliced into FineWeb-Edu validation text, asked 16K / 131K / 1M tokens later.

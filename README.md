@@ -1,5 +1,7 @@
 # KH: constant-memory fact recall over 1M+ tokens
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23447665.svg)](https://doi.org/10.5281/zenodo.23447665)
+
 KH is 01TEK's long-memory model line. **KH-1** is the first version; later versions will be added here.
 
 This release has the code, evaluation logs and paper for **"Write Where Short Memory Cannot Reach: Distance-Invariant Fact Recall in Fixed-State Language Models"** (Youssef Khouidi, 01TEK, 2026), and for the **KH-1** memory adapters.
@@ -42,7 +44,7 @@ Out of the box KH-1 scores 0 here (it never saw bAbI-style sentences); weights: 
 
 **Other bases** (short single-GPU runs): Gemma 4 E2B recalls 0.40–0.575 at 1M, flat from 16K; LFM2.5-8B-A1B (mixture of experts) 0.35–0.375. See the paper.
 
-Details: [`kh1/README.md`](kh1/README.md) and the paper ([`paper_v2/arxiv/main.pdf`](paper_v2/arxiv/main.pdf)).
+Details: [`kh1/README.md`](kh1/README.md) and the paper ([doi:10.5281/zenodo.23447665](https://doi.org/10.5281/zenodo.23447665); PDF also in [`paper_v2/arxiv/main.pdf`](paper_v2/arxiv/main.pdf)).
 
 ## Quick start (LFM2 grafts)
 Needs an NVIDIA GPU with CUDA. Versions we tested: PyTorch 2.9.1, Transformers 4.57.6, flash-linear-attention 0.5.2.
@@ -80,8 +82,9 @@ python poc_m3/kh1_chat.py --ckpt KH-1-1.2B --tau 0.99
   title  = {Write Where Short Memory Cannot Reach: Distance-Invariant Fact Recall in Fixed-State Language Models},
   author = {Khouidi, Youssef},
   year   = {2026},
-  publisher = {01TEK LLC},
-  url    = {https://github.com/01TEK/KH}
+  publisher = {Zenodo},
+  doi    = {10.5281/zenodo.23447665},
+  url    = {https://doi.org/10.5281/zenodo.23447665}
 }
 ```
 
